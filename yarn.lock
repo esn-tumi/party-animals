@@ -6513,7 +6513,7 @@ __metadata:
     react-dom: ^18.2.0
     remix-auth: ^3.3.0
     remix-auth-auth0: 1.4.0
-    stripe: ^10.14.0
+    stripe: ^10.15.0
     tailwindcss: ^3.1.8
     typescript: ~4.8.4
     v8n: ^1.5.1
@@ -6602,7 +6602,7 @@ __metadata:
     rimraf: ^3.0.2
     rrule: ^2.7.1
     sharp: ^0.31.1
-    stripe: ^10.14.0
+    stripe: ^10.15.0
     supertest: ^6.3.0
     ts-jest: ^29.0.3
     ts-node: ^10.9.1
@@ -22961,13 +22961,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stripe@npm:^10.14.0":
-  version: 10.14.0
-  resolution: "stripe@npm:10.14.0"
+"stripe@npm:^10.15.0":
+  version: 10.15.0
+  resolution: "stripe@npm:10.15.0"
   dependencies:
     "@types/node": ">=8.1.0"
     qs: ^6.11.0
-  checksum: 749fa60007f83877fa8b31fef0dae95fb267f02cb0dc5fcd216f5d376fa114d69da2b33a14212070f15c49f1c349b5c9b0e7510a42a077c288727ea903526b98
+  checksum: 2aa7da212eab80451242ef8129eca964cfd915179268ceb8217a9c9f7bae28c71557929e140a991a2d0e335ff2b9ca928ff261b94810e34eca5cacf64324fb04
   languageName: node
   linkType: hard
 
