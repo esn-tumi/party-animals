@@ -41,7 +41,7 @@
     "@pothos/plugin-scope-auth": "3.15.0",
     "@pothos/plugin-simple-objects": "^3.6.4",
     "@pothos/plugin-tracing": "^0.5.4",
-    "@pothos/tracing-sentry": "^0.7.5",
+    "@pothos/tracing-sentry": "^0.7.8",
     "@prisma/client": "^4.4.0",
     "@sendgrid/mail": "^7.7.0",
     "@sentry/integrations": "^7.15.0",

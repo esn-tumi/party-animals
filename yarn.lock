@@ -5519,16 +5519,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pothos/tracing-sentry@npm:^0.7.5":
-  version: 0.7.5
-  resolution: "@pothos/tracing-sentry@npm:0.7.5"
+"@pothos/tracing-sentry@npm:^0.7.8":
+  version: 0.7.8
+  resolution: "@pothos/tracing-sentry@npm:0.7.8"
   peerDependencies:
     "@pothos/core": "*"
     "@pothos/plugin-tracing": "*"
     "@sentry/node": "*"
     "@sentry/tracing": "*"
     graphql: ">=15.1.0"
-  checksum: 3566f367de393d02a0fcb2ec9bf4574fe028b6c552bcdac618e760347e69b94df324c1d285277703e017bb2f508a6405e56d72b5180623be25de957906d556b9
+  checksum: 1afaa896d84b14e5d4cbf5fa6693c74a6a8ca80739e8bdf56a0d950e7f10ec6852b801158c9ffec1e70418ae995e0eadfb1d70cada9a5e383a9d413efae53c88
   languageName: node
   linkType: hard
 
@@ -6542,7 +6542,7 @@ __metadata:
     "@pothos/plugin-scope-auth": 3.15.0
     "@pothos/plugin-simple-objects": ^3.6.4
     "@pothos/plugin-tracing": ^0.5.4
-    "@pothos/tracing-sentry": ^0.7.5
+    "@pothos/tracing-sentry": ^0.7.8
     "@prisma/client": ^4.4.0
     "@sendgrid/mail": ^7.7.0
     "@sentry/integrations": ^7.15.0
