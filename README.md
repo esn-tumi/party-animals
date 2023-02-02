@@ -1,59 +1,53 @@
-[![Build Docker for the legacy app](https://github.com/heddendorp/tumi/actions/workflows/publish-legacy-app.yml/badge.svg)](https://github.com/heddendorp/tumi/actions/workflows/publish-legacy-app.yml) [![Deploy preview of legacy app](https://github.com/heddendorp/tumi/actions/workflows/preview-legacy-app.yml/badge.svg)](https://github.com/heddendorp/tumi/actions/workflows/preview-legacy-app.yml) [![Build Docker for Server](https://github.com/heddendorp/tumi/actions/workflows/publish-server.yml/badge.svg)](https://github.com/heddendorp/tumi/actions/workflows/publish-server.yml)
+# Welcome to Remix!
 
-# ESN TUMi
+- [Remix Docs](https://remix.run/docs)
 
-The main repository of the webservice that make TUMi work the way it does.
-The main code for the TUMi app can be found here together with some other projects like the website for Party Animals.
-Additionally, there is a new serverside rendered version of the TUMi app and a small projects for experiments.
+## Development
 
-## Contributing
+From your terminal:
 
-To find something to work on it's recommended to check the [issues](https://github.com/heddendorp/tumi/issues) and look
-at the **Good first issue** tag.
+```sh
+npm run dev
+```
 
-### Commits
+This starts your app in development mode, rebuilding assets on file changes.
 
-This repository follows the [conventional commits](https://conventionalcommits.org/). Please make sure to work you commit
-messages according to the guidelines.
+## Deployment
 
-## Projects
+First, build your app for production:
 
-As this repo is based on yarn workspaces you can find additional information in the folders for the specific projects.
+```sh
+npm run build
+```
 
-### What's on `tumi.esn.world`
+Then run the app in production mode:
 
-#### [Legacy App](./legacy-app/README.md)
+```sh
+npm start
+```
 
-Check this out for the frontend application that is currently the _TUMi app_. You can also learn more about the features and usage here.
+Now you'll need to pick a host to deploy it to.
 
-#### [Server](./server/README.md)
+### DIY
 
-The server used by all projects but Party Animals for data access
+If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
 
-### [Experiments](./experiments)
+Make sure to deploy the output of `remix build`
 
-### [Party Animals](./party-animals)
+- `build/`
+- `public/build/`
 
-## Tech Stack
+### Using a Template
 
-### TUMi Apps (Legacy app + events)
+When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
 
-**Client:** Angular, Apollo Angular, Angular Material, TailwindCSS
-
-### Server
-
-**Server:** Node, Express, Graphql Yoga, Prisma, Nexus
-
-### Party Animals
-
-Here there is no specific difference betweeen server and client,
-it is built on remix which is based on react.
-Also in play is prisma for db connection.
-
-### Experiments
-
-**Client:** Angular, Apollo Angular, TailwindCSS
-
-### Authentication
-
-All the authentication is done with [Auth0](https://auth0.com/docs).
+```sh
+cd ..
+# create a new project, and pick a pre-configured host
+npx create-remix@latest
+cd my-new-remix-app
+# remove the new project's app (not the old one!)
+rm -rf app
+# copy your app over
+cp -R ../my-old-remix-app/app app
+```

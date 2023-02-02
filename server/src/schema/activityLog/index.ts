@@ -1,2 +1,0 @@
-import './activityLogType';
-import './activityLogQueries';

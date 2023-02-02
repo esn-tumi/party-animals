@@ -1,2 +1,0 @@
-import './userOfTenantType';
-import './userOfTenantMutations';

@@ -1,2 +1,0 @@
-import './statisticsType';
-import './statisticsQueries';
