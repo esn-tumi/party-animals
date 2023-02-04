@@ -28,7 +28,7 @@ export function links() {
 export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
-    <html>
+    <html lang="en">
       <head>
         <title>Oh no!</title>
         <Meta />
