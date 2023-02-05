@@ -19,13 +19,6 @@ export default function AdminFrame() {
   return (
     <>
       <nav className="mx-auto flex max-w-3xl items-center justify-between p-4">
-        {/*<a*/}
-        {/*  className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100"*/}
-        {/*  href="/"*/}
-        {/*>*/}
-        {/*  👋*/}
-        {/*</a>*/}
-
         <ul className="flex items-center space-x-2 text-sm font-medium text-gray-200">
           <li>
             <NavLink
@@ -37,7 +30,6 @@ export default function AdminFrame() {
               Registrations
             </NavLink>
           </li>
-
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -48,7 +40,6 @@ export default function AdminFrame() {
               Groups
             </NavLink>
           </li>
-
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -57,6 +48,16 @@ export default function AdminFrame() {
               to="assignments"
             >
               Assignments
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+              }
+              to="genetic"
+            >
+              Genetics
             </NavLink>
           </li>
           <li>
