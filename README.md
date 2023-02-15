@@ -4,13 +4,28 @@
 
 ## Development
 
+Copy the `.env.template` file to `.env` and fill in the values.
+
 From your terminal:
+
+
+Start docker to get the database running:
+```sh
+  docker-compose -f stack.yml up -d
+```
+Start the dev server to begin development:
 
 ```sh
 npm run dev
 ```
 
 This starts your app in development mode, rebuilding assets on file changes.
+
+
+After you are done, you can stop the docker container:
+```sh
+  docker-compose -f stack.yml down
+```
 
 ## Deployment
 
