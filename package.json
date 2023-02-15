@@ -9,6 +9,10 @@
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
     "dev": "concurrently \"yarn dev:css\" \"remix dev\"",
     "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+    "docker:up": "docker-compose -f stack.yml up -d",
+    "docker:down": "docker-compose -f stack.yml down",
+    "prisma:push": "yarn prisma db push",
+    "prisma:studio": "yarn prisma studio",
     "start": "remix-serve build"
   },
   "dependencies": {
