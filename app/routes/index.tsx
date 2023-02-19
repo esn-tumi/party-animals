@@ -17,8 +17,14 @@ export default function Index() {
               src="/images/spring.jpg"
             />
           </div>
+          <div className="relative z-10 px-8 py-12 md:px-12">
+            <img
+              className="block w-48 md:w-64 h-auto"
+              src="/images/logo-stack.png"
+            />
+          </div>
           <div className="relative bg-gradient-to-t from-[rgba(0,26,102,0.8)] bg-blend-multiply">
-            <div className="max-w-4xl px-8 pb-12 pt-32 md:px-12 md:pb-12 md:pt-64">
+            <div className="max-w-4xl px-8 pb-12 pt-24 md:px-12 md:pb-12 md:pt-48">
               <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-opacity-60 text-white">
                 The ultimate exchange experience
               </p>
@@ -464,27 +470,27 @@ export default function Index() {
         </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-blue-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-sky-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12 h-full flex flex-col justify-between">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               The best way to start an exchange semester and meet amazing people
               from all over the world.
             </p>
             <div className="mt-4 text-base md:text-xl font-medium leading-snug md:leading-snug">
-              <p className="text-blue-900">Anna</p>
-              <p className="text-blue-600">Participated in Oct 22</p>
+              <p className="text-sky-900">Anna</p>
+              <p className="text-sky-600">Participated in Oct 22</p>
             </div>
           </div>
         </div>
-        <div className="bg-rose-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-pink-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12 h-full flex flex-col justify-between">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               The best way to start an exchange semester and meet amazing people
               from all over the world.
             </p>
             <div className="mt-4 text-base md:text-xl font-medium leading-snug md:leading-snug">
-              <p className="text-rose-900">Anna</p>
-              <p className="text-rose-600">Participated in Oct 22</p>
+              <p className="text-pink-900">Anna</p>
+              <p className="text-pink-600">Participated in Oct 22</p>
             </div>
           </div>
         </div>
@@ -543,7 +549,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="mt-12 mb-16 md:mt-24 md:mb-28 flex items-center justify-center">
+      <section className="mt-12 mb-8 md:mt-24 md:mb-12 flex items-center justify-center">
         <div className="flex flex-col space-y-3 w-full px-8 md:flex-row md:justify-center md:space-x-4 md:space-y-0">
           <Link
             className="shrink-0 h-fit overflow-hidden inline-block leading-none rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-all px-4 py-2 focus:outline-none focus:ring"
@@ -561,6 +567,24 @@ export default function Index() {
             <span className="block font-medium text-lg text-center">
               Explore our other events
             </span>
+          </a>
+        </div>
+      </section>
+      <section className="mb-16 md:mb-28 flex items-center justify-center">
+        <div className="flex w-full px-8 flex-row justify-center space-x-4">
+          <a
+            className="shrink-0 font-medium text-center text-sm inline-block text-neutral-600 hover:text-black transition-all"
+            href="https://tumi.esn.world/page/imprint"
+            target="_blank"
+          >
+            <span>Imprint</span>
+          </a>
+          <a
+            className="shrink-0 font-medium text-center text-sm md:text-sm inline-block text-neutral-600 hover:text-black transition-all"
+            href="https://tumi.esn.world/page/privacy"
+            target="_blank"
+          >
+            <span>Privacy Policy</span>
           </a>
         </div>
       </section>

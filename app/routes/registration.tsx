@@ -45,32 +45,32 @@ export default function Registration() {
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
               Party Animals is designed as the ultimate exchange experience. As
               the name suggests, it is suited for students who enjoy partying
-              and don't mind a couple of drinks along the way. Culture Creatures
-              is more relaxed and focuses on cultural enjoyment.
+              and do not mind a couple of drinks along the way. Culture
+              Creatures is more relaxed and focuses on cultural enjoyment.
             </p>
           </div>
         </div>
-        <div className="bg-indigo-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How much is it?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-indigo-900">
-              With the help of funding we can offer the Party Animals package
-              for €119 (only €7.50 per day). This covers 14 days of activities.
-              Culture Creatures is €89 (only €12.50 per day) for seven days of
-              activites. Neither of the programmes include local transportation
-              within Munich or any additional food and drinks you might want to
-              consume during the events.
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-green-900">
+              The Party Animals package is €119 (only €7.50 per day). This
+              covers 14 days of activities. Culture Creatures is €89 (only
+              €12.50 per day) for seven days of activites. Neither of the
+              programmes include local transportation within Munich or any
+              additional food and drinks you might want to consume during the
+              events.
             </p>
           </div>
         </div>
-        <div className="bg-yellow-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-sky-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Can I be in a group with my friends?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-yellow-900">
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-sky-900">
               No, you cannot decide which of the groups you will be placed in.
               Party Animals and Culture Creatures are all about meeting new
               people. Team spirit is a core aspect of both programmes.
@@ -90,12 +90,12 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-cyan-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-amber-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How does the application work?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-cyan-900">
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-amber-900">
               In order to ensure the best experience for participants, we
               unfortunately cannot guarantee a spot to everyone who signs up.
               The sooner you sign up, the better your chances of being selected.
@@ -104,12 +104,12 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-indigo-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Are there any other options?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-green-900">
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-indigo-900">
               If you are unable to join one of our multi-day programmes, you can
               still sign up for our individual events during the orientation
               weeks. You can explore our general event schedule on{' '}
@@ -128,12 +128,12 @@ export default function Registration() {
       </section>
       <Outlet />
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-purple-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How can I stay in the loop?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-purple-900">
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-green-900">
               Follow us on{' '}
               <a
                 className="underline hover:text-blue-700"
@@ -148,12 +148,12 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-red-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-amber-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               What's next?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-red-900">
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-amber-900">
               <ul className="list-none">
                 <li>
                   <strong className="font-medium">March 20, 18:00</strong>{' '}
@@ -173,7 +173,7 @@ export default function Registration() {
           </div>
         </div>
       </section>
-      <section className="mt-12 mb-16 md:mt-24 md:mb-28 flex items-center justify-center">
+      <section className="mt-12 mb-8 md:mt-24 md:mb-12 flex items-center justify-center">
         <div className="flex flex-col space-y-3 w-full px-8 md:flex-row md:justify-center md:space-x-4 md:space-y-0">
           <Link
             className="shrink-0 h-fit overflow-hidden inline-block leading-none rounded-xl text-black border border-neutral-300 hover:bg-neutral-300 transition-all px-4 py-2 focus:outline-none focus:ring"
@@ -183,6 +183,24 @@ export default function Registration() {
               Back to overview
             </span>
           </Link>
+        </div>
+      </section>
+      <section className="mb-16 md:mb-28 flex items-center justify-center">
+        <div className="flex w-full px-8 flex-row justify-center space-x-4">
+          <a
+            className="shrink-0 font-medium text-center text-sm inline-block text-neutral-600 hover:text-black transition-all"
+            href="https://tumi.esn.world/page/imprint"
+            target="_blank"
+          >
+            <span>Imprint</span>
+          </a>
+          <a
+            className="shrink-0 font-medium text-center text-sm md:text-sm inline-block text-neutral-600 hover:text-black transition-all"
+            href="https://tumi.esn.world/page/privacy"
+            target="_blank"
+          >
+            <span>Privacy Policy</span>
+          </a>
         </div>
       </section>
     </main>

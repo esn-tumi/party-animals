@@ -1,4 +1,4 @@
-import { LoaderFunction, redirect } from "@remix-run/node";
+import { LoaderFunction, redirect } from '@remix-run/node';
 import { authenticator } from '~/services/auth.server';
 import { db } from '~/utils/db.server';
 import { PaymentStatus, Status } from '~/generated/prisma';
@@ -23,8 +23,8 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export default function () {
   return (
-    <p className="text-green-500">
-      You have paid the participation fee. Thank you!
+    <p className="font-medium text-base leading-normal md:text-xl md:leading-normal text-green-600 mb-4">
+      → You have paid the participation fee. Thank you!
     </p>
   );
 }

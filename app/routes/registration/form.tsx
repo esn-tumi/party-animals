@@ -288,8 +288,8 @@ export default function RegistrationForm() {
             <option value="">Select your status</option>
             <option value="l">Local student</option>
             <option value="i">International degree student</option>
-            <option value="o">Exchange Student (started before April)</option>
-            <option value="e">Exchange Student (starting in April)</option>
+            <option value="o">Exchange student (started before April)</option>
+            <option value="e">Exchange student (starting in April)</option>
           </select>
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
             Status
@@ -400,7 +400,6 @@ export default function RegistrationForm() {
             <option value="">Select your preference</option>
             <option value="pa">Party Animals (€119)</option>
             <option value="cc">Culture Creatures (€89)</option>
-            <option value="either">Either programme works for me.</option>
             <option value="pa-cc">
               I prefer Party Animals, but am open to join Culture Creatures.
             </option>
