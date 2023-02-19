@@ -156,16 +156,16 @@ export default function Registration() {
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-amber-900">
               <ul className="list-none">
                 <li>
-                  <strong className="font-medium">March 20, 18:00</strong>{' '}
-                  Applications close
+                  Applications close:{' '}
+                  <strong className="font-medium">March 20, 6&nbsp;PM</strong>
                 </li>
                 <li>
-                  <strong className="font-medium">March 23, 18:00</strong> First
-                  round of admissions
+                  First round of admissions:{' '}
+                  <strong className="font-medium">March 23, 6&nbsp;PM</strong>
                 </li>
                 <li>
-                  <strong className="font-medium">March 25, 18:00</strong>{' '}
-                  Second round of admissions
+                  Second round of admissions:{' '}
+                  <strong className="font-medium">March 25, 6&nbsp;PM</strong>
                 </li>
               </ul>
               Check your e-mail to confirm your registration.

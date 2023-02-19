@@ -80,18 +80,18 @@ export default function RegistrationForm() {
         method="post"
         className="px-8 py-12 md:px-12 grid grid-cols-1 gap-4 md:grid-cols-2"
       >
-        <div className="md:col-span-2 mb-8">
+        <div className="mb-8">
           <div
             className="bg-neutral-100 p-4 text-black rounded-xl"
             role="alert"
           >
-            <h3 className="font-medium text-red-600">
-              The registration deadline has passed.
-            </h3>
-            <p className="text-black">
-              You can still sign up, however, you will be placed on the
-              waitlist. If a spot becomes available, you might have the chance
-              to claim it.
+            <p className="font-medium text-red-600 leading-snug">
+              The registration deadline has passed.{' '}
+              <span className="font-normal text-black">
+                You can still sign up, however, you will be placed on the
+                waitlist. If a spot becomes available, you might have the chance
+                to claim it.
+              </span>
             </p>
           </div>
         </div>
@@ -502,7 +502,7 @@ export default function RegistrationForm() {
             placeholder="Expectations"
           />
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
-            My expectations for the orientation programme
+            My expectations for the programme
           </span>
           {actionData?.errors.expectations ? (
             <ValidationMessage
