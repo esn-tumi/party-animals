@@ -64,7 +64,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-screen bg-slate-800">
+      <body className="min-h-screen">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
