@@ -54,9 +54,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
-        <div className="pa-start"></div>
-      </section>
       <section className="bg-[#140033] my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-violet-400 ">
