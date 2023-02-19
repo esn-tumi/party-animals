@@ -7,26 +7,10 @@ name: Build Docker for Party Animals
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '43 11 * * *'
   push:
     branches: [ main ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
-    paths:
-      - 'party-animals/**'
-      - 'Dockerfile-PartyAnimals'
-      - '.github/workflows/publish-partyAnimals.yml'
-      - 'infrastructure/party-animals.yml'
-      - 'yarn.lock'
-#  pull_request:
-#    branches: [ main ]
-#    paths:
-#      - 'party-animals/**'
-#      - 'Dockerfile-PartyAnimals'
-#      - '.github/workflows/publish-partyAnimals.yml'
-#      - 'infrastructure/party-animals.yml'
-#      - 'yarn.lock'
 
 env:
   # Use docker.io for Docker Hub if empty
