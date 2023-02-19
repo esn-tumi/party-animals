@@ -15,7 +15,7 @@ template:
     - name: AUTH0_CLIENT_SECRET
       secretRef: auth0-secret
     - name: AUTH0_CALLBACK_URL
-      secretRef: auth0-callback
+      secretRef: https://party-animals.esn.world/auth/auth0/callback
     - name: PRICE_ID
       secretRef: stripe-price-id
     - name: STRIPE_WEBHOOK_ENDPOINT_SECRET
@@ -26,8 +26,8 @@ template:
       cpu: 0.25
       memory: 0.5Gi
   scale:
-    minReplicas: 1
-    maxReplicas: 5
+    minReplicas: 0
+    maxReplicas: 2
     rules:
       - name: http-rule
         http:
