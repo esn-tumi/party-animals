@@ -129,7 +129,7 @@ jobs:
       name: production
       url: https://party-animals.esn.world
     needs: build
-    if: github.ref == 'refs/heads/main'
+#    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Azure Login
