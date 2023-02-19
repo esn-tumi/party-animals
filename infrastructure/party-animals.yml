@@ -15,7 +15,7 @@ template:
     - name: AUTH0_CLIENT_SECRET
       secretRef: auth0-secret
     - name: AUTH0_CALLBACK_URL
-      secretRef: https://party-animals.esn.world/auth/auth0/callback
+      value: https://party-animals.esn.world/auth/auth0/callback
     - name: PRICE_ID
       secretRef: stripe-price-id
     - name: STRIPE_WEBHOOK_ENDPOINT_SECRET
