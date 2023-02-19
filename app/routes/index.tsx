@@ -97,7 +97,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-2 sm:grid-cols-2">
+      <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
         <div className="bg-violet-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <h2 className="font-medium leading-tight text-2xl md:leading-tight text-black tracking-tight mb-6 ">
@@ -114,7 +114,7 @@ export default function Index() {
                 to="/registration"
               >
                 <span className="block font-medium text-lg text-center">
-                  Sign up now
+                  Sign up
                 </span>
               </Link>
             </div>
@@ -144,7 +144,7 @@ export default function Index() {
                 to="/registration"
               >
                 <span className="block font-medium text-lg text-center">
-                  Sign up now
+                  Sign up
                 </span>
               </Link>
             </div>
@@ -394,14 +394,14 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-2 sm:grid-cols-2">
+      <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
         <div className="bg-orange-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
-            <p className="font-medium leading-tight text-xl md:text-3xl md:leading-tight text-black">
+            <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               The best way to start an exchange semester and meet amazing people
               from all over the world.
             </p>
-            <div className="mt-4 text-lg md:text-xl font-medium leading-tight md:leading-tight ">
+            <div className="mt-4 text-lg md:text-xl font-medium leading-snug md:leading-snug">
               <p className="text-orange-900">Anna</p>
               <p className="text-orange-600">Participated in Oct 22</p>
             </div>
@@ -409,11 +409,11 @@ export default function Index() {
         </div>
         <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
-            <p className="font-medium leading-tight text-xl md:text-3xl md:leading-tight text-black">
+            <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               The best way to start an exchange semester and meet amazing people
               from all over the world.
             </p>
-            <div className="mt-4 text-lg md:text-xl font-medium leading-tight md:leading-tight ">
+            <div className="mt-4 text-lg md:text-xl font-medium leading-snug md:leading-snug">
               <p className="text-green-900">Anna</p>
               <p className="text-green-600">Participated in Oct 22</p>
             </div>
@@ -447,14 +447,14 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-2 sm:grid-cols-2">
+      <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
         <div className="bg-blue-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
-            <p className="font-medium leading-tight text-xl md:text-3xl md:leading-tight text-black">
+            <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               The best way to start an exchange semester and meet amazing people
               from all over the world.
             </p>
-            <div className="mt-4 text-lg md:text-xl font-medium leading-tight md:leading-tight ">
+            <div className="mt-4 text-lg md:text-xl font-medium leading-snug md:leading-snug">
               <p className="text-blue-900">Anna</p>
               <p className="text-blue-600">Participated in Oct 22</p>
             </div>
@@ -462,11 +462,11 @@ export default function Index() {
         </div>
         <div className="bg-rose-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
-            <p className="font-medium leading-tight text-xl md:text-3xl md:leading-tight text-black">
+            <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               The best way to start an exchange semester and meet amazing people
               from all over the world.
             </p>
-            <div className="mt-4 text-lg md:text-xl font-medium leading-tight md:leading-tight ">
+            <div className="mt-4 text-lg md:text-xl font-medium leading-snug md:leading-snug">
               <p className="text-rose-900">Anna</p>
               <p className="text-rose-600">Participated in Oct 22</p>
             </div>
