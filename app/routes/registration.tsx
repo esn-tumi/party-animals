@@ -43,10 +43,11 @@ export default function Registration() {
               Which programme is right for me?
             </p>
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
-              Party Animals is designed as the ultimate exchange experience. As
-              the name suggests, it is suited for students who enjoy partying
-              and do not mind a couple of drinks along the way. Culture
-              Creatures is more relaxed and focuses on cultural enjoyment.
+              Party Animals (April 3&ndash;16, 2023) is designed as the ultimate
+              exchange experience. As the name suggests, it is suited for
+              students who enjoy partying and do not mind a couple of drinks
+              along the way. Culture Creatures (April 10&ndash;16, 2023) is more
+              relaxed and focuses on cultural enjoyment.
             </p>
           </div>
         </div>

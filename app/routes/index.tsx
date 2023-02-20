@@ -120,7 +120,7 @@ export default function Index() {
             <p className="font-medium text-6xl text-black mb-2">€89</p>
             <div className="text-base font-normal leading-snug text-black md:leading-snug mb-8">
               <p className="text-green-600 font-medium">Only €12.50 per day</p>
-              <p>7 days of action</p>
+              <p>April 10&ndash;16, 2023</p>
             </div>
             <div className="flex flex-col md:flex-row">
               <Link
@@ -152,7 +152,7 @@ export default function Index() {
             <p className="font-medium text-6xl text-white mb-2">€119</p>
             <div className="text-base font-normal leading-snug text-white md:leading-snug mb-8">
               <p className="text-pink-400 font-medium">Only €8.50 per day</p>
-              <p>14 days of action</p>
+              <p>April 3&ndash;16, 2023</p>
             </div>
             <div className="flex flex-col md:flex-row">
               <Link
