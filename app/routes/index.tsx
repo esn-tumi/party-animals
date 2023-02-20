@@ -17,14 +17,14 @@ export default function Index() {
               src="/images/spring.jpg"
             />
           </div>
-          <div className="relative z-10 px-8 py-12 md:px-12">
+          <div className="relative z-10 px-8 pt-12 md:px-12">
             <img
               className="block w-48 md:w-64 h-auto"
               src="/images/logo-stack.png"
             />
           </div>
           <div className="relative bg-gradient-to-t from-[rgba(0,26,102,0.8)] bg-blend-multiply">
-            <div className="max-w-4xl px-8 pb-12 pt-24 md:px-12 md:pb-12 md:pt-32">
+            <div className="max-w-4xl px-8 pb-12 pt-16 md:px-12 md:pb-12 md:pt-32">
               <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-opacity-60 text-white">
                 Spring 2023
               </p>
