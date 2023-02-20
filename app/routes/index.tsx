@@ -137,8 +137,8 @@ export default function Index() {
                 For exchange and international students who want to explore
                 Munich's rich cultural landscape. The package includes the cost
                 of all activities. It does not cover additional drinks and food
-                that you may want to consume during the events. You will join of
-                of two groups of 20 students each (incl. 3 organisers per
+                that you may want to consume during the events. You will join
+                one of two groups of 20 students each (incl. 3 organisers per
                 group).
               </p>
             </div>
@@ -169,9 +169,9 @@ export default function Index() {
                 For exchange and international students who want to dive into
                 Munich's student (night) life. The package includes the cost of
                 all activities. It does not cover additional drinks and food
-                that you may want to consume during the events. You will join of
-                of eight groups of 25 students each (incl. five organisers per
-                group).
+                that you may want to consume during the events. You will join
+                one of eight groups of 25 students each (incl. five organisers
+                per group).
               </p>
             </div>
           </div>
