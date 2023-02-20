@@ -26,7 +26,7 @@ export default function CultureCreatures() {
           <div className="relative bg-gradient-to-t from-[rgba(13,38,0,0.8)] bg-blend-multiply">
             <div className="max-w-4xl px-8 pb-12 pt-16 md:px-12 md:pb-12 md:pt-32">
               <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-opacity-60 text-white">
-                The ultimate exchange experience
+                April 10 &ndash; April 16, 2023
               </p>
               <h1 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-white ">
                 Welcome to <br />

@@ -151,7 +151,7 @@ export default function Index() {
             </h2>
             <p className="font-medium text-6xl text-white mb-2">€119</p>
             <div className="text-base font-normal leading-snug text-white md:leading-snug mb-8">
-              <p className="text-green-400 font-medium">Only €8.50 per day</p>
+              <p className="text-pink-400 font-medium">Only €8.50 per day</p>
               <p>14 days of action</p>
             </div>
             <div className="flex flex-col md:flex-row">

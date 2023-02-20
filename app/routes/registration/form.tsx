@@ -580,14 +580,14 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label htmlFor="covid">
+        <label htmlFor="refund">
           <div className="flex flex-row space-x-2">
             <input
               type="checkbox"
-              name="covid"
-              id="covid"
+              name="refund"
+              id="refund"
               required
-              defaultValue={actionData?.values?.covid}
+              defaultValue={actionData?.values?.refund}
               className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
@@ -598,10 +598,10 @@ export default function RegistrationForm() {
               best as possible.
             </span>
           </div>
-          {actionData?.errors.covid ? (
+          {actionData?.errors.refund ? (
             <ValidationMessage
               isSubmitting={transition.state === 'submitting'}
-              error={actionData?.errors?.covid}
+              error={actionData?.errors?.refund}
             />
           ) : null}
         </label>
