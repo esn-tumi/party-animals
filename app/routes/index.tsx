@@ -59,7 +59,7 @@ export default function Index() {
             The ultimate exchange experience
           </p>
           <h2 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-pink-200">
-            Unlesh your inner
+            Unleash your inner
             <br />
             Party Animal
           </h2>
