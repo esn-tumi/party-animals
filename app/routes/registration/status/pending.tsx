@@ -46,9 +46,9 @@ export default function RegistrationStatusPending() {
           for you please reach out to us via{' '}
           <a
             className="text-blue-600 underline hover:text-blue-700"
-            href="mailto:questions@esn-tumi.de?subject=[Party Animals] Registration Question"
+            href="mailto:party-animals@esn-tumi.de?subject=[Party Animals] Registration Question"
           >
-            questions@esn-tumi.de
+            party-animals@esn-tumi.de
           </a>{' '}
           and inform us about your current situation.
         </p>
@@ -82,7 +82,9 @@ export function ErrorBoundary({ error }: { error: Error }) {
 
           <p className="mb-8 text-center text-neutral-600 md:text-lg">
             You can try refreshing the page or contact us at{' '}
-            <a href="mailto:questions@esn-tumi.de">questions@esn-tumi.de</a>{' '}
+            <a href="mailto:party-animals@esn-tumi.de">
+              party-animals@esn-tumi.de
+            </a>{' '}
             <br />
             Please send the following error message along with your request:
           </p>

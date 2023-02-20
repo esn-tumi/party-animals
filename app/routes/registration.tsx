@@ -28,9 +28,9 @@ export default function Registration() {
             contact&nbsp;
             <a
               className="text-blue-600 underline hover:text-blue-700"
-              href="mailto:questions@esn-tumi.de?subject=[Party Animals] Technical Issue"
+              href="mailto:party-animals@esn-tumi.de?subject=[Party Animals] Technical Issue"
             >
-              questions@esn-tumi.de
+              party-animals@esn-tumi.de
             </a>
             .
           </p>
