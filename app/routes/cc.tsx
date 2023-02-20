@@ -11,7 +11,7 @@ export default function CultureCreatures() {
     <main className="max-w-7xl m-auto px-2 md:px-8">
       <section className="my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
-          <div className="absolute top-0 bottom-0 left-0 right-0">
+          <div className="absolute top-0 bottom-0 left-0 right-0 bg-green-600">
             <img
               className="block h-full w-full object-cover"
               src="/images/culture-creatures.jpg"

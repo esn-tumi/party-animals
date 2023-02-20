@@ -90,12 +90,12 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-amber-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-yellow-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How does the application work?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-amber-900">
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-yellow-900">
               In order to ensure the best experience for participants, we
               unfortunately cannot guarantee a spot to everyone who signs up.
               The sooner you sign up, the better your chances of being selected.
@@ -148,12 +148,12 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-amber-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-pink-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               What's next?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-amber-900">
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
               <ul className="list-none">
                 <li>
                   Applications close:{' '}

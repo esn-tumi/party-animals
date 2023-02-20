@@ -11,7 +11,7 @@ export default function PartyAnimals() {
     <main className="max-w-7xl m-auto px-2 md:px-8">
       <section className="my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
-          <div className="absolute top-0 bottom-0 left-0 right-0">
+          <div className="absolute top-0 bottom-0 left-0 right-0 bg-pink-600">
             <img
               className="block h-full w-full object-cover"
               src="/images/party-animals.jpg"
@@ -365,7 +365,7 @@ export default function PartyAnimals() {
           </div>
         </div>
       </section>
-      <section className="my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-0 right-0">
             <img
@@ -419,7 +419,7 @@ export default function PartyAnimals() {
           </div>
         </div>
       </section>
-      <section className="my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-0 right-0">
             <img
@@ -468,12 +468,12 @@ export default function PartyAnimals() {
             </p>
             <div className="mt-4 text-base md:text-xl font-medium leading-snug md:leading-snug">
               <p className="text-pink-900">Katie</p>
-              <p className="text-pink-600">Student from Czech Republic</p>
+              <p className="text-pink-600">Student from the Czech Republic</p>
             </div>
           </div>
         </div>
       </section>
-      <section className="my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-0 right-0">
             <img
@@ -500,7 +500,7 @@ export default function PartyAnimals() {
           </div>
         </div>
       </section>
-      <section className="my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-0 right-0">
             <img
@@ -522,6 +522,90 @@ export default function PartyAnimals() {
                 importantly, we will be playing beautiful games and enjoy tasty
                 Bavarian beer culture, combined into one beautiful competition,
                 where the only losers are those who choose not to participate!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-md md:rounded-lg overflow-hidden">
+        <div className="px-8 py-12 md:px-12">
+          <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+            8 party animals
+          </p>
+          <h2 className="mb-8 md:mb-12 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
+            Who will you join?
+          </h2>
+          <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-4 md:gap-y-6 xl:gap-y-8 xl:grid-cols-4">
+            <div className="flex flex-row gap-3 md:gap-4 items-center">
+              <img
+                className="block h-auto w-8 md:w-12 shrink-0 object-cover"
+                src="/images/teams/black-bats.png"
+              />
+              <p className="font-medium text-xl md:text-2xl shrink-0">
+                Black Bats
+              </p>
+            </div>
+            <div className="flex flex-row gap-3 md:gap-4 items-center">
+              <img
+                className="block h-auto w-8 md:w-12 shrink-0 object-cover"
+                src="/images/teams/blue-bulls.png"
+              />
+              <p className="font-medium text-xl md:text-2xl shrink-0">
+                Blue Bulls
+              </p>
+            </div>
+            <div className="flex flex-row gap-3 md:gap-4 items-center">
+              <img
+                className="block h-auto w-8 md:w-12 shrink-0 object-cover"
+                src="/images/teams/brown-bears.png"
+              />
+              <p className="font-medium text-xl md:text-2xl shrink-0">
+                Brown Bears
+              </p>
+            </div>
+            <div className="flex flex-row gap-3 md:gap-4 items-center">
+              <img
+                className="block h-auto w-8 md:w-12 shrink-0 object-cover"
+                src="/images/teams/gray-geese.png"
+              />
+              <p className="font-medium text-xl md:text-2xl shrink-0">
+                Gray Geese
+              </p>
+            </div>
+            <div className="flex flex-row gap-3 md:gap-4 items-center">
+              <img
+                className="block h-auto w-8 md:w-12 shrink-0 object-cover"
+                src="/images/teams/green-goats.png"
+              />
+              <p className="font-medium text-xl md:text-2xl shrink-0">
+                Green Goats
+              </p>
+            </div>
+            <div className="flex flex-row gap-3 md:gap-4 items-center">
+              <img
+                className="block h-auto w-8 md:w-12 shrink-0 object-cover"
+                src="/images/teams/pink-penguins.png"
+              />
+              <p className="font-medium text-xl md:text-2xl shrink-0">
+                Pink Penguins
+              </p>
+            </div>
+            <div className="flex flex-row gap-3 md:gap-4 items-center">
+              <img
+                className="block h-auto w-8 md:w-12 shrink-0 object-cover"
+                src="/images/teams/purple-panthers.png"
+              />
+              <p className="font-medium text-xl md:text-2xl shrink-0">
+                Purple Panthers
+              </p>
+            </div>
+            <div className="flex flex-row gap-3 md:gap-4 items-center">
+              <img
+                className="block h-auto w-8 md:w-12 shrink-0 object-cover"
+                src="/images/teams/red-rhinos.png"
+              />
+              <p className="font-medium text-xl md:text-2xl shrink-0">
+                Red Rhinos
               </p>
             </div>
           </div>
