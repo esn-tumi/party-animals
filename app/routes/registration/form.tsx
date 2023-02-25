@@ -44,21 +44,34 @@ export default function RegistrationForm() {
   const [esnMember, setEsnMember] = useState(false);
   const transition = useTransition();
   const actionData = useActionData();
-  /*return (
-    <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
-      <div className="max-w-4xl px-8 pt-12 md:px-12">
-        <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
-          Application Closed
-        </p>
-        <h2 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
-          Programme Registration
-        </h2>
-        <p className="font-normal text-lg leading-normal md:text-xl md:leading-normal text-neutral-600">
-          The registration deadline for the spring 2023 orientation programmes has passed. You can still take part in the <a href="https:/tumi.esn.world/events" target="_blank" className="text-blue-600 underline hover:text-blue-700">TUMi orientation weeks</a>.
-        </p>
-      </div>
-    </section>
-  );*/
+  const registrationCloseDate = new Date('2023-03-20');
+  const now = new Date();
+  const registrationClosed = now > registrationCloseDate;
+  if (now > new Date('2023-03-31'))
+    return (
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="max-w-4xl px-8 py-12 md:px-12">
+          <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+            Application Closed
+          </p>
+          <h2 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
+            Programme Registration
+          </h2>
+          <p className="font-normal text-lg leading-normal md:text-xl md:leading-normal text-neutral-600">
+            The registration deadline for the spring 2023 orientation programmes
+            has passed. You can still take part in the{' '}
+            <a
+              href="https:/tumi.esn.world/events"
+              target="_blank"
+              className="text-blue-600 underline hover:text-blue-700"
+            >
+              TUMi orientation weeks
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+    );
   return (
     <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
       <div className="max-w-4xl px-8 pt-12 md:px-12">
@@ -80,21 +93,23 @@ export default function RegistrationForm() {
         method="post"
         className="px-8 py-12 md:px-12 grid grid-cols-1 gap-4 md:grid-cols-2"
       >
-        <div className="mb-8">
-          <div
-            className="bg-neutral-100 p-4 text-black rounded-xl"
-            role="alert"
-          >
-            <p className="font-medium text-red-600 leading-snug">
-              The registration deadline has passed.{' '}
-              <span className="font-normal text-black">
-                You can still sign up, however, you will be placed on the
-                waitlist. If a spot becomes available, you might have the chance
-                to claim it.
-              </span>
-            </p>
+        {registrationClosed ? (
+          <div className="mb-8">
+            <div
+              className="bg-neutral-100 p-4 text-black rounded-xl"
+              role="alert"
+            >
+              <p className="font-medium text-red-600 leading-snug">
+                The registration deadline has passed.{' '}
+                <span className="font-normal text-black">
+                  You can still sign up, however, you will be placed on the
+                  waitlist. If a spot becomes available, you might have the
+                  chance to claim it.
+                </span>
+              </p>
+            </div>
           </div>
-        </div>
+        ) : null}
         {actionData?.errors.form ? (
           <div className="md:col-span-2">
             <ValidationMessage
@@ -436,53 +451,6 @@ export default function RegistrationForm() {
             <ValidationMessage
               isSubmitting={transition.state === 'submitting'}
               error={actionData?.errors?.oldie}
-            />
-          ) : null}
-        </label>
-        <label className="relative block h-fit" htmlFor="dinner">
-          <select
-            name="dinner"
-            id="dinner"
-            required
-            defaultValue={actionData?.values?.dinner}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
-          >
-            <option value="">Select your food option</option>
-            <option value="meat">Meat option</option>
-            <option value="vegetarian">Vegetarian option</option>
-            <option value="vegan">Vegan option</option>
-          </select>
-          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
-            Dinner food selection
-          </span>
-          {actionData?.errors.dinner ? (
-            <ValidationMessage
-              isSubmitting={transition.state === 'submitting'}
-              error={actionData?.errors?.dinner}
-            />
-          ) : null}
-        </label>
-        <label className="relative block h-fit" htmlFor="size">
-          <select
-            name="size"
-            id="size"
-            required
-            defaultValue={actionData?.values?.size}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
-          >
-            <option value="">Select your shirt size</option>
-            <option value="s">S</option>
-            <option value="m">M</option>
-            <option value="l">L</option>
-            <option value="xl">XL</option>
-          </select>
-          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
-            Shirt size
-          </span>
-          {actionData?.errors.size ? (
-            <ValidationMessage
-              isSubmitting={transition.state === 'submitting'}
-              error={actionData?.errors?.size}
             />
           ) : null}
         </label>

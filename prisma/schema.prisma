@@ -35,6 +35,11 @@ enum Priority {
   HIGH
 }
 
+enum GroupType {
+  PA
+  CC
+}
+
 model User {
   id            String         @id @default(uuid()) @db.Uuid
   createdAt     DateTime       @default(now())
@@ -69,13 +74,11 @@ model Registration {
   languages          String?
   // Programme data
   programme          String
-  dinner             String
-  size               String
   oldie              Boolean
   expectations       String
   requests           String?
   // Assignment
-  group              Group?        @relation(fields: [groupId], references: [id])
+  group              Group?        @relation(fields: [groupId], references: [id], onDelete: SetNull)
   groupId            String?       @db.Uuid
 }
 
@@ -84,5 +87,6 @@ model Group {
   createdAt     DateTime       @default(now())
   name          String         @unique
   description   String         @default("")
+  groupType     GroupType
   registrations Registration[]
 }

@@ -16,13 +16,13 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
 export const loader: LoaderFunction = async ({ request }) => {
-  /* const user = await authenticator.isAuthenticated(request);
+  const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
-  } */
+  }
   const countries = fetch(
     'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
   ).then((res) => res.json());
@@ -37,7 +37,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  /* const user = await authenticator.isAuthenticated(request);
+  const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
@@ -45,7 +45,7 @@ export const action: ActionFunction = async ({ request }) => {
     throw new Error(
       `Only Admins are allowed to change this! You are ${user.role}`
     );
-  } */
+  }
   const formData = await request.formData();
   const id = formData.get('id');
   if (typeof id !== 'string') {
@@ -414,12 +414,6 @@ export default function AdminRegistrations() {
 
               <p className="text-neutral-600 leading-snug">Diet</p>
               <p className="leading-snug">{registration.diet}</p>
-
-              <p className="text-neutral-600 leading-snug">Dinner</p>
-              <p className="leading-snug">{registration.dinner}</p>
-
-              <p className="text-neutral-600 leading-snug">Size</p>
-              <p className="leading-snug">{registration.size.toUpperCase()}</p>
 
               <hr className="border-black border-opacity-20 col-span-2 my-2" />
 

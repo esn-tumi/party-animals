@@ -8,13 +8,13 @@ import { itemURL } from '~/utils';
 import { Popover } from '@headlessui/react';
 
 export const loader: LoaderFunction = async ({ request }) => {
-  /* const user = await authenticator.isAuthenticated(request);
+  const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
-  } */
+  }
   const countries = await fetch(
     'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
   ).then((res) => res.json());
@@ -68,18 +68,6 @@ export const loader: LoaderFunction = async ({ request }) => {
   return { registrations, groups, assignments, nonAssigned, countries };
 };
 export default function AdminGeneticAssignment() {
-  const mapGender = (short: string) => {
-    switch (short) {
-      case 'm':
-        return 'male';
-      case 'f':
-        return 'female';
-      case 'd':
-        return 'genderqueer';
-      case 'n':
-        return 'question-mark';
-    }
-  };
   const { groups, assignments, nonAssigned, countries } = useLoaderData<{
     registrations: (Registration & { user: User })[];
     groups: Group[];
@@ -87,9 +75,6 @@ export default function AdminGeneticAssignment() {
     nonAssigned: (Registration & { user: User })[];
     countries: any[];
   }>();
-  // console.log(groups);
-  // console.log(assignments);
-  // console.log(nonAssigned);
   const getCountry = (code: string) => {
     return countries.find((c) => c.alpha2Code === code);
   };

@@ -1,6 +1,13 @@
 import { ActionFunction, LoaderFunction, redirect } from '@remix-run/node';
 import { db } from '~/utils/db.server';
-import { PaymentStatus, Registration, Status, User } from '~/generated/prisma';
+import {
+  Group,
+  GroupType,
+  PaymentStatus,
+  Registration,
+  Status,
+  User,
+} from '~/generated/prisma';
 import { authenticator } from '~/services/auth.server';
 import { getDomainUrl, getStripeSession } from '~/utils/stripe.server';
 import { Form, useLoaderData } from '@remix-run/react';
@@ -34,7 +41,7 @@ export const action: ActionFunction = async ({ request }) => {
     where: {
       id: registrationId,
     },
-    include: { user: true },
+    include: { user: true, group: true },
   });
   if (!registration) {
     console.error('Invalid registration id: not found');
@@ -49,8 +56,21 @@ export const action: ActionFunction = async ({ request }) => {
     console.error('Not authenticated');
     throw new Error('Not authenticated');
   }
+  if (user.id !== registration.userId) {
+    console.error('User does not match registration');
+    throw new Error('User does not match registration');
+  }
+  if (!registration.group) {
+    console.error('No group found');
+    throw new Error('No group found');
+  }
+  const priceId = (
+    registration.group.groupType === GroupType.PA
+      ? process.env.PA_PRICE_ID
+      : process.env.CC_PRICE_ID
+  ) as string;
   const stripeRedirectUrl = await getStripeSession(
-    process.env.PRICE_ID as string,
+    priceId,
     getDomainUrl(request),
     `Party Animals payment for ${user.email}`,
     {
@@ -68,7 +88,9 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function () {
-  const registration = useLoaderData<Registration & { user: User }>();
+  const registration = useLoaderData<
+    Registration & { user: User; group: Group }
+  >();
   return (
     <div>
       <p className="font-medium text-base leading-normal md:text-xl md:leading-normal text-red-600 mb-4">

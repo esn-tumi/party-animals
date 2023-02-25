@@ -69,19 +69,6 @@ function validateRegistration(data: FormData): { [key: string]: string } {
   if (!v8n().string().test(data.get('programme'))) {
     errors.programme = 'Please select a programme preference from the list';
   }
-  console.log(v8n().string().minLength(3).test(data.get('dinner')));
-  console.log(data.get('dinner'));
-  if (!v8n().string().minLength(3).test(data.get('dinner'))) {
-    errors.dinner = 'Please select your meal for the kickoff dinner';
-  }
-  if (
-    !v8n()
-      .string()
-      .pattern(/s|m|l|(?:xl)/)
-      .test(data.get('size'))
-  ) {
-    errors.size = 'Please select a valid size from the list';
-  }
   if (
     !v8n()
       .string()
@@ -152,8 +139,6 @@ export async function createRegistration(
       esnSection: values.esnSection?.toString() ?? null,
       languages: values.languages?.toString() ?? null,
       programme: values.programme.toString(),
-      dinner: values.dinner.toString(),
-      size: values.size.toString(),
       oldie: values.oldie.toString() === 'true',
       expectations: values.expectations.toString(),
       requests: values.requests?.toString() ?? null,
