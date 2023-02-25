@@ -66,9 +66,10 @@ export default function Index() {
           <p className="mb-8 font-normal text-base leading-normal md:text-xl md:leading-normal text-pink-400">
             Party Animals is the ultimate orientation program for exchange and
             international students who want to dive into Munich's student
-            (night) life. Join one of eight teams of 25 students (incl. five
-            tutors), make new friends, and get to know the ins and outs of the
-            city together. The programme is intense but incredibly rewarding.
+            (night) life. Join one of eight teams of 25 students, make new
+            friends, and get to know the ins and outs of the city together. The
+            programme is designed to be intense and takes place from April 3 to
+            April 16, 2023.
           </p>
           <div className="flex flex-col md:flex-row">
             <Link
@@ -97,7 +98,8 @@ export default function Index() {
             Party Animals roam free and turn into a Culture Creature. Instead of
             copious amounts of adult beverages, you'll engage in copious amounts
             of cultural events and activities. The programme is also a great way
-            to get to know Munich and make friends. Your doctor might thank you.
+            to get to know Munich and make friends. It takes place from April 10
+            to April 16, 2023.
           </p>
           <div className="flex flex-col md:flex-row">
             <Link
@@ -112,14 +114,16 @@ export default function Index() {
         </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-neutral-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-neutral-200 order-last md:order-first rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <h2 className="font-medium leading-tight text-2xl md:leading-tight text-black tracking-tight mb-6 ">
               Culture Creatures
             </h2>
-            <p className="font-medium text-6xl text-black mb-2">€89</p>
+            <p className="font-medium text-6xl text-black mb-2">€109</p>
             <div className="text-base font-normal leading-snug text-black md:leading-snug mb-8">
-              <p className="text-green-600 font-medium">Only €12.50 per day</p>
+              <p className="text-green-600 font-medium">
+                Instead of <s className="decoration-2">€150</s>
+              </p>
               <p>April 10&ndash;16, 2023</p>
             </div>
             <div className="flex flex-col md:flex-row">
@@ -133,13 +137,19 @@ export default function Index() {
               </Link>
             </div>
             <div className="mt-6 text-sm md:text-base font-normal leading-snug md:leading-snug">
-              <p className="text-black text-opacity-60">
+              <p className="text-neutral-600">
                 For exchange and international students who want to explore
                 Munich's rich cultural landscape. The package includes the cost
-                of all activities. It does not cover additional drinks and food
-                that you may want to consume during the events. You will join
-                one of two groups of 20 students each (incl. 3 organisers per
-                group).
+                of the activities listed in the{' '}
+                <Link
+                  to="/cc"
+                  className="underline hover:text-black transition-all"
+                >
+                  schedule
+                </Link>
+                . It does not cover additional drinks and food that you may want
+                to consume during the events. You will join one of two groups of
+                20 students (incl. 3 organisers per group).
               </p>
             </div>
           </div>
@@ -151,7 +161,9 @@ export default function Index() {
             </h2>
             <p className="font-medium text-6xl text-white mb-2">€119</p>
             <div className="text-base font-normal leading-snug text-white md:leading-snug mb-8">
-              <p className="text-pink-400 font-medium">Only €8.50 per day</p>
+              <p className="text-pink-400 font-medium">
+                Instead of <s className="decoration-2">€160</s>
+              </p>
               <p>April 3&ndash;16, 2023</p>
             </div>
             <div className="flex flex-col md:flex-row">
@@ -165,13 +177,19 @@ export default function Index() {
               </Link>
             </div>
             <div className="mt-6 text-sm md:text-base font-normal leading-snug md:leading-snug">
-              <p className="text-white text-opacity-60">
+              <p className="text-neutral-400">
                 For exchange and international students who want to dive into
                 Munich's student (night) life. The package includes the cost of
-                all activities. It does not cover additional drinks and food
-                that you may want to consume during the events. You will join
-                one of eight groups of 25 students each (incl. five organisers
-                per group).
+                the activities listed in the{' '}
+                <Link
+                  to="/pa"
+                  className="underline hover:text-white transition-all"
+                >
+                  schedule
+                </Link>
+                . It does not cover additional drinks and food that you may want
+                to consume during the events. You will join one of eight groups
+                of 25 students (incl. five organisers per group).
               </p>
             </div>
           </div>
@@ -182,17 +200,21 @@ export default function Index() {
           <div className="absolute top-0 bottom-0 left-0 right-0">
             <img
               className="block h-full w-full object-cover"
-              src="/images/lake.jpg"
+              src="/images/kickoff.jpg"
             />
           </div>
           <div className="relative bg-gradient-to-t from-[rgba(0,0,0,0.8)] bg-blend-multiply">
             <div className="max-w-4xl px-8 pb-12 pt-48 md:px-12 md:pb-12 md:pt-96">
               <h2 className="mb-4 text-2xl font-medium leading-tight md:mb-6 md:text-4xl md:leading-tight text-white tracking-tight">
-                The choice is yours
+                The choice is yours&mdash;sign up before March 15
               </h2>
               <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-white text-opacity-80">
-                Both of our orientation packages will help you make friends fast
-                and get to know the ins and outs of student life in Munich.
+                Party Animals is for students who enjoy being social, partying
+                late at night, and a couple of drinks along the way. Culture
+                Creatures is more relaxed and focuses on cultural enjoyment
+                instead. Both of our orientation packages will help you make
+                friends fast and get to know the ins and outs of student life in
+                Munich.
               </p>
             </div>
           </div>

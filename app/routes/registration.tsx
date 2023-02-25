@@ -45,9 +45,10 @@ export default function Registration() {
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
               Party Animals (April 3&ndash;16, 2023) is designed as the ultimate
               exchange experience. As the name suggests, it is suited for
-              students who enjoy partying and do not mind a couple of drinks
-              along the way. Culture Creatures (April 10&ndash;16, 2023) is more
-              relaxed and focuses on cultural enjoyment.
+              students who enjoy being social, partying late at night, and a
+              couple of drinks along the way. Culture Creatures (April
+              10&ndash;16, 2023) is more relaxed and focuses on cultural
+              enjoyment.
             </p>
           </div>
         </div>
@@ -57,12 +58,13 @@ export default function Registration() {
               How much is it?
             </p>
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-green-900">
-              The Party Animals package is €119 (only €7.50 per day). This
-              covers 14 days of activities. Culture Creatures is €89 (only
-              €12.50 per day) for seven days of activites. Neither of the
-              programmes include local transportation within Munich or any
-              additional food and drinks you might want to consume during the
-              events.
+              The Party Animals package is <s className="decoration-2">€160</s>{' '}
+              €119 (only €8.50 per day). This covers all activities in the
+              two-week programme schedule. Culture Creatures is{' '}
+              <s className="decoration-2">€150</s> €109 for its weeklong
+              schedule. Neither of the programmes include local transportation
+              within Munich or any additional food and drinks you might want to
+              consume during the events.
             </p>
           </div>
         </div>
@@ -84,10 +86,10 @@ export default function Registration() {
               What if I cannot attend every event?
             </p>
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
-              Please make sure you are able to attend as many events as
-              possible. Party Animals and Culture Creatures are designed as
-              complete packages. You should only ever miss an event if it is due
-              to a crucial appointment (e.g. apartment registration).
+              Please make sure you are able to attend all events. Party Animals
+              and Culture Creatures are designed as complete packages. You
+              should only ever miss an event if it is due to a crucial
+              appointment (e.g. apartment registration).
             </p>
           </div>
         </div>
@@ -98,10 +100,10 @@ export default function Registration() {
             </p>
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-yellow-900">
               In order to ensure the best experience for participants, we
-              unfortunately cannot guarantee a spot to everyone who signs up.
-              The sooner you sign up, the better your chances of being selected.
-              We try to facilitate diverse groups to bring students with
-              different backgrounds together.
+              unfortunately cannot guarantee a spot to everyone who signs up. We
+              try to facilitate diverse groups to bring students with different
+              backgrounds together. We do not work with a first come, first
+              serve system for these programmes.
             </p>
           </div>
         </div>
@@ -157,16 +159,22 @@ export default function Registration() {
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
               <ul className="list-none">
                 <li>
-                  Applications close:{' '}
-                  <strong className="font-medium">March 20, 6&nbsp;PM</strong>
+                  Apply before:{' '}
+                  <strong className="font-medium">
+                    March 15, 6&nbsp;PM CET
+                  </strong>
                 </li>
                 <li>
                   First round of admissions:{' '}
-                  <strong className="font-medium">March 23, 6&nbsp;PM</strong>
+                  <strong className="font-medium">
+                    March 17, 6&nbsp;PM CET
+                  </strong>
                 </li>
                 <li>
                   Second round of admissions:{' '}
-                  <strong className="font-medium">March 25, 6&nbsp;PM</strong>
+                  <strong className="font-medium">
+                    March 20, 6&nbsp;PM CET
+                  </strong>
                 </li>
               </ul>
               Check your e-mail to confirm your registration.

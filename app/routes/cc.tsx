@@ -37,8 +37,8 @@ export default function CultureCreatures() {
                 the Party Animals roam free and turn into a Culture Creature.
                 Instead of copious amounts of adult beverages, you'll engage in
                 copious amounts of cultural events and activities. The programme
-                is also a great way to get to know Munich and make friends. Your
-                doctor might thank you.
+                is also a great way to get to know Munich and make friends. It
+                takes place from April 10 to April 16, 2023.
               </p>
               <div className="flex flex-col md:flex-row">
                 <Link

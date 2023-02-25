@@ -80,7 +80,7 @@ export default function RegistrationForm() {
         method="post"
         className="px-8 py-12 md:px-12 grid grid-cols-1 gap-4 md:grid-cols-2"
       >
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <div
             className="bg-neutral-100 p-4 text-black rounded-xl"
             role="alert"
@@ -94,7 +94,7 @@ export default function RegistrationForm() {
               </span>
             </p>
           </div>
-        </div>
+        </div> */}
         {actionData?.errors.form ? (
           <div className="md:col-span-2">
             <ValidationMessage
@@ -399,7 +399,7 @@ export default function RegistrationForm() {
           >
             <option value="">Select your preference</option>
             <option value="pa">Party Animals (€119)</option>
-            <option value="cc">Culture Creatures (€89)</option>
+            <option value="cc">Culture Creatures (€109)</option>
             <option value="pa-cc">
               I prefer Party Animals, but am open to join Culture Creatures.
             </option>
@@ -447,13 +447,13 @@ export default function RegistrationForm() {
             defaultValue={actionData?.values?.dinner}
             className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
-            <option value="">Select your food option</option>
+            <option value="">Select your dinner preference</option>
             <option value="meat">Meat option</option>
             <option value="vegetarian">Vegetarian option</option>
             <option value="vegan">Vegan option</option>
           </select>
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
-            Dinner food selection
+            Dinner preference
           </span>
           {actionData?.errors.dinner ? (
             <ValidationMessage
@@ -540,8 +540,8 @@ export default function RegistrationForm() {
             />
             <span className="text-black font-medium">
               In understand that once I receive my spot confirmation, I have to
-              pay the programme fee (€89 for Culture Creatures or €119 for Party
-              Animals) within 24 hours. Otherwise my spot will expire.
+              pay the programme fee (€109 for Culture Creatures or €119 for
+              Party Animals) within 24 hours. Otherwise my spot will expire.
             </span>
           </div>
 
@@ -590,7 +590,7 @@ export default function RegistrationForm() {
               spot cannot be replaced. In order to ensure the best experience
               for participants, I cannot resell my participation spot without
               our prior agreement. We will try to accomodate cancellations as
-              best as possible.
+              best as possible, however, refunds are not guaranteed.
             </span>
           </div>
           {actionData?.errors.refund ? (
