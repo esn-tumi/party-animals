@@ -2,8 +2,13 @@ import { LoaderFunction, redirect } from '@remix-run/node';
 import { authenticator } from '~/services/auth.server';
 import { db } from '~/utils/db.server';
 import { Outlet, useLoaderData } from '@remix-run/react';
-import { Registration, Status, User } from '~/generated/prisma';
-import { itemURL } from '~/utils';
+import {
+  Group,
+  GroupType,
+  Registration,
+  Status,
+  User,
+} from '~/generated/prisma';
 
 export const loader: LoaderFunction = async ({ request }) => {
   const user = await authenticator.isAuthenticated(request);
@@ -14,6 +19,10 @@ export const loader: LoaderFunction = async ({ request }) => {
         id: user.id,
       },
     },
+    include: {
+      user: true,
+      group: true,
+    },
   });
   if (!registration) return redirect('/registration/form');
   if (registration.registrationStatus !== Status.ACCEPTED)
@@ -22,7 +31,9 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function () {
-  const registration = useLoaderData<Registration & { user: User }>();
+  const registration = useLoaderData<
+    Registration & { user: User; group: Group }
+  >();
   return (
     <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
       <div className="max-w-4xl px-8 py-12 md:p-12">
@@ -33,6 +44,8 @@ export default function () {
           You have been granted a spot. We are excited to go on this journey
           with you, {registration.callBy}!
         </h2>
+        {/*TODO: Adrian, handle telling them which group they got*/}
+        {registration.group.groupType === GroupType.PA ? <></> : <></>}
         <ol className="list-none">
           <li className="mb-8">
             <p className="mb-4 font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">

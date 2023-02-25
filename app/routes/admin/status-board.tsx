@@ -7,13 +7,13 @@ import { useLoaderData, useLocation } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 
 export const loader: LoaderFunction = async ({ request }) => {
-  /* const user = await authenticator.isAuthenticated(request);
+  const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
-  } */
+  }
   const countries = fetch(
     'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
   ).then((res) => res.json());

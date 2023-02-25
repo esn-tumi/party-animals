@@ -1,6 +1,6 @@
 import { ActionFunction, LoaderFunction, redirect } from '@remix-run/node';
 import { authenticator } from '~/services/auth.server';
-import { Group, Role } from '~/generated/prisma';
+import { Group, GroupType, Role } from '~/generated/prisma';
 import { db } from '~/utils/db.server';
 import {
   Form,
@@ -11,13 +11,13 @@ import {
 import { ValidationMessage } from '~/components/ValidationMessage';
 
 export const loader: LoaderFunction = async ({ request }) => {
-  /* const user = await authenticator.isAuthenticated(request);
+  const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
-  } */
+  }
   const countries = fetch(
     'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
   ).then((res) => res.json());
@@ -32,7 +32,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  /* const user = await authenticator.isAuthenticated(request);
+  const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
@@ -40,16 +40,21 @@ export const action: ActionFunction = async ({ request }) => {
     throw new Error(
       `Only Admins are allowed to change this! You are ${user.role}`
     );
-  } */
+  }
   const data = await request.formData();
   const name = data.get('name');
+  const groupType = data.get('groupType') as GroupType;
   const errors: { [key: string]: string } = {};
   if (typeof name !== 'string' || name.length < 3) {
     errors.firstName = 'The name must be at least 3 characters long';
     const values = Object.fromEntries(data);
     return { errors, values };
+  } else if (!Object.values(GroupType).includes(groupType)) {
+    errors.groupType = 'Please select a valid group type';
+    const values = Object.fromEntries(data);
+    return { errors, values };
   } else {
-    const group = await db.group.create({ data: { name } });
+    const group = await db.group.create({ data: { name, groupType } });
     return { group };
   }
 };
@@ -68,7 +73,10 @@ export default function AdminGroups() {
           </h1>
           <div className="flex flex-wrap gap-4 w-full">
             {groups.map((group) => (
-              <div className="shirnk-0 bg-blue-200 px-4 py-2 rounded-full">
+              <div
+                className="shirnk-0 bg-blue-200 px-4 py-2 rounded-full"
+                key={group.id}
+              >
                 <span className="text-black font-medium">{group.name}</span>
               </div>
             ))}
@@ -81,7 +89,7 @@ export default function AdminGroups() {
             Create Group
           </h2>
           <div className="flex gap-4 md:gap-8 w-full items-center">
-            <label className="relative block w-full h-fit" htmlFor="lastName">
+            <label className="relative block w-3/4 h-fit" htmlFor="lastName">
               <input
                 className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
                 id="name"
@@ -98,6 +106,28 @@ export default function AdminGroups() {
                 <ValidationMessage
                   isSubmitting={transition.state === 'submitting'}
                   error={actionData?.errors?.name}
+                />
+              ) : null}
+            </label>
+            <label className="relative block h-fit" htmlFor="groupType">
+              <select
+                name="groupType"
+                id="groupType"
+                required
+                defaultValue={actionData?.values?.groupType}
+                className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              >
+                <option value="">Select a type</option>
+                <option value={GroupType.PA}>Party Animals</option>
+                <option value={GroupType.CC}>Culture Creatures</option>
+              </select>
+              <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
+                Group type
+              </span>
+              {actionData?.errors.groupType ? (
+                <ValidationMessage
+                  isSubmitting={transition.state === 'submitting'}
+                  error={actionData?.errors?.groupType}
                 />
               ) : null}
             </label>
@@ -155,7 +185,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
             Error!
           </h1>
 
-          <h6 className="mb-2 text-center text-lg font-bold text-gray-800 md:text-2xl md:text-3xl">
+          <h6 className="mb-2 text-center text-lg font-bold text-gray-800 md:text-3xl">
             <span className="text-red-500">Oops!</span> We had a problem.
           </h6>
 

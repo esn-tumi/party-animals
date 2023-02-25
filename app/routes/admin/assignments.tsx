@@ -10,7 +10,6 @@ import {
 } from '~/generated/prisma';
 import { db } from '~/utils/db.server';
 import { Form, useLoaderData } from '@remix-run/react';
-import { itemURL } from '~/utils';
 import { Popover } from '@headlessui/react';
 
 const prioToNum = (prio: Priority) => {
@@ -41,26 +40,6 @@ const statusToNum = (status: string) => {
   }
 };
 
-const shirtSizeInGroup = (group: Registration[], size: string) => {
-  return group.filter((reg) => reg.size === size).length;
-};
-
-const spaceForSizeInGroup = (group: Registration[], size: string) => {
-  const alreadyInGroup = shirtSizeInGroup(group, size);
-  switch (size) {
-    case 's':
-      return alreadyInGroup < 6;
-    case 'm':
-      return alreadyInGroup < 12;
-    case 'l':
-      return alreadyInGroup < 10;
-    case 'xl':
-      return alreadyInGroup < 2;
-    default:
-      return false;
-  }
-};
-
 const genderInGroup = (group: Registration[], gender: string) => {
   return group.filter((reg) => reg.gender === gender).length;
 };
@@ -69,13 +48,13 @@ const countryInGroup = (group: Registration[], country: string) =>
   group.some((reg) => reg.country === country);
 
 export const loader: LoaderFunction = async ({ request }) => {
-  /* const user = await authenticator.isAuthenticated(request);
+  const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
-  } */
+  }
   const countries = await fetch(
     'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
   ).then((res) => res.json());
@@ -143,13 +122,9 @@ export const loader: LoaderFunction = async ({ request }) => {
             if (
               genderInGroup(assignments[group.id], registration.gender) < 10
             ) {
-              if (
-                spaceForSizeInGroup(assignments[group.id], registration.size)
-              ) {
-                if (assignments[group.id].length < 20) {
-                  assignments[group.id].push(registration);
-                  assigned = true;
-                }
+              if (assignments[group.id].length < 20) {
+                assignments[group.id].push(registration);
+                assigned = true;
               }
             }
           }
@@ -173,7 +148,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  /* const user = await authenticator.isAuthenticated(request);
+  const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
@@ -181,7 +156,7 @@ export const action: ActionFunction = async ({ request }) => {
     throw new Error(
       `Only Admins are allowed to change this! You are ${user.role}`
     );
-  } */
+  }
   const formData = await request.formData();
   const action = formData.get('action');
   if (typeof action !== 'string') {
