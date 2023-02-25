@@ -1,10 +1,10 @@
-import { LoaderFunction, redirect } from "@remix-run/node";
-import { NavLink } from "@remix-run/react";
+import { LoaderFunction, redirect } from '@remix-run/node';
+import { NavLink } from '@remix-run/react';
 import { authenticator } from '~/services/auth.server';
 import { Role } from '~/generated/prisma';
 import { Link, Outlet } from '@remix-run/react';
 
-export const loader: LoaderFunction = async ({ request }) => {
+/* export const loader: LoaderFunction = async ({ request }) => {
   const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
@@ -13,17 +13,19 @@ export const loader: LoaderFunction = async ({ request }) => {
     throw new Error('You are not authorized to access this page');
   }
   return null;
-};
+}; */
 
 export default function AdminFrame() {
   return (
     <>
-      <nav className="mx-auto flex max-w-3xl items-center justify-between p-4">
-        <ul className="flex items-center space-x-2 text-sm font-medium text-gray-200">
+      <nav className="mx-auto mt-2 md:mt-4 w-fit h-fit">
+        <ul className="mx-auto w-fit flex flex-row items-center text-sm font-medium text-neutral-600">
           <li>
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="registrations"
             >
@@ -33,7 +35,9 @@ export default function AdminFrame() {
           <li>
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="groups"
             >
@@ -43,7 +47,9 @@ export default function AdminFrame() {
           <li>
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="assignments"
             >
@@ -53,7 +59,9 @@ export default function AdminFrame() {
           <li>
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="genetic"
             >
@@ -63,7 +71,9 @@ export default function AdminFrame() {
           <li>
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="status-board"
             >

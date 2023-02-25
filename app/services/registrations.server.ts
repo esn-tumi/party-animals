@@ -61,10 +61,13 @@ function validateRegistration(data: FormData): { [key: string]: string } {
       .pattern(/l|i|o|e/)
       .test(data.get('status'))
   ) {
-    errors.status = 'Please select a valid status from the list';
+    errors.status = 'Please select a status from the list';
   }
   if (!v8n().string().test(data.get('diet'))) {
-    errors.diet = 'Please provide a valid diet from the list';
+    errors.diet = 'Please select a diet preference from the list';
+  }
+  if (!v8n().string().test(data.get('programme'))) {
+    errors.programme = 'Please select a programme preference from the list';
   }
   console.log(v8n().string().minLength(3).test(data.get('dinner')));
   console.log(data.get('dinner'));
@@ -98,11 +101,8 @@ function validateRegistration(data: FormData): { [key: string]: string } {
   if (!v8n().not.null().test(data.get('friends'))) {
     errors.friends = 'Please accept this statement';
   }
-  if (!v8n().not.null().test(data.get('covid'))) {
-    errors.covid = 'Please accept this statement';
-  }
-  if (!v8n().not.null().test(data.get('vax'))) {
-    errors.vax = 'Please confirm this statement';
+  if (!v8n().not.null().test(data.get('refund'))) {
+    errors.refund = 'Please accept this statement';
   }
   return errors;
 }
@@ -151,11 +151,12 @@ export async function createRegistration(
       diet: values.diet.toString(),
       esnSection: values.esnSection?.toString() ?? null,
       languages: values.languages?.toString() ?? null,
+      programme: values.programme.toString(),
       dinner: values.dinner.toString(),
       size: values.size.toString(),
       oldie: values.oldie.toString() === 'true',
       expectations: values.expectations.toString(),
-      requests: values.requests.toString(),
+      requests: values.requests?.toString() ?? null,
     },
   });
   return [{}, registration];

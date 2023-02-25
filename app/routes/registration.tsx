@@ -87,7 +87,7 @@ export default function Registration() {
               Please make sure you are able to attend as many events as
               possible. Party Animals and Culture Creatures are designed as
               complete packages. You should only ever miss an event if it is due
-              to a crucial appoinment (e.g. apartment registration).
+              to a crucial appointment (e.g. apartment registration).
             </p>
           </div>
         </div>

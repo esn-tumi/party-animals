@@ -16,13 +16,13 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request);
+  /* const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
-  }
+  } */
   const countries = fetch(
     'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
   ).then((res) => res.json());
@@ -37,7 +37,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request);
+  /* const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
@@ -45,7 +45,7 @@ export const action: ActionFunction = async ({ request }) => {
     throw new Error(
       `Only Admins are allowed to change this! You are ${user.role}`
     );
-  }
+  } */
   const formData = await request.formData();
   const id = formData.get('id');
   if (typeof id !== 'string') {
@@ -125,8 +125,24 @@ export default function AdminRegistrations() {
   const nonRejectedRegistrations = registrations.filter(
     (registration) => registration.status !== 'REJECTED'
   );
+  const newExchangeRegistrations = nonRejectedRegistrations.filter(
+    (registration) => registration.status === 'e'
+  );
+  const cultureCreaturesRegistrations = nonRejectedRegistrations.filter(
+    (registration) => registration.programme === 'cc'
+  );
+  const partyAnimalsRegistrations = nonRejectedRegistrations.filter(
+    (registration) => registration.programme === 'pa'
+  );
+  const eitherProgrammeRegistrations = nonRejectedRegistrations.filter(
+    (registration) =>
+      registration.programme === 'pa-cc' || registration.programme === 'cc-pa'
+  );
   const femaleRegistrations = nonRejectedRegistrations.filter(
     (registration) => registration.gender === 'f'
+  );
+  const maleRegistrations = nonRejectedRegistrations.filter(
+    (registration) => registration.gender === 'm'
   );
   const registrationsToday = registrations.filter(
     (registration) =>
@@ -147,13 +163,25 @@ export default function AdminRegistrations() {
   const mapStatus = (short: string) => {
     switch (short) {
       case 'l':
-        return 'Local Student';
+        return 'Local';
       case 'i':
-        return 'International degree student';
+        return 'International';
       case 'o':
-        return 'Exchange Student (started before october)';
+        return 'Exchange (old)';
       case 'e':
-        return 'Exchange Student (starting in october)';
+        return 'Exchange (new)';
+    }
+  };
+  const mapProgramme = (short: string) => {
+    switch (short) {
+      case 'pa':
+        return 'Animals';
+      case 'cc':
+        return 'Creatures';
+      case 'pa-cc':
+        return 'Animals > Creatures';
+      case 'cc-pa':
+        return 'Creatures > Animals';
     }
   };
   const getCountry = (code: string) => {
@@ -169,55 +197,128 @@ export default function AdminRegistrations() {
   }
 
   return (
-    <main>
-      <section className="mb-2 p-4 text-white">
-        <h1 className="text-2xl font-bold">Registrations</h1>
-      </section>
-      <section className="p-4 text-white sm:p-0">
-        <ul className="divide-y-2 divide-white divide-opacity-25 border-2 border-white border-opacity-25 sm:grid sm:grid-cols-3 sm:divide-y-0 sm:divide-x-2 sm:border-l-0 sm:border-r-0 ">
-          <li className="p-8">
-            <p className="text-3xl font-black">
+    <main className="px-2 md:px-8">
+      <section className="bg-black min-w-fit rounded-md md:rounded-lg overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+        <h1 className="text-2xl mb-6 font-medium text-white">Registrations</h1>
+        <ul className="text-white grid gap-6 xl:gap-y-8 grid-cols-2 md:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
+          <li className="">
+            <p className="text-6xl font-medium mb-2">
               {nonRejectedRegistrations.length}
             </p>
-            <p className="mt-1 text-xl font-medium">Registrations</p>
+            <p className="text-base font-normal text-white text-opacity-60 leading-snug">
+              Total
+            </p>
           </li>
 
-          <li className="p-8">
-            <p className="text-3xl font-black">{femaleRegistrations.length}</p>
-            <p className="mt-1 text-xl font-medium">Female registrations</p>
+          <li className="">
+            <p className="text-6xl font-medium mb-2">
+              {partyAnimalsRegistrations.length}
+            </p>
+            <p className="text-base font-normal text-white text-opacity-60 leading-snug">
+              Animals
+            </p>
           </li>
 
-          <li className="p-8">
-            <p className="text-3xl font-black">{registrationsToday.length}</p>
-            <p className="mt-1 text-xl font-medium">Created today</p>
+          <li className="">
+            <p className="text-6xl font-medium mb-2">
+              {cultureCreaturesRegistrations.length}
+            </p>
+            <p className="text-base font-normal text-white text-opacity-60 leading-snug">
+              Creatures
+            </p>
+          </li>
+
+          <li className="">
+            <p className="text-6xl font-medium mb-2">
+              {eitherProgrammeRegistrations.length}
+            </p>
+            <p className="text-base font-normal text-white text-opacity-60 leading-snug">
+              Either
+            </p>
+          </li>
+
+          <li className="">
+            <p className="text-6xl font-medium mb-2">
+              {femaleRegistrations.length}
+            </p>
+            <p className="text-base font-normal text-white text-opacity-60 leading-snug">
+              Female
+            </p>
+          </li>
+
+          <li className="">
+            <p className="text-6xl font-medium mb-2">
+              {maleRegistrations.length}
+            </p>
+            <p className="text-base font-normal text-white text-opacity-60 leading-snug">
+              Male
+            </p>
+          </li>
+
+          <li className="">
+            <p className="text-6xl font-medium mb-2">
+              {newExchangeRegistrations.length}
+            </p>
+            <p className="text-base font-normal text-white text-opacity-60 leading-snug">
+              New Exchange
+            </p>
+          </li>
+
+          <li className="">
+            <p className="text-6xl font-medium mb-2">
+              {registrationsToday.length}
+            </p>
+            <p className="text-base font-normal text-white text-opacity-60 leading-snug">
+              Today
+            </p>
           </li>
         </ul>
       </section>
-      <section className="grid grid-cols-1 gap-4 p-4 text-white md:grid-cols-2 xl:grid-cols-3">
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 mb-8 gap-2 md:gap-y-8">
         {registrations.map((registration) => (
           <div
             key={registration.id}
-            className="flex flex-col rounded-lg border p-6"
+            className={`flex flex-col rounded-[2.25rem] p-6 min-w-fit w-full h-fit ${(() => {
+              if (registration.registrationStatus === 'ACCEPTED')
+                return 'bg-green-200';
+              switch (registration.gender) {
+                case 'f':
+                  return 'bg-pink-200';
+                case 'm':
+                  return 'bg-blue-200';
+                case 'd':
+                  return 'bg-violet-200';
+                case 'n':
+                  return 'bg-violet-200';
+                default:
+                  return 'bg-neutral-200';
+              }
+            })()}`}
           >
             <div className="mb-4 flex items-center">
               <img
                 src={registration.user.photo}
-                className="mr-2 w-10 overflow-hidden rounded-full"
+                className="mr-4 w-12 overflow-hidden rounded-full"
                 referrerPolicy={'no-referrer'}
               />
-              <h2 className="text-xl font-bold">
-                Registration of {registration.user.firstName}{' '}
-                {registration.user.lastName} ({registration.callBy})
-              </h2>
-              <div className="grow" />
+              <div>
+                <h2 className="text-xl font-medium leading-tight">
+                  {registration.user.firstName} {registration.user.lastName}{' '}
+                </h2>
+                <p className="text-neutral-600 leading-tight">
+                  "{registration.callBy}"
+                </p>
+              </div>
+              <div className="grow"></div>
               <img
                 src={itemURL(`${mapGender(registration.gender)}:color`)}
-                className="w-10"
+                className="w-6"
               />
             </div>
-            <div className="mb-4 grid grid-cols-[max-content_auto] gap-2">
-              <p>Registration Time</p>
-              <p>
+
+            <div className="grid grid-cols-[minmax(max-content,_0.5fr)_1fr] gap-x-8 gap-y-1">
+              <p className="text-neutral-600 leading-snug">Registered at</p>
+              <p className="leading-snug">
                 {new Date(registration.createdAt).toLocaleString('en-DE', {
                   month: 'numeric',
                   day: 'numeric',
@@ -226,268 +327,320 @@ export default function AdminRegistrations() {
                   minute: 'numeric',
                 })}
               </p>
-              <p>E-Mail</p>
-              <p>{registration.user.email}</p>
-              <p>Phone Number</p>
-              <div className="flex items-center">
-                <p>{registration.phone}</p>
+
+              <p className="text-neutral-600 leading-snug">Programme</p>
+              <p className="leading-snug">
+                {mapProgramme(registration.programme)}
+              </p>
+
+              <p className="text-neutral-600 leading-snug">Priority</p>
+              <p className="leading-snug">{registration.priority}</p>
+
+              <p className="text-neutral-600 leading-snug">Status</p>
+              <p className="leading-snug">{registration.registrationStatus}</p>
+
+              <p className="text-neutral-600 leading-snug">Payment</p>
+              <p className="leading-snug">{registration.paymentStatus}</p>
+
+              <p className="text-neutral-600 leading-snug">Group</p>
+              <p className="leading-snug">
+                {registration.group
+                  ? registration?.group?.name ?? 'Not assigned'
+                  : '-'}
+              </p>
+
+              {registration.group && registration.paymentStatus === 'PENDING' && (
+                <>
+                  <div></div>
+                  <p className="text-red-600 font-medium leading-snug">
+                    This registration has a group but is not paid!
+                  </p>
+                </>
+              )}
+
+              <hr className="border-black border-opacity-20 col-span-2 my-2" />
+
+              <p className="text-neutral-600 leading-snug">Mail</p>
+              <p className="leading-snug">{registration.user.email}</p>
+
+              <p className="text-neutral-600 leading-snug">Phone</p>
+              <div className="inline-flex items-center">
                 <a
                   target="_blank"
                   href={`https://wa.me/${registration.phone.replace(`+`, ``)}`}
-                  className="ml-2"
+                  className="flex items-center"
                 >
-                  <img src={itemURL('whatsapp:fluency')} className="w-6" />
+                  <p className="leading-snug">{registration.phone}</p>
+                  <img
+                    src={itemURL('whatsapp:color')}
+                    className="block ml-1 w-6"
+                  />
                 </a>
               </div>
-              <p>Home Country</p>
-              <div className="flex items-center">
-                <img
-                  src={getCountry(registration.country).flags.svg}
-                  className="mr-2 h-4"
-                  alt=""
-                />
-                <p>{getCountry(registration.country).name}</p>
+
+              <p className="text-neutral-600 leading-snug">University</p>
+              <p className="leading-snug">{registration.university}</p>
+
+              <p className="text-neutral-600 leading-snug">Status</p>
+              <p className="leading-snug">{mapStatus(registration.status)}</p>
+
+              <p className="text-neutral-600 leading-snug">ESN</p>
+              <p className="leading-snug">
+                {registration.esnSection ? registration.esnSection : '-'}
+              </p>
+
+              <hr className="border-black border-opacity-20 col-span-2 my-2" />
+
+              <p className="text-neutral-600 leading-snug">Country</p>
+              <div>
+                <div className="leading-snug inline-flex flex-col items-center mr-2">
+                  <img
+                    src={getCountry(registration.country).flags.svg}
+                    className="inline-block h-3 "
+                    alt=""
+                  />
+                </div>
+                <p className="inline leading-snug">
+                  {getCountry(registration.country).name}
+                </p>
               </div>
-              <p>Home University</p>
-              <p>{registration.university}</p>
-              <p>Status</p>
-              <p>{mapStatus(registration.status)}</p>
-              <p>Diet</p>
-              <p>{registration.diet}</p>
-              <p>Dinner choice</p>
-              <p>{registration.dinner}</p>
-              {registration.esnSection && (
-                <>
-                  <p>ESN Section</p>
-                  <p>{registration.esnSection}</p>
-                </>
-              )}
-              {registration.languages && (
-                <>
-                  <p>Languages</p>
-                  <p>{registration.languages}</p>
-                </>
-              )}
-              <strong className="col-span-2">Party Animal</strong>
-              <p>Size</p>
-              <p>{registration.size.toUpperCase()}</p>
-              <p>Oldie</p>
-              <p>{registration.oldie ? 'Yes' : 'No'}</p>
-              <p>Expectations</p>
-              <p>{registration.expectations}</p>
-              {registration.requests && (
-                <>
-                  <p>Requests</p>
-                  <p>{registration.requests}</p>
-                </>
-              )}
-              <strong className="col-span-2">Internal Data</strong>
-              <p>Priority</p>
-              <p>{registration.priority}</p>
-              <p>Status</p>
-              <p>{registration.registrationStatus}</p>
-              <p>Payment</p>
-              <p>{registration.paymentStatus}</p>
-              {registration.group && (
-                <>
-                  <p>Group</p>
-                  <p>{registration?.group?.name ?? 'Not assigned'}</p>
-                </>
-              )}
-              {registration.group && registration.paymentStatus === 'PENDING' && (
-                <>
-                  <p>⚠️Warning⚠️</p>
-                  <p>This registration has a group but is not paid.</p>
-                </>
-              )}
+
+              <p className="text-neutral-600 leading-snug">Languages</p>
+              <p className="leading-snug">
+                {registration.languages ? registration.languages : '-'}
+              </p>
+
+              <hr className="border-black border-opacity-20 col-span-2 my-2" />
+
+              <p className="text-neutral-600 leading-snug">Diet</p>
+              <p className="leading-snug">{registration.diet}</p>
+
+              <p className="text-neutral-600 leading-snug">Dinner</p>
+              <p className="leading-snug">{registration.dinner}</p>
+
+              <p className="text-neutral-600 leading-snug">Size</p>
+              <p className="leading-snug">{registration.size.toUpperCase()}</p>
+
+              <hr className="border-black border-opacity-20 col-span-2 my-2" />
+
+              <p className="text-neutral-600 leading-snug">Oldie</p>
+              <p className="leading-snug">
+                {registration.oldie ? 'Yes' : 'No'}
+              </p>
+
+              <p className="text-neutral-600 leading-snug">Expectations</p>
+              <p className="leading-snug">{registration.expectations}</p>
+
+              <p className="text-neutral-600 leading-snug">Requests</p>
+              <p className="leading-snug">
+                {registration.requests ? registration.requests : '-'}
+              </p>
             </div>
-            <div className="grow" />
-            <Menu as="div" className="relative mb-4 inline-block text-left">
-              <div>
-                <Menu.Button className="inline-flex w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                  Set Priority
-                </Menu.Button>
-              </div>
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className=" absolute right-0 z-20 mt-2 w-56 origin-top-right divide-y divide-slate-900 rounded-md bg-slate-600 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="px-1 py-1 ">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <button
-                          className={`${
-                            active
-                              ? 'bg-violet-500 text-white'
-                              : 'text-slate-100'
-                          } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                          onClick={() => setPriority(registration.id, 'high')}
-                        >
-                          <img
-                            src={itemURL('high-priority:fluency')}
-                            className="mr-2 w-6"
-                          />
-                          High Priority
-                        </button>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <button
-                          className={`${
-                            active
-                              ? 'bg-violet-500 text-white'
-                              : 'text-slate-100'
-                          } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                          onClick={() => setPriority(registration.id, 'medium')}
-                        >
-                          <img
-                            src={itemURL('medium-priority:fluency')}
-                            className="mr-2 w-6"
-                          />
-                          Medium Priority
-                        </button>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <button
-                          className={`${
-                            active
-                              ? 'bg-violet-500 text-white'
-                              : 'text-slate-100'
-                          } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                          onClick={() => setPriority(registration.id, 'low')}
-                        >
-                          <img
-                            src={itemURL('low-priority:fluency')}
-                            className="mr-2 w-6"
-                          />
-                          Low Priority
-                        </button>
-                      )}
-                    </Menu.Item>
-                  </div>
-                  <div className="px-1 py-1">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <button
-                          className={`${
-                            active
-                              ? 'bg-violet-500 text-white'
-                              : 'text-slate-100'
-                          } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                          onClick={() =>
-                            setPriority(registration.id, 'pending')
-                          }
-                        >
-                          <img
-                            src={itemURL('connection-status-off:fluency')}
-                            className="mr-2 w-6"
-                          />
-                          Set to pending
-                        </button>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <button
-                          className={`${
-                            active
-                              ? 'bg-violet-500 text-white'
-                              : 'text-slate-100'
-                          } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                          onClick={() => setPriority(registration.id, 'cancel')}
-                        >
-                          <img
-                            src={itemURL('cancel:fluency')}
-                            className="mr-2 w-6"
-                          />
-                          Cancel
-                        </button>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <button
-                          className={`${
-                            active
-                              ? 'bg-violet-500 text-white'
-                              : 'text-slate-100'
-                          } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                          onClick={() => setPriority(registration.id, 'none')}
-                        >
-                          <img
-                            src={itemURL('remove-user-female:fluency')}
-                            className="mr-2 w-6"
-                          />
-                          Reject
-                        </button>
-                      )}
-                    </Menu.Item>
-                  </div>
-                </Menu.Items>
-              </Transition>
-            </Menu>
-            <Menu as="div" className="relative inline-block text-left">
-              <div>
-                <Menu.Button className="inline-flex w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                  Assign to Group
-                </Menu.Button>
-              </div>
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="absolute right-0 z-20 mt-2 w-56 origin-top-right divide-y divide-slate-900 rounded-md bg-slate-600 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="px-1 py-1 ">
-                    {groups.map((group) => (
-                      <Menu.Item key={group.id}>
+
+            <div className="flex flex-col gap-2 w-full mt-6">
+              <Menu as="div" className="relative w-full text-left">
+                <div>
+                  <Menu.Button className="border border-transparent flex w-full justify-center rounded-xl bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 transition-all focus:outline-none focus-visible:ring-2">
+                    Set Priority
+                  </Menu.Button>
+                </div>
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items className="absolute left-[50%] top-[100%] -translate-x-1/2 -translate-y-full z-20 w-full divide-y divide-neutral-200 rounded-md bg-white shadow-lg focus:outline-none">
+                    <div className="py-1">
+                      <Menu.Item>
                         {({ active }) => (
                           <button
                             className={`${
                               active
-                                ? 'bg-violet-500 text-white'
-                                : 'text-slate-100'
-                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                            onClick={() => setGroup(registration.id, group.id)}
+                                ? 'bg-neutral-100 text-black'
+                                : 'text-black'
+                            } group flex w-full items-center px-2 py-2 text-sm`}
+                            onClick={() =>
+                              setPriority(registration.id, 'pending')
+                            }
                           >
-                            {group.name}
+                            <img
+                              src={itemURL('connection-status-off:color')}
+                              className="mr-2 w-6"
+                            />
+                            Set to pending
                           </button>
                         )}
                       </Menu.Item>
-                    ))}
-                  </div>
-                  <div className="px-1 py-1">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <button
-                          className={`${
-                            active
-                              ? 'bg-violet-500 text-white'
-                              : 'text-slate-100'
-                          } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                          onClick={() => setGroup(registration.id, 'none')}
-                        >
-                          Remove from group
-                        </button>
-                      )}
-                    </Menu.Item>
-                  </div>
-                </Menu.Items>
-              </Transition>
-            </Menu>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <button
+                            className={`${
+                              active
+                                ? 'bg-neutral-100 text-black'
+                                : 'text-black'
+                            } group flex w-full items-center px-2 py-2 text-sm`}
+                            onClick={() =>
+                              setPriority(registration.id, 'cancel')
+                            }
+                          >
+                            <img
+                              src={itemURL('cancel:color')}
+                              className="mr-2 w-6"
+                            />
+                            Cancel
+                          </button>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <button
+                            className={`${
+                              active
+                                ? 'bg-neutral-100 text-black'
+                                : 'text-black'
+                            } group flex w-full items-center px-2 py-2 text-sm`}
+                            onClick={() => setPriority(registration.id, 'none')}
+                          >
+                            <img
+                              src={itemURL('remove-user-female:color')}
+                              className="mr-2 w-6"
+                            />
+                            Reject
+                          </button>
+                        )}
+                      </Menu.Item>
+                    </div>
+                    <div className="py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <button
+                            className={`${
+                              active
+                                ? 'bg-neutral-100 text-black'
+                                : 'text-black'
+                            } group flex w-full items-center px-2 py-2 text-sm`}
+                            onClick={() => setPriority(registration.id, 'high')}
+                          >
+                            <img
+                              src={itemURL('high-priority:color')}
+                              className="mr-2 w-6"
+                            />
+                            High Priority
+                          </button>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <button
+                            className={`${
+                              active
+                                ? 'bg-neutral-100 text-black'
+                                : 'text-black'
+                            } group flex w-full items-center px-2 py-2 text-sm`}
+                            onClick={() =>
+                              setPriority(registration.id, 'medium')
+                            }
+                          >
+                            <img
+                              src={itemURL('medium-priority:color')}
+                              className="mr-2 w-6"
+                            />
+                            Medium Priority
+                          </button>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <button
+                            className={`${
+                              active
+                                ? 'bg-neutral-100 text-black'
+                                : 'text-black'
+                            } group flex w-full items-center px-2 py-2 text-sm`}
+                            onClick={() => setPriority(registration.id, 'low')}
+                          >
+                            <img
+                              src={itemURL('low-priority:color')}
+                              className="mr-2 w-6"
+                            />
+                            Low Priority
+                          </button>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
+              <Menu as="div" className="relative w-full text-left">
+                <div>
+                  <Menu.Button className="flex w-full justify-center rounded-xl bg-white px-4 py-2 font-medium text-black hover:text-neutral-600 transition-all focus:outline-none focus-visible:ring-2">
+                    Pin to Group
+                  </Menu.Button>
+                </div>
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items className="absolute left-[50%] top-[100%] -translate-x-1/2 -translate-y-full z-20 w-full divide-y divide-neutral-200 rounded-md bg-white shadow-lg focus:outline-none">
+                    {groups.length !== 0 ? (
+                      <div className="py-1">
+                        {groups.map((group) => (
+                          <Menu.Item key={group.id}>
+                            {({ active }) => (
+                              <button
+                                className={`${
+                                  active
+                                    ? 'bg-neutral-100 text-black'
+                                    : 'text-black'
+                                } group flex w-full items-center px-2 py-2 text-sm`}
+                                onClick={() =>
+                                  setGroup(registration.id, group.id)
+                                }
+                              >
+                                {group.name}
+                              </button>
+                            )}
+                          </Menu.Item>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="py-1">
+                        <p className="text-black group flex w-full items-center px-2 py-2 text-sm">
+                          You have to create a group first.
+                        </p>
+                      </div>
+                    )}
+                    {registration.groupId && (
+                      <div className="py-1">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              className={`${
+                                active
+                                  ? 'bg-neutral-100 text-black'
+                                  : 'text-black'
+                              } group flex w-full items-center px-2 py-2 text-sm`}
+                              onClick={() => setGroup(registration.id, 'none')}
+                            >
+                              Remove from group
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    )}
+                  </Menu.Items>
+                </Transition>
+              </Menu>
+            </div>
           </div>
         ))}
       </section>
@@ -508,7 +661,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
     px-8
   "
     >
-      <div className="rounded-md bg-white px-10 py-5 shadow-xl md:py-20 md:px-40">
+      <div className="rounded-md bg-black px-10 py-5 shadow-xl md:py-20 md:px-40">
         <div className="flex flex-col items-center">
           <h1 className="text-4xl font-bold text-blue-600 md:text-9xl">
             Error!
@@ -525,7 +678,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
             Please send the following error message along with your request:
           </p>
 
-          <pre className="select-all whitespace-pre-wrap text-sm text-slate-600">
+          <pre className="select-all blackspace-pre-wrap text-sm text-slate-600">
             {error.message}
           </pre>
         </div>

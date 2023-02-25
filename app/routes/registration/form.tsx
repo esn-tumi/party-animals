@@ -222,7 +222,7 @@ export default function RegistrationForm() {
             defaultValue={actionData?.values?.phone}
           />
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
-            Phone number (mobile)
+            Phone number (WhatsApp)
           </span>
           {actionData?.errors.phone ? (
             <ValidationMessage
@@ -417,6 +417,28 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
+        <label className="relative block h-fit" htmlFor="oldie">
+          <select
+            name="oldie"
+            id="oldie"
+            required
+            defaultValue={actionData?.values?.oldie}
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+          >
+            <option value="">Select an option</option>
+            <option value="true">Yes, and I need more.</option>
+            <option value="false">No, I can't wait to.</option>
+          </select>
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
+            Have you participated before?
+          </span>
+          {actionData?.errors.oldie ? (
+            <ValidationMessage
+              isSubmitting={transition.state === 'submitting'}
+              error={actionData?.errors?.oldie}
+            />
+          ) : null}
+        </label>
         <label className="relative block h-fit" htmlFor="dinner">
           <select
             name="dinner"
@@ -426,14 +448,9 @@ export default function RegistrationForm() {
             className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your food option</option>
-            <option value="schnitzel">Wiener Schnitzel (pork)</option>
-            <option value="fish">Breaded redfish fillet (fish)</option>
-            <option value="spatzle">
-              Creamy cheese dumplings (vegetarian)
-            </option>
-            <option value="pork">Young pork roast (pork)</option>
-            <option value="pasta">Pasta sheep's cheese (vegetarian)</option>
-            <option value="salad">Salad Vienna (vegan)</option>
+            <option value="meat">Meat option</option>
+            <option value="vegetarian">Vegetarian option</option>
+            <option value="vegan">Vegan option</option>
           </select>
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
             Dinner food selection
@@ -469,28 +486,6 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label className="relative block h-fit" htmlFor="oldie">
-          <select
-            name="oldie"
-            id="oldie"
-            required
-            defaultValue={actionData?.values?.oldie}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
-          >
-            <option value="">Select an option</option>
-            <option value="true">Yes, and I need more.</option>
-            <option value="false">No, I can't wait to.</option>
-          </select>
-          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
-            Have you participated before?
-          </span>
-          {actionData?.errors.oldie ? (
-            <ValidationMessage
-              isSubmitting={transition.state === 'submitting'}
-              error={actionData?.errors?.oldie}
-            />
-          ) : null}
-        </label>
         <label className="relative block" htmlFor="expectations">
           <textarea
             className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
@@ -518,7 +513,7 @@ export default function RegistrationForm() {
             name="requests"
             rows={4}
             defaultValue={actionData?.values?.requests}
-            placeholder="Expectations"
+            placeholder="Requests"
           />
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
             Special requests

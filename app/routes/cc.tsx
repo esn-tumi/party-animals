@@ -102,12 +102,15 @@ export default function CultureCreatures() {
             </div>
           </div>
           <div>
-            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide lowercase text-neutral-600">
               Tuesday, April 11
             </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
+                  Overnight stay in Regensburg
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (all-day)
                   Regensburg trip
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
                     all-day
@@ -115,17 +118,22 @@ export default function CultureCreatures() {
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
+                Explore the lovely town of Regensburg, take part in a medieval
+                city tour, and round off the day with a dinner
                 Overnight trip to a magical medieval city
               </p>
             </div>
           </div>
           <div>
-            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide lowercase text-neutral-600">
               Wednesday, April 12
             </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
+                  Day trip to Landshut
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (all-day)
                   Landshut trip
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
                     all-day
@@ -133,17 +141,22 @@ export default function CultureCreatures() {
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
+                Explore the medieval Trausnitz Castle&mdash;the home of the
+                Wittelsbach dynasty
                 Explore the historical city center and visit a castle
               </p>
             </div>
           </div>
           <div>
-            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide lowercase text-neutral-600">
               Thursday, April 13
             </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
+                  Break
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (all-day)
                   Rest day
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
                     all-day
@@ -151,17 +164,35 @@ export default function CultureCreatures() {
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
+                Enjoy a day off to complete organisational matters and moving in
                 While Culture Creatures is fun, you might have other duties to carry out
               </p>
             </div>
           </div>
           <div>
-            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide lowercase text-neutral-600">
               Friday, April 14
             </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
+                  Campus tour
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (afternoon)
+                  </span>
+                </strong>
+              </p>
+              <p className="text-neutral-600 text-base md:text-lg">
+                The campuses of TUM are notoriously tricky to navigate&mdash;
+                with the help of our tutors you find your way in no time
+              </p>
+            </div>
+            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
+              <p className="font-normal text-base md:text-lg">
+                <strong className="font-medium text-black">
+                  Classical concert
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (evening)
                   Munich tour
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
                     half-day
@@ -182,17 +213,36 @@ export default function CultureCreatures() {
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
+                Experience a concerto for violin and orchestra (premiere of a
+                composition commissioned by the Bamberg Symphony Orchestra)
                 Concert of Bamberger Symphoniker
               </p>
             </div>
           </div>
           <div>
-            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide lowercase text-neutral-600">
               Saturday, April 15
             </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
+                  Museum visit
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (morning)
+                  </span>
+                </strong>
+              </p>
+              <p className="text-neutral-600 text-base md:text-lg">
+                Visit Deutsches Museum&mdash;one of the largest natural science
+                museums in the world
+              </p>
+            </div>
+            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
+              <p className="font-normal text-base md:text-lg">
+                <strong className="font-medium text-black">
+                  Tour of Munich
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (afternoon)
                   Hike
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
                     full-day
@@ -200,25 +250,27 @@ export default function CultureCreatures() {
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Enjoy magnificent views over Schliersee and Tegernsee
+                Get to know Munich and its highlights from a local student's
+                perspective
               </p>
             </div>
           </div>
           <div>
-            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide lowercase text-neutral-600">
               Sunday, April 16
             </p>
             <div className="px-4 py-3 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Museum tour
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    half-day
+                  Hike
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (all-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Visit one of Munich's museums
+                The area surrounding Munich offers incredibly picturesque hiking
+                routes which are enjoyable and beginner friendly
               </p>
             </div>
           </div>

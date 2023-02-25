@@ -67,12 +67,13 @@ model Registration {
   diet               String
   esnSection         String?
   languages          String?
-  // PA data
+  // Programme data
+  programme          String
   dinner             String
   size               String
   oldie              Boolean
   expectations       String
-  requests           String
+  requests           String?
   // Assignment
   group              Group?        @relation(fields: [groupId], references: [id])
   groupId            String?       @db.Uuid

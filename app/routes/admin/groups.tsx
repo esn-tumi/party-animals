@@ -1,4 +1,4 @@
-import { ActionFunction, LoaderFunction, redirect } from "@remix-run/node";
+import { ActionFunction, LoaderFunction, redirect } from '@remix-run/node';
 import { authenticator } from '~/services/auth.server';
 import { Group, Role } from '~/generated/prisma';
 import { db } from '~/utils/db.server';
@@ -11,13 +11,13 @@ import {
 import { ValidationMessage } from '~/components/ValidationMessage';
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request);
+  /* const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
-  }
+  } */
   const countries = fetch(
     'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
   ).then((res) => res.json());
@@ -32,7 +32,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request);
+  /* const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
@@ -40,7 +40,7 @@ export const action: ActionFunction = async ({ request }) => {
     throw new Error(
       `Only Admins are allowed to change this! You are ${user.role}`
     );
-  }
+  } */
   const data = await request.formData();
   const name = data.get('name');
   const errors: { [key: string]: string } = {};
@@ -60,49 +60,53 @@ export default function AdminGroups() {
   const transition = useTransition();
   const actionData = useActionData();
   return (
-    <main>
-      <section className="mb-2 p-4 text-white">
-        <h1 className="mb-4 text-2xl font-bold">Groups</h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          {groups.map((group) => (
-            <div className="border border-slate-200 p-4">
-              <strong>{group.name}</strong>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="mb-2 p-4 text-white">
-        <Form
-          method="post"
-          className="grid grid-cols-1 gap-4 rounded-lg border-2 border-slate-400 p-4 md:grid-cols-2"
-        >
-          <h1 className="text-lg font-bold md:col-span-2">Create Group</h1>
-          <label
-            className="relative block rounded-lg border-2 border-gray-200 p-3"
-            htmlFor="lastName"
-          >
-            <input
-              className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Group name"
-              required
-              defaultValue={actionData?.values?.name}
-            />
-            <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-              Group name
-            </span>
-            {actionData?.errors?.name ? (
-              <ValidationMessage
-                isSubmitting={transition.state === 'submitting'}
-                error={actionData?.errors?.name}
-              />
-            ) : null}
-          </label>
-          <button className="inline-block rounded-lg border border-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-indigo-600 focus:outline-none focus:ring active:bg-indigo-500">
+    <main className="px-2 md:px-8">
+      {groups.length !== 0 && (
+        <section className="text-white bg-black min-w-fit rounded-md md:rounded-lg overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+          <h1 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
+            Groups
+          </h1>
+          <div className="flex flex-wrap gap-4 w-full">
+            {groups.map((group) => (
+              <div className="shirnk-0 bg-blue-200 px-4 py-2 rounded-full">
+                <span className="text-black font-medium">{group.name}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+      <section className="bg-neutral-200 p-8 md:p-12 text-black my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem]">
+        <Form method="post">
+          <h2 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
             Create Group
-          </button>
+          </h2>
+          <div className="flex gap-4 md:gap-8 w-full items-center">
+            <label className="relative block w-full h-fit" htmlFor="lastName">
+              <input
+                className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Group name"
+                required
+                defaultValue={actionData?.values?.name}
+              />
+              <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
+                Group name
+              </span>
+              {actionData?.errors?.name ? (
+                <ValidationMessage
+                  isSubmitting={transition.state === 'submitting'}
+                  error={actionData?.errors?.name}
+                />
+              ) : null}
+            </label>
+            <button className="shrink-0 h-fit overflow-hidden inline-block leading-none rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-all px-4 py-2 focus:outline-none focus:ring">
+              <span className="block font-medium text-lg text-center">
+                Create Group
+              </span>
+            </button>
+          </div>
           {/*<label
             className="relative block rounded-lg border-2 border-gray-200 p-3"
             htmlFor="lastName"

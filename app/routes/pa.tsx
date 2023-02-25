@@ -78,27 +78,28 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Opening
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    afternoon
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (afternoon)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Meet all the participants and break the ice
+                Get to know your party group, make first connections, and plan
+                how you'll be the best team
               </p>
             </div>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Dinner
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    evening
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (evening)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Enjoy a meal together with all teams in a typical Bavarian beer
-                hall
+                Few things in life are better than food, so let's experience a
+                typical Bavarian restaurant together!
               </p>
             </div>
           </div>
@@ -110,27 +111,27 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Info session @ TUM
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    afternoon
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (afternoon)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Learn everything you need to know about your semester in Munich
+                Learn everything you need to know about your semester in Munich.
               </p>
             </div>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Pub quiz
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    evening
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (evening)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Get to know Munich's student bar scene and showcase your trivia
-                knowledge
+                Get to know Munich's student bar scene and combine your (trivia)
+                knowledge as a team and take home the winning prize.
               </p>
             </div>
           </div>
@@ -142,26 +143,32 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Brewery tour
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    afternoon
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (afternoon)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Take a behind the scenes look at how Bavarian beer is made
+                How is liquid gold (or beer) made? Find out by joining a tour of
+                Erdinger Brewery. In an impressive 3-hour program we'll learn
+                everything it takes to brew beer. Of course, we'll also sample
+                the finished product.
               </p>
             </div>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Karaoke
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    evening
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (evening)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Singing in the shower has finally paid off
+                Tired of singing in the shower? Warm up your vocal cords and get
+                yourself ready for an unforgettable karaoke night! And even if
+                you're not much of a singer, you won't be able to resist
+                grabbing the microphone.
               </p>
             </div>
           </div>
@@ -173,13 +180,15 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Movie night
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    evening
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (evening)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Experience a movie&mdash;but in a large lecture hall
+                You have probably watched movies at school but have you watched
+                movies at university? Join us for a special movie night in one
+                of TUM's most historical lecture halls.
               </p>
             </div>
           </div>
@@ -191,8 +200,8 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Group time
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    all-day
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (all-day)
                   </span>
                 </strong>
               </p>
@@ -209,13 +218,14 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   City rallye
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    half-day
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (half-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Explore Munich through fun challenges
+                Explore Munich through fun challenges. Can you collect more
+                points than the other teams?
               </p>
             </div>
           </div>
@@ -227,8 +237,8 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Easter break
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    all-day
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (all-day)
                   </span>
                 </strong>
               </p>
@@ -245,13 +255,15 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Sports day
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    half-day
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (half-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Show your competitive side and help your team win
+                After a relaxed day, physical acitvity will help us to get back
+                into the groove. Show your competitive side and help your team
+                win.
               </p>
             </div>
           </div>
@@ -262,14 +274,15 @@ export default function PartyAnimals() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Overnight stay at a castle
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    all-day
+                  Overnight stay in the Austrian Alps
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (all-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                There's nothing quite like a party in a castle
+                There is no better way to connect with your team than spending
+                24 hours together&mdash;and partying 1564 m above sea level.
               </p>
             </div>
           </div>
@@ -280,14 +293,14 @@ export default function PartyAnimals() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Return from castle
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    half-day
+                  Return from the Alps
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (half-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                There's nothing quite like a party in a castle
+                Have fun on the ride home or catch up on some sleep.
               </p>
             </div>
           </div>
@@ -299,13 +312,14 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Club party
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    evening
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (evening)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Because a party in a castle is not enough
+                How could we claim to be Party Animals if we didn't have another
+                party.
               </p>
             </div>
           </div>
@@ -317,13 +331,15 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Day trip
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    all-day
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (all-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Explore a picturesque town in the region around Munich
+                Munich is known as a great starting point for visiting many of
+                Germanies most picturesque places. As a group, you'll explore
+                one of the lovely town in the region around Munich.
               </p>
             </div>
           </div>
@@ -335,13 +351,15 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Beerlympics
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    half-day
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (half-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                The name says it all
+                The name says it all&mdash;show your team spirit and (drinking)
+                skills! Join forces with another team to compete in four highly
+                entertaining games.
               </p>
             </div>
           </div>
@@ -353,13 +371,14 @@ export default function PartyAnimals() {
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
                   Group time
-                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    all-day
+                  <span className="ml-2 font-normal text-neutral-600 lowercase">
+                    (all-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Reminisce about your incredible orientation experience
+                Reminisce about your incredible orientation experience and make
+                plans for what's next.
               </p>
             </div>
           </div>

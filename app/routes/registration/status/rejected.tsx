@@ -85,7 +85,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
             You can try refreshing the page or contact us at{' '}
             <a href="mailto:party-animals@esn-tumi.de">
               party-animals@esn-tumi.de
-            </a>{' '}
+            </a>
             <br />
             Please send the following error message along with your request:
           </p>

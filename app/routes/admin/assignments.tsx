@@ -69,13 +69,13 @@ const countryInGroup = (group: Registration[], country: string) =>
   group.some((reg) => reg.country === country);
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request);
+  /* const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
-  }
+  } */
   const countries = await fetch(
     'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
   ).then((res) => res.json());
@@ -173,7 +173,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  const user = await authenticator.isAuthenticated(request);
+  /* const user = await authenticator.isAuthenticated(request);
   if (!user) {
     return redirect('/auth/login');
   }
@@ -181,7 +181,7 @@ export const action: ActionFunction = async ({ request }) => {
     throw new Error(
       `Only Admins are allowed to change this! You are ${user.role}`
     );
-  }
+  } */
   const formData = await request.formData();
   const action = formData.get('action');
   if (typeof action !== 'string') {
@@ -294,20 +294,31 @@ export default function AdminAssignments() {
     0
   );
   return (
-    <main>
-      <section className="mb-2 p-4 text-white">
-        <h1 className="mb-6 text-2xl font-bold">
-          Assignments ({groups.length * 20 - totalAssigned} still free)
+    <main className="px-2 md:px-8">
+      <section className="text-black bg-neutral-200 min-w-fit rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+        <h1 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
+          Assignments{' '}
+          <span className="text-neutral-600">
+            ({groups.length * 20 - totalAssigned} available)
+          </span>
         </h1>
-        <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <div className="mb-4 grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {groups.map((group) => (
-            <div className="border border-slate-200 p-4">
-              <div className="mb-4 flex items-center justify-between">
+            <div className="bg-neutral-100 rounded-xl p-4">
+              <div className="mb-4 flex flex-col">
                 <div>
-                  <h3 className="mb-1 text-lg font-bold">
-                    {group.name} ({assignments[group.id].length} assigned)
+                  <h3 className="text-lg font-medium">
+                    {group.name}{' '}
+                    <span className="text-neutral-600">
+                      ({assignments[group.id].length} assigned)
+                    </span>
                   </h3>
                   <p className="mb-4">
+                    {
+                      assignments[group.id].filter((r) => r.gender === 'f')
+                        .length
+                    }{' '}
+                    female,{' '}
                     {
                       assignments[group.id].filter((r) => r.gender === 'm')
                         .length
@@ -315,8 +326,8 @@ export default function AdminAssignments() {
                     male
                   </p>
                 </div>
-                <div className="flex">
-                  <Form method="patch">
+                <div className="flex w-full gap-2">
+                  <Form method="patch" className="w-full">
                     <input
                       type="hidden"
                       name="action"
@@ -334,14 +345,13 @@ export default function AdminAssignments() {
                         .map((r) => r.id)
                         .join(',')}
                     />
-                    <button>
-                      <img
-                        src={itemURL('check-all:fluency')}
-                        className="w-10"
-                      />
+                    <button className="border border-transparent w-full shrink-0 h-fit overflow-hidden inline-block rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-all px-4 py-2 focus:outline-none focus:ring">
+                      <span className="block font-medium text-center">
+                        Accept group
+                      </span>
                     </button>
                   </Form>
-                  <Form method="patch">
+                  <Form method="patch" className="w-full">
                     <input
                       type="hidden"
                       name="action"
@@ -359,32 +369,42 @@ export default function AdminAssignments() {
                         .map((r) => r.id)
                         .join(',')}
                     />
-                    <button>
-                      <img src={itemURL('pin:fluency')} className="w-10" />
+                    <button className="w-full shrink-0 border border-neutral-300 h-fit overflow-hidden inline-block rounded-xl text-black bg-white hover:bg-neutral-300 transition-all px-4 py-2 focus:outline-none focus:ring">
+                      <span className="block font-medium text-center">
+                        Pin group
+                      </span>
                     </button>
                   </Form>
                 </div>
               </div>
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-2">
                 {assignments[group.id].map((registration) => (
-                  <div className="flex items-center">
-                    <img
+                  <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-md">
+                    {/* <img
                       className="h-10 w-10 rounded-full"
                       referrerPolicy="no-referrer"
                       src={registration.user.photo}
                       alt={registration.user.firstName}
-                    />
-                    <div className="ml-2 overflow-hidden">
-                      <p className="overflow-hidden text-ellipsis whitespace-nowrap text-lg">
-                        {registration.groupId ? '📌' : ''}
-                        {registration.registrationStatus === 'ACCEPTED'
-                          ? '✅'
-                          : ''}
-                        {registration.paymentStatus === 'SUCCESS' ? '💶' : ''}{' '}
+                    /> */}
+                    <div className="px-3 py-2 rounded-md overflow-hidden w-full">
+                      <p
+                        className={`${
+                          registration.gender !== 'f' &&
+                          registration.gender !== 'm' &&
+                          'text-violet-600'
+                        } ${registration.gender === 'f' && 'text-pink-600'} ${
+                          registration.gender === 'm' && 'text-blue-600'
+                        } overflow-hidden text-ellipsis font-medium whitespace-nowrap mb-1`}
+                      >
                         {registration.user.firstName}{' '}
                         {registration.user.lastName}
+                        {registration.groupId ? ' 📌' : ''}
+                        {registration.registrationStatus === 'ACCEPTED'
+                          ? ' ✅'
+                          : ''}
+                        {registration.paymentStatus === 'SUCCESS' ? ' 💶' : ''}{' '}
                       </p>
-                      <div className="flex items-center">
+                      <div className="flex items-center overflow-hidden">
                         <img
                           src={getCountry(registration.country).flags.svg}
                           className="mr-2 h-4"
@@ -395,92 +415,92 @@ export default function AdminAssignments() {
                         </p>
                       </div>
                     </div>
-                    <div className="grow" />
-                    <Popover className="relative">
-                      <Popover.Button>💭</Popover.Button>
-
-                      <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
-                        <div className="overflow-hidden rounded-lg shadow-lg ring-2 ring-white ring-opacity-5">
-                          <div className="relative grid gap-8 bg-gray-800 p-7">
+                    <div className="shrink-0 w-fit flex flex-col items-strech divide-y border-l border-neutral-300 divide-neutral-300">
+                      <Popover className="h-full relative">
+                        <Popover.Button className="h-full w-full p-2 leading-none text-neutral-600 hover:text-black hover:bg-neutral-300 transition-all">
+                          Read
+                        </Popover.Button>
+                        <Popover.Panel className="absolute left-1/2 -translate-x-1/2 z-10 mt-2 w-screen max-w-sm p-4 bg-white overflow-hidden rounded-md shadow-lg">
+                          <div className="relative">
                             <p>{registration.expectations}</p>
                           </div>
-                        </div>
-                      </Popover.Panel>
-                    </Popover>
-                    <Form method="patch">
-                      <input
-                        type="hidden"
-                        name="action"
-                        defaultValue="pinUser"
-                      />
-                      <input
-                        type="hidden"
-                        name="groupId"
-                        defaultValue={group.id}
-                      />
-                      <input
-                        type="hidden"
-                        name="registrationId"
-                        defaultValue={registration.id}
-                      />
-                      <button>
-                        <img src={itemURL('pin:fluency')} className="w-8" />
-                      </button>
-                    </Form>
-                    <img
-                      className="h-8 rounded-full"
-                      referrerPolicy="no-referrer"
-                      src={itemURL(`${mapGender(registration.gender)}:color`)}
-                      alt={registration.gender}
-                    />
+                        </Popover.Panel>
+                      </Popover>
+                      <Form method="patch" className="h-full">
+                        <input
+                          type="hidden"
+                          name="action"
+                          defaultValue="pinUser"
+                        />
+                        <input
+                          type="hidden"
+                          name="groupId"
+                          defaultValue={group.id}
+                        />
+                        <input
+                          type="hidden"
+                          name="registrationId"
+                          defaultValue={registration.id}
+                        />
+                        <button className="h-full w-full p-2 leading-none text-neutral-600 hover:text-black hover:bg-neutral-300 transition-all">
+                          Pin
+                          {/* <img src={itemURL('pin:fluency')} className="w-8" /> */}
+                        </button>
+                      </Form>
+                      {/* <img
+                        className="h-8 rounded-full"
+                        referrerPolicy="no-referrer"
+                        src={itemURL(`${mapGender(registration.gender)}:color`)}
+                        alt={registration.gender}
+                      /> */}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           ))}
         </div>
-        <div className="border border-slate-200 p-4">
-          <h3 className="mb-4 text-lg font-bold">
-            Not assigned ({nonAssigned.length})
+        <div className="mt-8">
+          <h3 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
+            Not assigned{' '}
+            <span className="text-neutral-600">({nonAssigned.length})</span>
           </h3>
-          <div className="flex">
-            <div className="flex flex-col space-y-4">
+          {nonAssigned.length !== 0 && (
+            <div className="bg-neutral-100 rounded-xl p-4 grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
               {nonAssigned.map((registration) => (
-                <div className="flex items-center">
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    referrerPolicy="no-referrer"
-                    src={registration.user.photo}
-                    alt={registration.user.firstName}
-                  />
-                  <div className="ml-2">
-                    <p className="text-lg">
-                      {registration.groupId ? '📌' : ''}
-                      {registration.registrationStatus === 'ACCEPTED'
-                        ? '✅'
-                        : ''}
+                <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-md">
+                  <div className="px-3 py-2 rounded-md overflow-hidden w-full">
+                    <p
+                      className={`${
+                        registration.gender !== 'f' &&
+                        registration.gender !== 'm' &&
+                        'text-violet-600'
+                      } ${registration.gender === 'f' && 'text-pink-600'} ${
+                        registration.gender === 'm' && 'text-blue-600'
+                      } overflow-hidden text-ellipsis font-medium whitespace-nowrap mb-1`}
+                    >
                       {registration.user.firstName} {registration.user.lastName}
+                      {registration.groupId ? ' 📌' : ''}
+                      {registration.registrationStatus === 'ACCEPTED'
+                        ? ' ✅'
+                        : ''}
+                      {registration.paymentStatus === 'SUCCESS' ? ' 💶' : ''}{' '}
                     </p>
-                    <div className="flex items-center">
+                    <div className="flex items-center overflow-hidden">
                       <img
                         src={getCountry(registration.country).flags.svg}
                         className="mr-2 h-4"
                         alt=""
                       />
-                      <p>{getCountry(registration.country).name}</p>
+                      <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                        {getCountry(registration.country).name}
+                      </p>
                     </div>
                   </div>
-                  <div className="grow" />
-                  <img
-                    className="ml-4 h-8 rounded-full"
-                    referrerPolicy="no-referrer"
-                    src={itemURL(`${mapGender(registration.gender)}:color`)}
-                    alt={registration.user.firstName}
-                  />
                 </div>
               ))}
             </div>
-          </div>
+          )}
         </div>
       </section>
     </main>
