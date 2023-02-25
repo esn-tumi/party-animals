@@ -66,7 +66,7 @@ export default function CultureCreatures() {
           </h2>
           <p className="max-w-4xl mb-8 font-normal leading-normal text-base md:text-xl md:leading-normal text-neutral-600">
             We have planned this preliminary schedule for you. This is mainly a
-            guide to indicate when the Party Animals events will happen and give
+            guide to indicate when the Culture Creatures events will happen and give
             you an impression of the time needed. The exact schedule is subject
             to change.
           </p>
@@ -77,14 +77,27 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Sports day
+                  Opening
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    half-day
+                    afternoon
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Show your competitive side and help your team win
+                Meet all the participants and break the ice
+              </p>
+            </div>
+            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
+              <p className="font-normal text-base md:text-lg">
+                <strong className="font-medium text-black">
+                  Dinner
+                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
+                    evening
+                  </span>
+                </strong>
+              </p>
+              <p className="text-neutral-600 text-base md:text-lg">
+                Enjoy a meal together
               </p>
             </div>
           </div>
@@ -95,14 +108,14 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Overnight stay at a castle
+                  Regensburg trip
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
                     all-day
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                There's nothing quite like a party in a castle
+                Overnight trip to a magical medieval city
               </p>
             </div>
           </div>
@@ -113,14 +126,14 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Return from castle
+                  Landshut trip
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    half-day
+                    all-day
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                There's nothing quite like a party in a castle
+                Explore the historical city center and visit a castle
               </p>
             </div>
           </div>
@@ -131,14 +144,14 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Club party
+                  Rest day
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    evening
+                    all-day
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Because a party in a castle is not enough
+                While Culture Creatures is fun, you might have other duties to carry out
               </p>
             </div>
           </div>
@@ -149,14 +162,27 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Day trip
+                  Munich tour
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    all-day
+                    half-day
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Explore a picturesque town in the region around Munich
+                See the famous places in Munich, including our university campus
+              </p>
+            </div>
+            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
+              <p className="font-normal text-base md:text-lg">
+                <strong className="font-medium text-black">
+                  Symphony concert
+                  <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
+                    evening
+                  </span>
+                </strong>
+              </p>
+              <p className="text-neutral-600 text-base md:text-lg">
+                Concert of Bamberger Symphoniker
               </p>
             </div>
           </div>
@@ -167,14 +193,14 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Beerlympics
+                  Hike
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    half-day
+                    full-day
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                The name says it all
+                Enjoy magnificent views over Schliersee and Tegernsee
               </p>
             </div>
           </div>
@@ -185,14 +211,14 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Group time
+                  Museum tour
                   <span className="ml-2 font-medium text-neutral-600 uppercase text-xs md:text-sm tracking-wide">
-                    all-day
+                    half-day
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Reminisce about your incredible orientation experience
+                Visit one of Munich's museums
               </p>
             </div>
           </div>
