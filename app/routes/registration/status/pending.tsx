@@ -34,10 +34,10 @@ export default function RegistrationStatusPending() {
         <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
           You have signed up successfully. We will inform you during the
           admission rounds whether there is a spot for you. The admission rounds
-          are on <span className="text-black">Thursday, March 23</span> and{' '}
-          <span className="text-black">Saturday, March 25</span>. Do not forget
-          to check your e-mail or this page to see if you got a spot. Otherwise
-          you might miss your payment window.
+          are on <span className="text-black">Friday, March 17</span> and{' '}
+          <span className="text-black">Monday, March 20</span>. Do not forget to
+          check your e-mail or this page to see if you got a spot. Otherwise you
+          might miss your payment window.
         </p>
         <p className="text-black">
           Please note that we only send out e-mails during the admission rounds

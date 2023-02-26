@@ -58,10 +58,23 @@ export default function Registration() {
               How much is it?
             </p>
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-green-900">
-              The Party Animals package is <s className="decoration-2">€160</s>{' '}
-              €119 (only €8.50 per day). This covers all activities in the
-              two-week programme schedule. Culture Creatures is{' '}
-              <s className="decoration-2">€150</s> €109 for its weeklong
+              The{' '}
+              <Link
+                className="underline hover:text-blue-700 transition-all"
+                to="pa"
+              >
+                Party Animals
+              </Link>{' '}
+              package is <s className="decoration-2">€160</s> €119 (only €8.50
+              per day). This covers all activities in the two-week programme
+              schedule.{' '}
+              <Link
+                className="underline hover:text-blue-700 transition-all"
+                to="cc"
+              >
+                Culture Creatures
+              </Link>{' '}
+              is <s className="decoration-2">€150</s> €109 for its weeklong
               schedule. Neither of the programmes include local transportation
               within Munich or any additional food and drinks you might want to
               consume during the events.
@@ -86,10 +99,10 @@ export default function Registration() {
               What if I cannot attend every event?
             </p>
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
-              Please make sure you are able to attend all events. Party Animals
-              and Culture Creatures are designed as complete packages. You
-              should only ever miss an event if it is due to a crucial
-              appointment (e.g. apartment registration).
+              Please make sure you can attend all events. Party Animals and
+              Culture Creatures are designed as complete packages. You should
+              only ever miss an event if it is due to a crucial appointment
+              (e.g. apartment registration).
             </p>
           </div>
         </div>
@@ -99,11 +112,11 @@ export default function Registration() {
               How does the application work?
             </p>
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-yellow-900">
-              In order to ensure the best experience for participants, we
-              unfortunately cannot guarantee a spot to everyone who signs up. We
-              try to facilitate diverse groups to bring students with different
-              backgrounds together. We do not work with a first come, first
-              serve system for these programmes.
+              To ensure the best experience for participants, we unfortunately
+              cannot guarantee a spot to everyone who signs up. We try to
+              facilitate diverse groups by bringing students with different
+              backgrounds together. Therefore, we do <em>not</em> work with a
+              first-come-first-served system.
             </p>
           </div>
         </div>
@@ -117,7 +130,7 @@ export default function Registration() {
               still sign up for our individual events during the orientation
               weeks. You can explore our general event schedule on{' '}
               <a
-                className="underline hover:text-blue-700"
+                className="underline hover:text-blue-700 transition-all"
                 href="https://tumi.esn.world"
                 target="_blank"
               >
@@ -139,7 +152,7 @@ export default function Registration() {
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-green-900">
               Follow us on{' '}
               <a
-                className="underline hover:text-blue-700"
+                className="underline hover:text-blue-700 transition-all"
                 href="https://www.instagram.com/tumi.esn/"
                 target="_blank"
               >

@@ -507,9 +507,9 @@ export default function RegistrationForm() {
               className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
-              In understand that once I receive my spot confirmation, I have to
-              pay the programme fee (€109 for Culture Creatures or €119 for
-              Party Animals) within 24 hours. Otherwise my spot will expire.
+              I understand that once I receive my spot confirmation, I must pay
+              the programme fee (€109 for Culture Creatures or €119 for Party
+              Animals) within 24 hours. Otherwise, my spot will expire.
             </span>
           </div>
 
@@ -555,10 +555,10 @@ export default function RegistrationForm() {
             />
             <span className="text-black font-medium">
               I understand that the participation fee cannot be refunded if my
-              spot cannot be replaced. In order to ensure the best experience
-              for participants, I cannot resell my participation spot without
-              our prior agreement. We will try to accomodate cancellations as
-              best as possible, however, refunds are not guaranteed.
+              spot cannot be replaced. To ensure the best experience for
+              participants, I cannot resell my participation spot without our
+              prior agreement. We will try to accommodate cancellations as best
+              as possible. However, refunds are not guaranteed.
             </span>
           </div>
           {actionData?.errors.refund ? (
