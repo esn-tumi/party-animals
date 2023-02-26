@@ -132,7 +132,7 @@ It seems like we didn't get your payment for your TUMi orientation program spot 
 https://party-animals.esn.world/registration/status 
 This is also where you can see your registration status, if the payment is confirmed here you are good to go.
 The *payment deadline is ${deadlineDate} CET* if you do not pay or contact us we will cancel your spot.
-Should you not be able to take part in the program anymore, please contact us at party-animals@esn-tumi.de and we will cancel your spot.
+Should you not be able to take part in the program anymore, please contact us at party.animals@esn-tumi.de and we will cancel your spot.
 Best, 
 Your TUMi team`);
     return `https://wa.me/${number}?text=${message}`;
@@ -294,5 +294,36 @@ Your TUMi team`);
         </pre>
       </section>
     </main>
+  );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  console.error(error);
+  return (
+    <div className="w-full max-w-7xl m-auto px-2 md:px-8">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="max-w-4xl px-8 py-12 md:p-12">
+          <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
+            Error
+          </h1>
+
+          <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
+            Oops! We had a problem. You can try refreshing the page or contact
+            us at{' '}
+            <a
+              href="mailto:party.animals@esn-tumi.de"
+              className="underline text-blue-600 transition-all hover:text-blue-700"
+            >
+              party.animals@esn-tumi.de
+            </a>
+            . Please send the following error message along with your request:
+          </p>
+
+          <pre className="select-all blackspace-pre-wrap text-sm text-black">
+            {error.message}
+          </pre>
+        </div>
+      </div>
+    </div>
   );
 }

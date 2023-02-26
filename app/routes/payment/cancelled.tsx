@@ -2,39 +2,33 @@ import { Link } from '@remix-run/react';
 
 export default function Cancelled() {
   return (
-    <div
-      className="
-    mt-6
-    flex
-    w-full
-    items-center
-    justify-center
-    px-8
-  "
-    >
-      <div className="rounded-md bg-white px-10 py-5 shadow-xl md:py-20 md:px-40">
-        <div className="flex flex-col items-center">
-          <h1 className="text-4xl font-bold text-blue-600 md:text-9xl">
+    <div className="w-full max-w-7xl m-auto px-2 md:px-8">
+      <div className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="max-w-4xl px-8 py-12 md:p-12">
+          <h1 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
             Payment cancelled!
           </h1>
-
-          <h6 className="mb-2 text-center text-lg font-bold text-gray-800 md:text-2xl md:text-3xl">
-            You will not be charged
-          </h6>
-
-          <p className="mb-8 text-center text-gray-500 md:text-lg">
-            You can try restarting that process or contact us at{' '}
-            <a href="mailto:questions@esn-tumi.de">questions@esn-tumi.de</a>
+          <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
+            You will not be charged. You can try restarting the process or
+            contact us at{' '}
+            <a
+              className="underline text-blue-600 transition-all hover:text-blue-700"
+              href="mailto:party.animals@esn-tumi.de"
+            >
+              party.animals@esn-tumi.de
+            </a>
           </p>
 
-          <Link
-            to="/registration"
-            className="inline-block rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
-          >
-            <span className="block rounded-full bg-white px-8 py-3 text-sm font-medium hover:bg-transparent">
-              Go to back to registration
-            </span>
-          </Link>
+          <div className="flex flex-col space-y-3 w-full md:flex-row md:space-x-4 md:space-y-0">
+            <Link
+              className="shrink-0 h-fit bg-white overflow-hidden inline-block leading-none rounded-xl text-black border border-neutral-300 hover:bg-neutral-300 transition-all px-4 py-2 focus:outline-none focus:ring"
+              to="/"
+            >
+              <span className="block font-medium text-lg text-center">
+                Back to overview
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

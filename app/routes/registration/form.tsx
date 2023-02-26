@@ -44,7 +44,7 @@ export default function RegistrationForm() {
   const [esnMember, setEsnMember] = useState(false);
   const transition = useTransition();
   const actionData = useActionData();
-  const registrationCloseDate = new Date('2023-03-20');
+  const registrationCloseDate = new Date('2023-03-15');
   const now = new Date();
   const registrationClosed = now > registrationCloseDate;
   if (now > new Date('2023-03-31'))

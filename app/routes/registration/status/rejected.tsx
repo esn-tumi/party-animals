@@ -61,36 +61,26 @@ export default function RegistrationStatusRejected() {
 export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
-    <div
-      className="
-    mt-6
-    flex
-    w-full
-    items-center
-    justify-center
-    px-8
-  "
-    >
-      <div className="rounded-md bg-white px-10 py-5 shadow-xl md:py-20 md:px-40">
-        <div className="flex flex-col items-center">
-          <h1 className="text-4xl font-medium text-red-600 md:text-9xl">
-            Error!
+    <div className="w-full max-w-7xl m-auto px-2 md:px-8">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="max-w-4xl px-8 py-12 md:p-12">
+          <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
+            Error
           </h1>
 
-          <h6 className="mb-2 text-center text-lg font-medium text-black md:text-2xl md:text-3xl">
-            <span className="text-red-560">Oops!</span> We had a problem.
-          </h6>
-
-          <p className="mb-8 text-center text-neutral-600 md:text-lg">
-            You can try refreshing the page or contact us at{' '}
-            <a href="mailto:party-animals@esn-tumi.de">
-              party-animals@esn-tumi.de
+          <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
+            Oops! We had a problem. You can try refreshing the page or contact
+            us at{' '}
+            <a
+              href="mailto:party.animals@esn-tumi.de"
+              className="underline text-blue-600 transition-all hover:text-blue-700"
+            >
+              party.animals@esn-tumi.de
             </a>
-            <br />
-            Please send the following error message along with your request:
+            . Please send the following error message along with your request:
           </p>
 
-          <pre className="select-all whitespace-pre-wrap text-sm text-neutral-600">
+          <pre className="select-all blackspace-pre-wrap text-sm text-black">
             {error.message}
           </pre>
         </div>
