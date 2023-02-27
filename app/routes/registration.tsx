@@ -61,7 +61,7 @@ export default function Registration() {
               The{' '}
               <Link
                 className="underline hover:text-blue-700 transition-all"
-                to="pa"
+                to="/pa"
               >
                 Party Animals
               </Link>{' '}
@@ -70,7 +70,7 @@ export default function Registration() {
               schedule.{' '}
               <Link
                 className="underline hover:text-blue-700 transition-all"
-                to="cc"
+                to="/cc"
               >
                 Culture Creatures
               </Link>{' '}

@@ -408,9 +408,9 @@ export default function PartyAnimals() {
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
                 How is liquid gold (or beer) made? Find out by joining a tour of
-                Erdinger Brewery. In an impressive 3-hour program we'll learn
-                everything it takes to brew beer. Of course, we'll also sample
-                the finished product.
+                an authentic Bavarian brewery. In an impressive programme we'll
+                learn everything it takes to brew beer. Of course, we'll also
+                sample the finished product.
               </p>
             </div>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
