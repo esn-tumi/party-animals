@@ -18,7 +18,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 export default function AdminFrame() {
   return (
     <>
-      <nav className="px-2 overflow-x-scroll mt-2 md:mt-4 w-full md:w-fit md:mx-auto h-fit">
+      <nav className="px-2 overflow-x-scroll md:overflow-hidden mt-2 md:mt-4 w-full md:w-fit md:mx-auto h-fit">
         <ul className="mx-auto w-fit flex flex-row items-center text-sm font-medium text-neutral-600">
           <li className="shrink-0">
             <NavLink
