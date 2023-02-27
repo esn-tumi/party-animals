@@ -556,9 +556,9 @@ export default function RegistrationForm() {
             <span className="text-black font-medium">
               I understand that the participation fee cannot be refunded if my
               spot cannot be replaced. To ensure the best experience for
-              participants, I cannot resell my participation spot without our
-              prior agreement. We will try to accommodate cancellations as best
-              as possible. However, refunds are not guaranteed.
+              participants, I cannot resell my participation spot without prior
+              agreement. Cancellations will be considered as best as possible.
+              However, refunds are not guaranteed.
             </span>
           </div>
           {actionData?.errors.refund ? (
