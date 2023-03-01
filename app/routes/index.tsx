@@ -162,7 +162,7 @@ export default function Index() {
             <p className="font-medium text-6xl text-white mb-2">€119</p>
             <div className="text-base font-normal leading-snug text-white md:leading-snug mb-8">
               <p className="text-pink-400 font-medium">
-                Instead of <s className="decoration-2">€160</s>
+                Instead of <s className="decoration-2">€170</s>
               </p>
               <p>April 3&ndash;16, 2023</p>
             </div>

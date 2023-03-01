@@ -43,7 +43,7 @@ export default function RegistrationStatusPending() {
           Please note that we only send out e-mails during the admission rounds
           and not immediately after this initial registration. If you see this
           message, your registration was successful. In case anything changes
-          for you please reach out to us via{' '}
+          for you (incl. phone number or email) please reach out to us via{' '}
           <a
             className="text-blue-600 underline hover:text-blue-700"
             href="mailto:party.animals@esn-tumi.de?subject=[Party Animals] Registration Question"

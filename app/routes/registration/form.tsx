@@ -55,7 +55,7 @@ export default function RegistrationForm() {
             Application Closed
           </p>
           <h2 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
-            Programme Registration
+            Registration
           </h2>
           <p className="font-normal text-lg leading-normal md:text-xl md:leading-normal text-neutral-600">
             The registration deadline for the spring 2023 orientation programmes
@@ -79,7 +79,7 @@ export default function RegistrationForm() {
           Fill out the form
         </p>
         <h2 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
-          Programme Registration
+          Registration
         </h2>
         <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
           Sign up here to join Party Animals or Culture Creatures. The

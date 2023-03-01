@@ -36,13 +36,14 @@ export default function Registration() {
           </p>
         </div>
       </section>
+      <Outlet />
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-orange-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-pink-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Which programme is right for me?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
               Party Animals (April 3&ndash;16, 2023) is designed as the ultimate
               exchange experience. As the name suggests, it is suited for
               students who enjoy being social, partying late at night, and a
@@ -65,7 +66,7 @@ export default function Registration() {
               >
                 Party Animals
               </Link>{' '}
-              package is <s className="decoration-2">€160</s> €119 (only €8.50
+              package is <s className="decoration-2">€170</s> €119 (only €8.50
               per day). This covers all activities in the two-week programme
               schedule.{' '}
               <Link
@@ -81,6 +82,8 @@ export default function Registration() {
             </p>
           </div>
         </div>
+      </section>
+      <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
         <div className="bg-sky-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
@@ -93,12 +96,12 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-pink-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-orange-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               What if I cannot attend every event?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
               Please make sure you can attend all events. Party Animals and
               Culture Creatures are designed as complete packages. You should
               only ever miss an event if it is due to a crucial appointment
@@ -142,7 +145,6 @@ export default function Registration() {
           </div>
         </div>
       </section>
-      <Outlet />
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
         <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
