@@ -2,6 +2,7 @@ import { ActionFunction, LoaderFunction, redirect } from '@remix-run/node';
 import { authenticator } from '~/services/auth.server';
 import {
   Group,
+  GroupType,
   Priority,
   Registration,
   Role,
@@ -104,6 +105,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     return 0;
   });
   const assignments: { [groupId: string]: Registration[] } = {};
+  const firstRoundLeftover: Registration[] = [];
   const nonAssigned: Registration[] = [];
   groups.forEach((group) => {
     assignments[group.id] = [];
@@ -111,25 +113,110 @@ export const loader: LoaderFunction = async ({ request }) => {
   });
   registrations
     .filter((registration) => !registration.groupId)
+    .filter((registration) => ['pa', 'pa-cc'].includes(registration.programme))
     .forEach((registration) => {
       let assigned = false;
       groups.sort(
         (a, b) => assignments[a.id].length - assignments[b.id].length
       );
-      groups.forEach((group) => {
-        if (!assigned) {
-          if (!countryInGroup(assignments[group.id], registration.country)) {
-            if (
-              genderInGroup(assignments[group.id], registration.gender) < 10
-            ) {
-              if (assignments[group.id].length < 20) {
-                assignments[group.id].push(registration);
-                assigned = true;
+      groups
+        .filter((group) => group.groupType === GroupType.PA)
+        .forEach((group) => {
+          if (!assigned) {
+            if (!countryInGroup(assignments[group.id], registration.country)) {
+              if (
+                genderInGroup(assignments[group.id], registration.gender) < 10
+              ) {
+                if (assignments[group.id].length < 20) {
+                  assignments[group.id].push(registration);
+                  assigned = true;
+                }
               }
             }
           }
-        }
-      });
+        });
+      if (!assigned) {
+        firstRoundLeftover.push(registration);
+      }
+    });
+  registrations
+    .filter((registration) => !registration.groupId)
+    .filter((registration) => ['cc', 'cc-pa'].includes(registration.programme))
+    .forEach((registration) => {
+      let assigned = false;
+      groups.sort(
+        (a, b) => assignments[a.id].length - assignments[b.id].length
+      );
+      groups
+        .filter((group) => group.groupType === GroupType.CC)
+        .forEach((group) => {
+          if (!assigned) {
+            if (!countryInGroup(assignments[group.id], registration.country)) {
+              if (
+                genderInGroup(assignments[group.id], registration.gender) < 10
+              ) {
+                if (assignments[group.id].length < 20) {
+                  assignments[group.id].push(registration);
+                  assigned = true;
+                }
+              }
+            }
+          }
+        });
+      if (!assigned) {
+        firstRoundLeftover.push(registration);
+      }
+    });
+  firstRoundLeftover
+    .filter((registration) => ['cc-pa', 'pa'].includes(registration.programme))
+    .forEach((registration) => {
+      let assigned = false;
+      groups.sort(
+        (a, b) => assignments[a.id].length - assignments[b.id].length
+      );
+      groups
+        .filter((group) => group.groupType === GroupType.PA)
+        .forEach((group) => {
+          if (!assigned) {
+            if (!countryInGroup(assignments[group.id], registration.country)) {
+              if (
+                genderInGroup(assignments[group.id], registration.gender) < 10
+              ) {
+                if (assignments[group.id].length < 20) {
+                  assignments[group.id].push(registration);
+                  assigned = true;
+                }
+              }
+            }
+          }
+        });
+      if (!assigned) {
+        nonAssigned.push(registration);
+      }
+    });
+  firstRoundLeftover
+    .filter((registration) => ['pa-cc', 'cc'].includes(registration.programme))
+    .forEach((registration) => {
+      let assigned = false;
+      groups.sort(
+        (a, b) => assignments[a.id].length - assignments[b.id].length
+      );
+      groups
+        .filter((group) => group.groupType === GroupType.CC)
+        .forEach((group) => {
+          if (!assigned) {
+            if (!countryInGroup(assignments[group.id], registration.country)) {
+              if (
+                genderInGroup(assignments[group.id], registration.gender) < 10
+              ) {
+                if (assignments[group.id].length < 20) {
+                  assignments[group.id].push(registration);
+                  assigned = true;
+                }
+              }
+            }
+          }
+        });
       if (!assigned) {
         nonAssigned.push(registration);
       }
@@ -388,6 +475,8 @@ export default function AdminAssignments() {
                         <p className="overflow-hidden text-ellipsis whitespace-nowrap">
                           {getCountry(registration.country).name}
                         </p>
+                        <div className="grow"></div>
+                        <p>{registration.programme}</p>
                       </div>
                     </div>
                     <div className="shrink-0 w-fit flex flex-col items-strech divide-y border-l border-neutral-300 divide-neutral-300">
@@ -470,6 +559,8 @@ export default function AdminAssignments() {
                       <p className="overflow-hidden text-ellipsis whitespace-nowrap">
                         {getCountry(registration.country).name}
                       </p>
+                      <div className="grow"></div>
+                      <p>{registration.programme}</p>
                     </div>
                   </div>
                 </div>

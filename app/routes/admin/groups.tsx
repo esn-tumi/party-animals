@@ -77,7 +77,9 @@ export default function AdminGroups() {
                 className="shirnk-0 bg-blue-200 px-4 py-2 rounded-full"
                 key={group.id}
               >
-                <span className="text-black font-medium">{group.name}</span>
+                <span className="text-black font-medium">
+                  {group.name} ({group.groupType})
+                </span>
               </div>
             ))}
           </div>
@@ -124,7 +126,7 @@ export default function AdminGroups() {
               <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
                 Group type
               </span>
-              {actionData?.errors.groupType ? (
+              {actionData?.errors?.groupType ? (
                 <ValidationMessage
                   isSubmitting={transition.state === 'submitting'}
                   error={actionData?.errors?.groupType}
