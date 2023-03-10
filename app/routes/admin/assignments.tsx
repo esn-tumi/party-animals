@@ -153,9 +153,9 @@ export const loader: LoaderFunction = async ({ request }) => {
           if (!assigned) {
             if (!countryInGroup(assignments[group.id], registration.country)) {
               if (
-                genderInGroup(assignments[group.id], registration.gender) < 10
+                genderInGroup(assignments[group.id], registration.gender) < 9
               ) {
-                if (assignments[group.id].length < 20) {
+                if (assignments[group.id].length < 17) {
                   assignments[group.id].push(registration);
                   assigned = true;
                 }
@@ -207,9 +207,9 @@ export const loader: LoaderFunction = async ({ request }) => {
           if (!assigned) {
             if (!countryInGroup(assignments[group.id], registration.country)) {
               if (
-                genderInGroup(assignments[group.id], registration.gender) < 10
+                genderInGroup(assignments[group.id], registration.gender) < 9
               ) {
-                if (assignments[group.id].length < 20) {
+                if (assignments[group.id].length < 17) {
                   assignments[group.id].push(registration);
                   assigned = true;
                 }
@@ -361,7 +361,7 @@ export default function AdminAssignments() {
         <h1 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
           Assignments{' '}
           <span className="text-neutral-600">
-            ({groups.length * 20 - totalAssigned} available)
+            ({groups.length * 20 - totalAssigned - 6} available)
           </span>
         </h1>
         <div className="mb-4 grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
