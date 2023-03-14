@@ -278,9 +278,11 @@ export default function AdminRegistrations() {
         {registrations.map((registration) => (
           <div
             key={registration.id}
-            className={`flex flex-col rounded-[2.25rem] p-6 min-w-fit w-full h-fit ${(() => {
+            className={`flex flex-col rounded-[2.25rem] p-6 w-full h-fit ${(() => {
               if (registration.registrationStatus === 'ACCEPTED')
                 return 'bg-green-200';
+              if (registration.registrationStatus === 'REJECTED' || 'CANCELLED')
+                return 'bg-neutral-200';
               switch (registration.gender) {
                 case 'f':
                   return 'bg-pink-200';

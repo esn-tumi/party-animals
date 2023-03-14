@@ -41,11 +41,14 @@ export default function () {
           Congratulations
         </p>
         <h2 className="mb-8 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
-          You have been granted a spot. We are excited to go on this journey
-          with you, {registration.callBy}!
+          You have been granted a spot{' '}
+          {registration.group.groupType === GroupType.PA ? (
+            <span>in Party Animals</span>
+          ) : (
+            <span>in Culture Creatures</span>
+          )}
+          , {registration.callBy}!
         </h2>
-        {/*TODO: Adrian, handle telling them which group they got*/}
-        {registration.group.groupType === GroupType.PA ? <></> : <></>}
         <ol className="list-none">
           <li className="mb-8">
             <p className="mb-4 font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
@@ -72,7 +75,7 @@ export default function () {
           <li>
             <p className="mb-4 font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               <span className="text-neutral-600 tabular-nums">(3)</span> Have
-              fun
+              fun!
             </p>
             <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
               Make sure to read all of the announcements in the WhatsApp group,
