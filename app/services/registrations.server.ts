@@ -4,19 +4,18 @@ import { db } from '~/utils/db.server';
 
 function validateRegistration(data: FormData): { [key: string]: string } {
   const errors: { [key: string]: string } = {};
-  if (!v8n().string().minLength(3).maxLength(50).test(data.get('firstName'))) {
-    errors.firstName = 'The first name must be at least 3 characters long';
+  if (!v8n().string().minLength(2).maxLength(50).test(data.get('firstName'))) {
+    errors.firstName = 'First name must be at least 2 characters long';
   }
-  if (!v8n().string().minLength(3).maxLength(50).test(data.get('lastName'))) {
-    errors.lastName = 'The last name must be at least 3 characters long';
+  if (!v8n().string().minLength(2).maxLength(50).test(data.get('lastName'))) {
+    errors.lastName = 'Last name must be at least 2 characters long';
   }
   if (
     !v8n()
-      .optional(v8n().string().minLength(3).maxLength(50))
+      .optional(v8n().string().minLength(2).maxLength(50))
       .test(data.get('callBy'))
   ) {
-    errors.callBy =
-      'If entered, your nickname must be at least 3 characters long';
+    errors.callBy = 'Nickname must be at least 2 characters long';
   }
   if (
     !v8n()
@@ -25,7 +24,7 @@ function validateRegistration(data: FormData): { [key: string]: string } {
       .pattern(/f|m|d|n/)
       .test(data.get('gender'))
   ) {
-    errors.gender = 'Please provide a valid value from the dropdown';
+    errors.gender = 'Select a value from the dropdown';
   }
   if (
     !v8n()
@@ -35,7 +34,7 @@ function validateRegistration(data: FormData): { [key: string]: string } {
       .maxLength(50)
       .test(data.get('email'))
   ) {
-    errors.email = 'Please enter a valid email address';
+    errors.email = 'Enter a valid email address';
   }
   if (
     !v8n()
@@ -45,14 +44,13 @@ function validateRegistration(data: FormData): { [key: string]: string } {
       .pattern(/[+][0-9]+/)
       .test(data.get('phone'))
   ) {
-    errors.phone =
-      'Please enter a valid phone number in the format +1234567890';
+    errors.phone = 'Enter a valid number in the format +1234567890';
   }
   if (!v8n().string().length(2).test(data.get('country'))) {
-    errors.country = 'Please select a country from the dropdown';
+    errors.country = 'Select a country from the dropdown';
   }
   if (!v8n().string().minLength(3).maxLength(50).test(data.get('university'))) {
-    errors.university = 'Please enter a valid university name';
+    errors.university = 'Enter a valid university name';
   }
   if (
     !v8n()
@@ -61,23 +59,13 @@ function validateRegistration(data: FormData): { [key: string]: string } {
       .pattern(/l|i|o|e/)
       .test(data.get('status'))
   ) {
-    errors.status = 'Please select a valid status from the list';
+    errors.status = 'Select a status from the list';
   }
   if (!v8n().string().test(data.get('diet'))) {
-    errors.diet = 'Please provide a valid diet from the list';
+    errors.diet = 'Select a diet preference from the list';
   }
-  console.log(v8n().string().minLength(3).test(data.get('dinner')));
-  console.log(data.get('dinner'));
-  if (!v8n().string().minLength(3).test(data.get('dinner'))) {
-    errors.dinner = 'Please select your meal for the kickoff dinner';
-  }
-  if (
-    !v8n()
-      .string()
-      .pattern(/s|m|l|(?:xl)/)
-      .test(data.get('size'))
-  ) {
-    errors.size = 'Please select a valid size from the list';
+  if (!v8n().string().test(data.get('programme'))) {
+    errors.programme = 'Select a preference from the list';
   }
   if (
     !v8n()
@@ -98,11 +86,8 @@ function validateRegistration(data: FormData): { [key: string]: string } {
   if (!v8n().not.null().test(data.get('friends'))) {
     errors.friends = 'Please accept this statement';
   }
-  if (!v8n().not.null().test(data.get('covid'))) {
-    errors.covid = 'Please accept this statement';
-  }
-  if (!v8n().not.null().test(data.get('vax'))) {
-    errors.vax = 'Please confirm this statement';
+  if (!v8n().not.null().test(data.get('refund'))) {
+    errors.refund = 'Please accept this statement';
   }
   return errors;
 }
@@ -151,11 +136,10 @@ export async function createRegistration(
       diet: values.diet.toString(),
       esnSection: values.esnSection?.toString() ?? null,
       languages: values.languages?.toString() ?? null,
-      dinner: values.dinner.toString(),
-      size: values.size.toString(),
+      programme: values.programme.toString(),
       oldie: values.oldie.toString() === 'true',
       expectations: values.expectations.toString(),
-      requests: values.requests.toString(),
+      requests: values.requests?.toString() ?? null,
     },
   });
   return [{}, registration];

@@ -11,11 +11,11 @@ import styles from './styles/app.css';
 
 export const meta: MetaFunction = () => {
   return {
-    title: 'Party Animals',
+    title: 'ESN TUMi Orientation Weeks+ (Party Animals and Culture Creatures)',
     description:
-      'Party Animals is the best way to start your exchange in munich',
+      'Party Animals and Culture Creatures are the best way to start your exchange in Munich',
     'og:description':
-      'Party Animals is the best way to start your exchange in munich',
+      'Party Animals and Culture Creatures are the best way to start your exchange in Munich',
     image: '/social-logo.png',
     'og:image': '/social-logo.png',
   };
@@ -64,7 +64,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-screen bg-slate-800">
+      <body className="min-h-screen">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

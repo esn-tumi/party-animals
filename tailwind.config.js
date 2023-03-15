@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        culture: ['IBM Plex Mono', 'sans-serif'],
+        //sans: ['"Mona-Sans", sans-serif', { fontFeatureSettings: '"ss01"' }],
       },
     },
   },

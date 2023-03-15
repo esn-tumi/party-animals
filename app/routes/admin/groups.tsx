@@ -1,6 +1,6 @@
-import { ActionFunction, LoaderFunction, redirect } from "@remix-run/node";
+import { ActionFunction, LoaderFunction, redirect } from '@remix-run/node';
 import { authenticator } from '~/services/auth.server';
-import { Group, Role } from '~/generated/prisma';
+import { Group, GroupType, Role } from '~/generated/prisma';
 import { db } from '~/utils/db.server';
 import {
   Form,
@@ -43,13 +43,18 @@ export const action: ActionFunction = async ({ request }) => {
   }
   const data = await request.formData();
   const name = data.get('name');
+  const groupType = data.get('groupType') as GroupType;
   const errors: { [key: string]: string } = {};
   if (typeof name !== 'string' || name.length < 3) {
     errors.firstName = 'The name must be at least 3 characters long';
     const values = Object.fromEntries(data);
     return { errors, values };
+  } else if (!Object.values(GroupType).includes(groupType)) {
+    errors.groupType = 'Please select a valid group type';
+    const values = Object.fromEntries(data);
+    return { errors, values };
   } else {
-    const group = await db.group.create({ data: { name } });
+    const group = await db.group.create({ data: { name, groupType } });
     return { group };
   }
 };
@@ -60,49 +65,80 @@ export default function AdminGroups() {
   const transition = useTransition();
   const actionData = useActionData();
   return (
-    <main>
-      <section className="mb-2 p-4 text-white">
-        <h1 className="mb-4 text-2xl font-bold">Groups</h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          {groups.map((group) => (
-            <div className="border border-slate-200 p-4">
-              <strong>{group.name}</strong>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="mb-2 p-4 text-white">
-        <Form
-          method="post"
-          className="grid grid-cols-1 gap-4 rounded-lg border-2 border-slate-400 p-4 md:grid-cols-2"
-        >
-          <h1 className="text-lg font-bold md:col-span-2">Create Group</h1>
-          <label
-            className="relative block rounded-lg border-2 border-gray-200 p-3"
-            htmlFor="lastName"
-          >
-            <input
-              className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Group name"
-              required
-              defaultValue={actionData?.values?.name}
-            />
-            <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-              Group name
-            </span>
-            {actionData?.errors?.name ? (
-              <ValidationMessage
-                isSubmitting={transition.state === 'submitting'}
-                error={actionData?.errors?.name}
-              />
-            ) : null}
-          </label>
-          <button className="inline-block rounded-lg border border-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-indigo-600 focus:outline-none focus:ring active:bg-indigo-500">
+    <main className="px-2 md:px-8">
+      {groups.length !== 0 && (
+        <section className="text-white bg-black min-w-fit rounded-md md:rounded-lg overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+          <h1 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
+            Groups
+          </h1>
+          <div className="flex flex-wrap gap-4 w-full">
+            {groups.map((group) => (
+              <div
+                className="shirnk-0 bg-blue-200 px-4 py-2 rounded-full"
+                key={group.id}
+              >
+                <span className="text-black font-medium">
+                  {group.name} ({group.groupType})
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+      <section className="bg-neutral-200 p-8 md:p-12 text-black my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem]">
+        <Form method="post">
+          <h2 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
             Create Group
-          </button>
+          </h2>
+          <div className="flex gap-4 md:gap-8 w-full items-center">
+            <label className="relative block w-3/4 h-fit" htmlFor="lastName">
+              <input
+                className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Group name"
+                required
+                defaultValue={actionData?.values?.name}
+              />
+              <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
+                Group name
+              </span>
+              {actionData?.errors?.name ? (
+                <ValidationMessage
+                  isSubmitting={transition.state === 'submitting'}
+                  error={actionData?.errors?.name}
+                />
+              ) : null}
+            </label>
+            <label className="relative block h-fit" htmlFor="groupType">
+              <select
+                name="groupType"
+                id="groupType"
+                required
+                defaultValue={actionData?.values?.groupType}
+                className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              >
+                <option value="">Select a type</option>
+                <option value={GroupType.PA}>Party Animals</option>
+                <option value={GroupType.CC}>Culture Creatures</option>
+              </select>
+              <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
+                Group type
+              </span>
+              {actionData?.errors?.groupType ? (
+                <ValidationMessage
+                  isSubmitting={transition.state === 'submitting'}
+                  error={actionData?.errors?.groupType}
+                />
+              ) : null}
+            </label>
+            <button className="shrink-0 h-fit overflow-hidden inline-block leading-none rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-all px-4 py-2 focus:outline-none focus:ring">
+              <span className="block font-medium text-lg text-center">
+                Create Group
+              </span>
+            </button>
+          </div>
           {/*<label
             className="relative block rounded-lg border-2 border-gray-200 p-3"
             htmlFor="lastName"
@@ -135,34 +171,26 @@ export default function AdminGroups() {
 export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
-    <div
-      className="
-    mt-6
-    flex
-    w-full
-    items-center
-    justify-center
-    px-8
-  "
-    >
-      <div className="rounded-md bg-white px-10 py-5 shadow-xl md:py-20 md:px-40">
-        <div className="flex flex-col items-center">
-          <h1 className="text-4xl font-bold text-blue-600 md:text-9xl">
-            Error!
+    <div className="w-full max-w-7xl m-auto px-2 md:px-8">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="max-w-4xl px-8 py-12 md:p-12">
+          <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
+            Error
           </h1>
 
-          <h6 className="mb-2 text-center text-lg font-bold text-gray-800 md:text-2xl md:text-3xl">
-            <span className="text-red-500">Oops!</span> We had a problem.
-          </h6>
-
-          <p className="mb-8 text-center text-gray-500 md:text-lg">
-            You can try refreshing the page or contact us at{' '}
-            <a href="mailto:questions@esn-tumi.de">questions@esn-tumi.de</a>{' '}
-            <br />
-            Please send the following error message along with your request:
+          <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
+            Oops! We had a problem. You can try refreshing the page or contact
+            us at{' '}
+            <a
+              href="mailto:party.animals@esn-tumi.de"
+              className="underline text-blue-600 transition-all hover:text-blue-700"
+            >
+              party.animals@esn-tumi.de
+            </a>
+            . Please send the following error message along with your request:
           </p>
 
-          <pre className="select-all whitespace-pre-wrap text-sm text-slate-600">
+          <pre className="select-all blackspace-pre-wrap text-sm text-black">
             {error.message}
           </pre>
         </div>

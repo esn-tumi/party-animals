@@ -1,4 +1,4 @@
-import { LoaderFunction, redirect } from "@remix-run/node";
+import { LoaderFunction, redirect } from '@remix-run/node';
 import { authenticator } from '~/services/auth.server';
 import { db } from '~/utils/db.server';
 import { useLoaderData } from '@remix-run/react';
@@ -23,26 +23,37 @@ export const loader: LoaderFunction = async ({ request }) => {
 export default function RegistrationStatusCancelled() {
   const registration = useLoaderData<Registration & { user: User }>();
   return (
-    <section className="bg-slate-800 p-4 text-white md:p-8">
-      <h2 className="mb-4 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 bg-clip-text py-2 text-2xl font-bold leading-loose text-transparent md:col-span-2 md:text-4xl">
-        This is not the year {registration.callBy}
-      </h2>
-      <p className="mb-4 lg:text-lg">
-        We cancelled your registration as per your request. <br />
-        If you believe this to be an error, please reach out to{' '}
-        <a href="mailto:questions@esn-tumi.de">questions@esn-tumi.de</a> and we
-        will help you figure this out. <br />
-        If this is what you wanted, make sure to check out the upcoming
-        orientation weeks!
-      </p>
-      <a
-        className="inline-block rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-[4px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
-        href="https://tumi.esn.world/events"
-      >
-        <span className="block rounded-full bg-slate-800 px-8 py-3 text-center text-lg font-bold hover:bg-transparent">
-          Check out the Orientation weeks
-        </span>
-      </a>
+    <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <div className="max-w-4xl px-8 py-12 md:p-12">
+        <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+          Registration cancelled
+        </p>
+        <h2 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
+          Sad to see you go, {registration.callBy}.
+        </h2>
+        <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
+          We cancelled your registration as per your request. Make sure to check
+          out our other events during the{' '}
+          <a
+            className="underline hover:text-blue-700"
+            href="https://tumi.esn.world"
+            target="_blank"
+          >
+            orientation weeks
+          </a>
+          .
+        </p>
+        <p className="text-black">
+          If you believe this to be an error, please reach out to{' '}
+          <a
+            className="text-blue-600 underline hover:text-blue-700"
+            href="mailto:party.animals@esn-tumi.de?subject=[Party Animals] Registration Issue"
+          >
+            party.animals@esn-tumi.de
+          </a>
+          .
+        </p>
+      </div>
     </section>
   );
 }
@@ -50,34 +61,26 @@ export default function RegistrationStatusCancelled() {
 export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
-    <div
-      className="
-    mt-6
-    flex
-    w-full
-    items-center
-    justify-center
-    px-8
-  "
-    >
-      <div className="rounded-md bg-white px-10 py-5 shadow-xl md:py-20 md:px-40">
-        <div className="flex flex-col items-center">
-          <h1 className="text-4xl font-bold text-blue-600 md:text-9xl">
-            Error!
+    <div className="w-full max-w-7xl m-auto">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="max-w-4xl px-8 py-12 md:p-12">
+          <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
+            Error
           </h1>
 
-          <h6 className="mb-2 text-center text-lg font-bold text-gray-800 md:text-2xl md:text-3xl">
-            <span className="text-red-500">Oops!</span> We had a problem.
-          </h6>
-
-          <p className="mb-8 text-center text-gray-500 md:text-lg">
-            You can try refreshing the page or contact us at{' '}
-            <a href="mailto:questions@esn-tumi.de">questions@esn-tumi.de</a>{' '}
-            <br />
-            Please send the following error message along with your request:
+          <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
+            Oops! We had a problem. You can try refreshing the page or contact
+            us at{' '}
+            <a
+              href="mailto:party.animals@esn-tumi.de"
+              className="underline text-blue-600 transition-all hover:text-blue-700"
+            >
+              party.animals@esn-tumi.de
+            </a>
+            . Please send the following error message along with your request:
           </p>
 
-          <pre className="select-all whitespace-pre-wrap text-sm text-slate-600">
+          <pre className="select-all blackspace-pre-wrap text-sm text-black">
             {error.message}
           </pre>
         </div>

@@ -1,5 +1,5 @@
-import { LoaderFunction, redirect } from "@remix-run/node";
-import { NavLink } from "@remix-run/react";
+import { LoaderFunction, redirect } from '@remix-run/node';
+import { NavLink } from '@remix-run/react';
 import { authenticator } from '~/services/auth.server';
 import { Role } from '~/generated/prisma';
 import { Link, Outlet } from '@remix-run/react';
@@ -18,52 +18,62 @@ export const loader: LoaderFunction = async ({ request }) => {
 export default function AdminFrame() {
   return (
     <>
-      <nav className="mx-auto flex max-w-3xl items-center justify-between p-4">
-        <ul className="flex items-center space-x-2 text-sm font-medium text-gray-200">
-          <li>
+      <nav className="px-2 overflow-x-scroll md:overflow-hidden mt-2 md:mt-4 w-full md:w-fit md:mx-auto h-fit">
+        <ul className="mx-auto w-fit flex flex-row items-center text-sm font-medium text-neutral-600">
+          <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="registrations"
             >
               Registrations
             </NavLink>
           </li>
-          <li>
+          <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="groups"
             >
               Groups
             </NavLink>
           </li>
-          <li>
+          <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="assignments"
             >
               Assignments
             </NavLink>
           </li>
-          <li>
+          <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="genetic"
             >
               Genetics
             </NavLink>
           </li>
-          <li>
+          <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 ${isActive ? 'font-bold' : ''}`
+                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                  isActive ? 'text-black bg-neutral-200' : ''
+                }`
               }
               to="status-board"
             >

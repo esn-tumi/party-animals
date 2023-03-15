@@ -44,39 +44,72 @@ export default function RegistrationForm() {
   const [esnMember, setEsnMember] = useState(false);
   const transition = useTransition();
   const actionData = useActionData();
-  /*return (
-    <section className="bg-slate-800 p-4 text-white md:p-8">
-      <h2 className=" text-2xl font-black md:text-4xl">Registration</h2>
-      <p className="mt-4 mb-8 md:text-lg">
-        The registration deadline for the summer 2022 edition of Party Animals
-        has passed. You can still take part in the TUMi orientation weeks.
-      </p>
-    </section>
-  );*/
-  return (
-    <section className="bg-slate-800 p-4 text-white md:p-8">
-      <h2 className=" text-2xl font-black md:text-4xl">Registration</h2>
-      <p className="mt-4 mb-8 md:text-lg">
-        Register here to join party animals. The registration includes the
-        entire program outlined in the overview. You will be assigned to one of
-        the eight groups of party animals and stay with them for the whole
-        program. <br />
-        We believe this is the best way to get to know each other and to start
-        well in munich.
-      </p>
-      <Form method="post" className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <div className="md:col-span-2">
-          <div
-            className="border-l-4 border-red-500 bg-red-900 p-4 text-red-100"
-            role="alert"
-          >
-            <h3 className="mb-4 font-medium">Registration deadline passed!</h3>
-            <p>
-              You can still sign up, but you will be placed on the waitlist.
-              Only if spots become free, you can get one.
-            </p>
-          </div>
+  const registrationCloseDate = new Date('2023-03-15');
+  const now = new Date();
+  const registrationClosed = now > registrationCloseDate;
+  if (now > new Date('2023-03-31'))
+    return (
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="max-w-4xl px-8 py-12 md:px-12">
+          <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+            Application Closed
+          </p>
+          <h2 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
+            Registration
+          </h2>
+          <p className="font-normal text-lg leading-normal md:text-xl md:leading-normal text-neutral-600">
+            The registration deadline for the spring 2023 orientation programmes
+            has passed. You can still take part in the{' '}
+            <a
+              href="https:/tumi.esn.world/events"
+              target="_blank"
+              className="text-blue-600 underline hover:text-blue-700"
+            >
+              TUMi orientation weeks
+            </a>
+            .
+          </p>
         </div>
+      </section>
+    );
+  return (
+    <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <div className="max-w-4xl px-8 pt-12 md:px-12">
+        <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+          Fill out the form
+        </p>
+        <h2 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
+          Registration
+        </h2>
+        <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
+          Sign up here to join Party Animals or Culture Creatures. The
+          registration includes the programme outlined in the overview. You will
+          be assigned to a group which you will stay with for the duration of
+          the programme. We believe this is the best way to get to know each
+          other and start the semester in Munich.
+        </p>
+      </div>
+      <Form
+        method="post"
+        className="px-8 py-12 md:px-12 grid grid-cols-1 gap-4 md:grid-cols-2"
+      >
+        {registrationClosed ? (
+          <div className="mb-8">
+            <div
+              className="bg-neutral-100 p-4 text-black rounded-xl"
+              role="alert"
+            >
+              <p className="font-medium text-red-600 leading-snug">
+                The registration deadline has passed.{' '}
+                <span className="font-normal text-black">
+                  You can still sign up, however, you will be placed on the
+                  waitlist. If a spot becomes available, you might have the
+                  chance to claim it.
+                </span>
+              </p>
+            </div>
+          </div>
+        ) : null}
         {actionData?.errors.form ? (
           <div className="md:col-span-2">
             <ValidationMessage
@@ -85,15 +118,12 @@ export default function RegistrationForm() {
             />
           </div>
         ) : null}
-        <h2 className="text-2xl font-bold md:col-span-2 md:text-4xl">
-          Who are you?
+        <h2 className="md:col-span-2 mb-4 text-2xl font-medium leading-tight md:text-4xl md:leading-tight text-black tracking-tight">
+          Nice to meet you
         </h2>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="firstName"
-        >
+        <label className="relative block h-fit" htmlFor="firstName">
           <input
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="firstName"
             name="firstName"
             type="text"
@@ -101,7 +131,7 @@ export default function RegistrationForm() {
             required
             defaultValue={actionData?.values?.firstName ?? user.firstName}
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
             First name
           </span>
           {actionData?.errors.firstName ? (
@@ -111,12 +141,9 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="lastName"
-        >
+        <label className="relative block h-fit" htmlFor="lastName">
           <input
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="lastName"
             name="lastName"
             type="text"
@@ -124,7 +151,7 @@ export default function RegistrationForm() {
             required
             defaultValue={actionData?.values?.lastName ?? user.lastName}
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
             Last name
           </span>
           {actionData?.errors.lastName ? (
@@ -134,12 +161,9 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="callBy"
-        >
+        <label className="relative block h-fit" htmlFor="callBy">
           <input
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="callBy"
             name="callBy"
             type="text"
@@ -147,8 +171,8 @@ export default function RegistrationForm() {
             required
             defaultValue={actionData?.values?.callBy ?? user.firstName}
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-            Call me by
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
+            Call me by (e.g. nickname)
           </span>
           {actionData?.errors.callBy ? (
             <ValidationMessage
@@ -157,16 +181,13 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="gender"
-        >
+        <label className="relative block h-fit" htmlFor="gender">
           <select
             name="gender"
             id="gender"
             placeholder="Gender"
             required
-            className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             defaultValue={actionData?.values?.gender}
           >
             <option value="">Select your gender</option>
@@ -175,7 +196,7 @@ export default function RegistrationForm() {
             <option value="d">Other</option>
             <option value="n">Prefer not to say</option>
           </select>
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
             Gender
           </span>
           {actionData?.errors.gender ? (
@@ -185,12 +206,9 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="email"
-        >
+        <label className="relative block h-fit" htmlFor="email">
           <input
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="email"
             name="email"
             type="email"
@@ -198,7 +216,7 @@ export default function RegistrationForm() {
             required
             defaultValue={actionData?.values?.email ?? user.email}
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
             Email
           </span>
           {actionData?.errors.email ? (
@@ -208,12 +226,9 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="phone"
-        >
+        <label className="relative block h-fit" htmlFor="phone">
           <input
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="phone"
             name="phone"
             type="tel"
@@ -221,8 +236,8 @@ export default function RegistrationForm() {
             required
             defaultValue={actionData?.values?.phone}
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-            WhatsApp Number
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
+            Phone number (WhatsApp)
           </span>
           {actionData?.errors.phone ? (
             <ValidationMessage
@@ -231,17 +246,14 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="country"
-        >
+        <label className="relative block h-fit" htmlFor="country">
           <select
             name="country"
             id="country"
             placeholder="Country"
             defaultValue={actionData?.values?.country}
             required
-            className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your home country</option>
             {countries.map((country: { alpha2Code: string; name: string }) => (
@@ -250,8 +262,8 @@ export default function RegistrationForm() {
               </option>
             ))}
           </select>
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-            Home Country
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
+            Home country
           </span>
           {actionData?.errors.country ? (
             <ValidationMessage
@@ -260,12 +272,9 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="university"
-        >
+        <label className="relative block h-fit" htmlFor="university">
           <input
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="university"
             name="university"
             type="text"
@@ -273,8 +282,8 @@ export default function RegistrationForm() {
             defaultValue={actionData?.values?.university}
             placeholder="University"
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-            Home University
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
+            Home university
           </span>
           {actionData?.errors.university ? (
             <ValidationMessage
@@ -283,24 +292,21 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="status"
-        >
+        <label className="relative block h-fit" htmlFor="status">
           <select
             name="status"
             id="status"
             required
             defaultValue={actionData?.values?.status}
-            className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your status</option>
-            <option value="l">Local Student</option>
+            <option value="l">Local student</option>
             <option value="i">International degree student</option>
-            <option value="o">Exchange Student (started before october)</option>
-            <option value="e">Exchange Student (starting in october)</option>
+            <option value="o">Exchange student (started before April)</option>
+            <option value="e">Exchange student (starting in April)</option>
           </select>
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
             Status
           </span>
           {actionData?.errors.status ? (
@@ -310,22 +316,19 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="diet"
-        >
+        <label className="relative block h-fit" htmlFor="diet">
           <select
             name="diet"
             id="diet"
             required
             defaultValue={actionData?.values?.diet}
-            className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="none">No restrictions</option>
             <option value="vegetarian">I am vegetarian</option>
             <option value="vegan">I am vegan</option>
           </select>
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
             Dietary restrictions
           </span>
           {actionData?.errors.diet ? (
@@ -337,16 +340,18 @@ export default function RegistrationForm() {
         </label>
         <div className="flex items-center">
           <label htmlFor="sectionMember">
-            <div className="flex flex-row space-x-4">
+            <div className="flex flex-row space-x-2">
               <input
                 type="checkbox"
                 name="sectionMember"
                 id="sectionMember"
                 defaultValue={actionData?.values?.sectionMember}
-                className="h-6 w-6 rounded-md border border-2 border-gray-200 bg-slate-800"
+                className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
                 onChange={(event) => setEsnMember(event.target.checked)}
               />
-              <span>I am a member of an ESN section at home</span>
+              <span className="font-medium text-black">
+                I am a member of an ESN section at home
+              </span>
             </div>
             {actionData?.errors.sectionMember ? (
               <ValidationMessage
@@ -356,12 +361,9 @@ export default function RegistrationForm() {
             ) : null}
           </label>
         </div>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="esnSection"
-        >
+        <label className="relative block h-fit" htmlFor="esnSection">
           <input
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600 disabled:bg-neutral-200"
             id="esnSection"
             name="esnSection"
             type="text"
@@ -369,7 +371,7 @@ export default function RegistrationForm() {
             placeholder="ESN Section"
             disabled={!esnMember}
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs peer-disabled:text-slate-500">
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
             My ESN section
           </span>
           {actionData?.errors.esnSection ? (
@@ -379,12 +381,9 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="languages"
-        >
+        <label className="relative block h-fit" htmlFor="languages">
           <input
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="languages"
             name="languages"
             type="text"
@@ -392,8 +391,8 @@ export default function RegistrationForm() {
             defaultValue={actionData?.values?.languages}
             placeholder="Languages"
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-            Indicate non-english languages (with levels) you speak
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
+            Language skills (incl. level)
           </span>
           {actionData?.errors.languages ? (
             <ValidationMessage
@@ -402,102 +401,51 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="dinner"
-        >
-          <select
-            name="dinner"
-            id="dinner"
-            required
-            defaultValue={actionData?.values?.dinner}
-            className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
-          >
-            <option value="">Select your food option</option>
-            <option value="schnitzel">
-              Wiener Schnitzel of "Schwäbisch-Hällisches Landschwein" (pork)
-              with lemon wedge, wild cranberries and fried potatoes, served with
-              a small seasonal salad
-            </option>
-            <option value="fish">
-              Breaded redfish fillet with lemon wedge, homemade remoulade sauce
-              and colourfully garnished potato salad
-            </option>
-            <option value="spatzle">
-              Creamy cheese dumplings "Allgäu style" with homemade fried onions
-              and small seasonal salad
-            </option>
-            <option value="pork">
-              Young pork roast with dark beer sauce, potato dumplings and local
-              coleslaw
-            </option>
-            <option value="pasta">
-              "Pasta sheep's cheese" with fresh market vegetables and herb
-              tomato sauce
-            </option>
-            <option value="salad">
-              "Salad Vienna" - colourful leaf salads with tomatoes, cucumbers,
-              egg, served with golden-brown fried chicken breast, lime dip and
-              garlic bread
-            </option>
-          </select>
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-            Dinner food selection
-          </span>
-          {actionData?.errors.dinner ? (
-            <ValidationMessage
-              isSubmitting={transition.state === 'submitting'}
-              error={actionData?.errors?.dinner}
-            />
-          ) : null}
-        </label>
-        <h2 className="mt-4 text-2xl font-bold md:col-span-2 md:text-4xl">
-          What's your Party Animal?
+        <h2 className="mt-8 md:col-span-2 mb-4 text-2xl font-medium leading-tight md:text-4xl md:leading-tight text-black tracking-tight">
+          Programme details
         </h2>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="size"
-        >
+        <label className="relative block h-fit" htmlFor="programme">
           <select
-            name="size"
-            id="size"
+            name="programme"
+            id="programme"
             required
-            defaultValue={actionData?.values?.size}
-            className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            defaultValue={actionData?.values?.programme}
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
-            <option value="">Select your shirt size</option>
-            <option value="s">S</option>
-            <option value="m">M</option>
-            <option value="l">L</option>
-            <option value="xl">XL</option>
+            <option value="">Select your preference</option>
+            <option value="pa">Party Animals (€119)</option>
+            <option value="cc">Culture Creatures (€109)</option>
+            <option value="pa-cc">
+              I prefer Party Animals, but am open to join Culture Creatures.
+            </option>
+            <option value="cc-pa">
+              I prefer Culture Creatures, but am open to join Party Animals.
+            </option>
           </select>
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-            Shirt Size
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
+            Orientation programme
           </span>
-          {actionData?.errors.size ? (
+          {actionData?.errors.programme ? (
             <ValidationMessage
               isSubmitting={transition.state === 'submitting'}
-              error={actionData?.errors?.size}
+              error={actionData?.errors?.programme}
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3"
-          htmlFor="oldie"
-        >
+        <label className="relative block h-fit" htmlFor="oldie">
           <select
             name="oldie"
             id="oldie"
             required
             defaultValue={actionData?.values?.oldie}
-            className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
-            <option value="">Select</option>
-            <option value="true">Yes! And I need more</option>
-            <option value="false">No, can't wait to become one</option>
+            <option value="">Select an option</option>
+            <option value="true">Yes, and I need more.</option>
+            <option value="false">No, I can't wait to.</option>
           </select>
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-            Have you been a Party Animal before?
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
+            Have you participated before?
           </span>
           {actionData?.errors.oldie ? (
             <ValidationMessage
@@ -506,12 +454,9 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3 md:col-span-2"
-          htmlFor="expectations"
-        >
+        <label className="relative block" htmlFor="expectations">
           <textarea
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="expectations"
             name="expectations"
             rows={4}
@@ -519,8 +464,8 @@ export default function RegistrationForm() {
             defaultValue={actionData?.values?.expectations}
             placeholder="Expectations"
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-            My expectations for Party Animals
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
+            My expectations for the programme
           </span>
           {actionData?.errors.expectations ? (
             <ValidationMessage
@@ -529,19 +474,16 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label
-          className="relative block rounded-lg border-2 border-gray-200 p-3 md:col-span-2"
-          htmlFor="requests"
-        >
+        <label className="relative block" htmlFor="requests">
           <textarea
-            className="peer w-full border-none bg-transparent px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="requests"
             name="requests"
-            rows={3}
+            rows={4}
             defaultValue={actionData?.values?.requests}
-            placeholder="Expectations"
+            placeholder="Requests"
           />
-          <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+          <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
             Special requests
           </span>
           {actionData?.errors.requests ? (
@@ -551,23 +493,23 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <h2 className="mt-4 text-2xl font-bold md:col-span-2 md:text-4xl">
-          Understand some things
+        <h2 className="mt-8 md:col-span-2 mb-4 text-2xl font-medium leading-tight md:text-4xl md:leading-tight text-black tracking-tight">
+          I acknowledge the following
         </h2>
         <label htmlFor="pay">
-          <div className="flex flex-row space-x-4">
+          <div className="flex flex-row space-x-2">
             <input
               type="checkbox"
               name="pay"
               id="pay"
               required
               defaultValue={actionData?.values?.pay}
-              className="h-6 w-6 rounded-md border border-2 border-gray-200 bg-slate-800"
+              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
             />
-            <span className="ml-3">
-              I understand, that once I receive my spot confirmation I have to
-              pay 89 euro within 24h to confirm it. Otherwise I will be excluded
-              from Party Animals.
+            <span className="text-black font-medium">
+              I understand that once I receive my spot confirmation, I must pay
+              the programme fee (€109 for Culture Creatures or €119 for Party
+              Animals) within 24 hours. Otherwise, my spot will expire.
             </span>
           </div>
 
@@ -579,19 +521,19 @@ export default function RegistrationForm() {
           ) : null}
         </label>
         <label htmlFor="friends">
-          <div className="flex flex-row space-x-4">
+          <div className="flex flex-row space-x-2">
             <input
               type="checkbox"
               name="friends"
               id="friends"
               required
               defaultValue={actionData?.values?.friends}
-              className="h-6 w-6 rounded-md border border-2 border-gray-200 bg-slate-800"
+              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
             />
-            <span>
-              I understand, that TUMi will create the groups. And I cannot
-              influence in which group I will end up, or who my mates will be
-              (this is to ensure diversity)
+            <span className="text-black font-medium">
+              I understand that I cannot influence which team I will be placed
+              in. I am open to meeting people outside of my existing friend
+              group.
             </span>
           </div>
           {actionData?.errors.friends ? (
@@ -601,43 +543,46 @@ export default function RegistrationForm() {
             />
           ) : null}
         </label>
-        <label htmlFor="covid">
-          <div className="flex flex-row space-x-4">
+        <label htmlFor="refund">
+          <div className="flex flex-row space-x-2">
             <input
               type="checkbox"
-              name="covid"
-              id="covid"
+              name="refund"
+              id="refund"
               required
-              defaultValue={actionData?.values?.covid}
-              className="h-6 w-6 rounded-md border border-2 border-gray-200 bg-slate-800"
+              defaultValue={actionData?.values?.refund}
+              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
             />
-            <span>
-              I understand, that there could be cancellations on short notice
-              and maybe not all participation fees could be refunded.
+            <span className="text-black font-medium">
+              I understand that the participation fee cannot be refunded if my
+              spot cannot be replaced. To ensure the best experience for
+              participants, I cannot resell my participation spot without prior
+              agreement. Cancellations will be considered as best as possible.
+              However, refunds are not guaranteed.
             </span>
           </div>
-          {actionData?.errors.covid ? (
+          {actionData?.errors.refund ? (
             <ValidationMessage
               isSubmitting={transition.state === 'submitting'}
-              error={actionData?.errors?.covid}
+              error={actionData?.errors?.refund}
             />
           ) : null}
         </label>
-        <label htmlFor="vax">
-          <div className="flex flex-row space-x-4">
+        {/* <label htmlFor="vax">
+          <div className="flex flex-row space-x-2">
             <input
               type="checkbox"
               name="vax"
               id="vax"
               required
               defaultValue={actionData?.values?.vax}
-              className="h-6 w-6 rounded-md border border-2 border-gray-200 bg-slate-800"
+              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
             />
-            <span>
+            <span className="text-black font-medium">
               I confirm that I classify as fully vaccinated according to german
               law. You can find out more{' '}
               <a
-                className="text-blue-300 underline visited:text-purple-300 hover:text-blue-500"
+                className="text-blue-600 underline hover:text-blue-700"
                 href="https://www.bmi.bund.de/SharedDocs/faqs/EN/topics/civil-protection/coronavirus/travel-restrictions-border-control/IV-restrictions-applying-to-air-and-sea-travel-outside-of-europe/what-rules-apply-for-fully-vaccinated-people.html"
                 target="_blank"
               >
@@ -651,15 +596,48 @@ export default function RegistrationForm() {
               error={actionData?.errors?.vax}
             />
           ) : null}
-        </label>
-        <button className="mt-4 inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[3px] hover:text-white focus:outline-none focus:ring active:text-opacity-75 md:col-span-2">
-          <span className="block rounded-full bg-slate-800 px-8 py-3 font-medium hover:bg-transparent">
-            {transition.state === 'submitting'
-              ? 'Getting you started...'
-              : 'Begin the journey'}
-          </span>
-        </button>
+        </label> */}
+        <div className="mt-8 md:col-span-2 flex flex-col space-y-3 w-full md:flex-row md:space-x-4 md:space-y-0">
+          <button className="h-fit overflow-hidden inline-block leading-none rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-all px-4 py-2 focus:outline-none focus:ring">
+            <span className="block font-medium text-lg text-center">
+              {transition.state === 'submitting'
+                ? 'Getting you started...'
+                : 'Begin the journey'}
+            </span>
+          </button>
+        </div>
       </Form>
     </section>
+  );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  console.error(error);
+  return (
+    <div className="w-full max-w-7xl m-auto">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="max-w-4xl px-8 py-12 md:p-12">
+          <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
+            Error
+          </h1>
+
+          <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
+            Oops! We had a problem. You can try refreshing the page or contact
+            us at{' '}
+            <a
+              href="mailto:party.animals@esn-tumi.de"
+              className="underline text-blue-600 transition-all hover:text-blue-700"
+            >
+              party.animals@esn-tumi.de
+            </a>
+            . Please send the following error message along with your request:
+          </p>
+
+          <pre className="select-all blackspace-pre-wrap text-sm text-black">
+            {error.message}
+          </pre>
+        </div>
+      </div>
+    </div>
   );
 }

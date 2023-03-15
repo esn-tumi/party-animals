@@ -2,6 +2,7 @@ import { LoaderFunction, redirect } from '@remix-run/node';
 import { authenticator } from '~/services/auth.server';
 import { Group, Registration, Role, User } from '~/generated/prisma';
 import { db } from '~/utils/db.server';
+import { itemURL } from '~/utils';
 import { useLoaderData, useLocation } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 
@@ -114,9 +115,9 @@ export default function () {
       case 'i':
         return 'International degree student';
       case 'o':
-        return 'Exchange Student (arrived in 2021)';
-      case 'e':
         return 'Exchange Student (arrived in 2022)';
+      case 'e':
+        return 'Exchange Student (arrived in 2023)';
     }
   };
   const getCountry = (code: string) => {
@@ -126,30 +127,28 @@ export default function () {
     registration: Registration & { user: User; group?: Group }
   ) => {
     const number = registration.phone.replace(/[ +]/g, '');
-    const message = encodeURIComponent(`Hey there ${registration.callBy}!
-It seems like we didn't get your payment for your the party animals spot yet. Please pay your registration fee at the following link:
+    const message = encodeURIComponent(`Hi, ${registration.callBy}!
+It seems like we didn't get your payment for your TUMi orientation program spot yet. Please pay your registration fee at the following link:
 https://party-animals.esn.world/registration/status 
 This is also where you can see your registration status, if the payment is confirmed here you are good to go.
 The *payment deadline is ${deadlineDate} CET* if you do not pay or contact us we will cancel your spot.
-Should you not be able to take part in the program anymore, please contact us at questions@esn-tumi.de and we will cancel your spot.
+Should you not be able to take part in the program anymore, please contact us at party.animals@esn-tumi.de and we will cancel your spot.
 Best, 
-Your TUMi party animals team`);
+Your TUMi team`);
     return `https://wa.me/${number}?text=${message}`;
   };
   return (
-    <main>
-      <section className="mb-2 p-4 text-white">
-        <h1 className="mb-2 text-2xl font-bold">Registration Status Board</h1>
-        <p className="mb-4">This is for sending mails and stuff</p>
-        <div className="space-x-4 md:flex">
-          <label
-            className="relative block w-32 rounded-lg border-2 border-gray-200 p-3"
-            htmlFor="status"
-          >
+    <main className="px-2 md:px-8">
+      <section className="text-black bg-neutral-200 min-w-fit rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+        <h1 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
+          Registration Status Board
+        </h1>
+        <div className="w-full grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <label className="relative block h-fit" htmlFor="status">
             <select
               id="status"
               onChange={(event) => setRegistrationStatus(event.target.value)}
-              className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={registrationStatus}
             >
               <option value="">All</option>
@@ -158,18 +157,15 @@ Your TUMi party animals team`);
               <option value="CANCELLED">Cancelled</option>
               <option value="REJECTED">Rejected</option>
             </select>
-            <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+            <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
               Status
             </span>
           </label>
-          <label
-            className="relative block rounded-lg border-2 border-gray-200 p-3"
-            htmlFor="group"
-          >
+          <label className="relative block h-fit" htmlFor="group">
             <select
               id="group"
               onChange={(event) => setGroup(event.target.value)}
-              className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={group}
             >
               <option value="">All</option>
@@ -179,101 +175,155 @@ Your TUMi party animals team`);
                 </option>
               ))}
             </select>
-            <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+            <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
               Group
             </span>
           </label>
-          <label
-            className="relative block w-32 rounded-lg border-2 border-gray-200 p-3"
-            htmlFor="paymentStatus"
-          >
+          <label className="relative block h-fit" htmlFor="paymentStatus">
             <select
               id="paymentStatus"
               onChange={(event) => setPaymentStatus(event.target.value)}
-              className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={paymentStatus}
             >
               <option value="">All</option>
-              <option value="PENDING">pending</option>
-              <option value="SUCCESS">paid</option>
+              <option value="PENDING">Pending</option>
+              <option value="SUCCESS">Paid</option>
             </select>
-            <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
+            <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
               Payment Status
             </span>
           </label>
-          <label
-            htmlFor="deadLineDate"
-            className="relative block w-40 rounded-lg border-2 border-gray-200 p-3"
-          >
+          <label htmlFor="deadLineDate" className="relative block h-fit">
             <input
               type="tex"
               onChange={(event) => setDeadlineDate(event.target.value)}
-              className="peer w-full border-none bg-slate-800 px-0 pt-3.5 pb-0 text-sm placeholder-transparent focus:ring-0"
+              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={deadlineDate}
             />
-            <span className="absolute left-3 -translate-y-1/3 text-xs font-medium text-gray-200 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:-translate-y-1/3 peer-focus:text-xs">
-              Deadline Date
+            <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
+              Deadline
             </span>
           </label>
         </div>
       </section>
-      <section className="mb-2 p-4 text-white">
-        <h2 className="mb-4 text-lg font-bold">
-          Selected registrations ({filteredRegistrations.length})
+      <section className="w-full text-black bg-neutral-200 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+        <h2 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
+          Selected Registrations{' '}
+          <span className="text-neutral-600">
+            ({filteredRegistrations.length})
+          </span>
         </h2>
-        <table className="w-full">
-          <thead>
-            <tr>
-              <th className="px-4 py-2">First Name</th>
-              <th className="px-4 py-2">Last Name</th>
-              <th className="px-4 py-2">Email</th>
-              <th className="px-4 py-2">Phone</th>
-              <th className="px-4 py-2">Group</th>
-              <th className="px-4 py-2">Registration Status</th>
-              <th className="px-4 py-2">Payment status</th>
-              <th className="px-4 py-2">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredRegistrations.map((registration) => (
-              <tr key={registration.id}>
-                <td className="px-4 py-2">{registration.user.firstName}</td>
-                <td className="px-4 py-2">{registration.user.lastName}</td>
-                <td className="px-4 py-2">{registration.user.email}</td>
-                <td className="px-4 py-2">{registration.phone}</td>
-                <td className="px-4 py-2">{registration.group?.name}</td>
-                <td className="px-4 py-2">{registration.registrationStatus}</td>
-                <td className="px-4 py-2">{registration.paymentStatus}</td>
-                <td className="px-4 py-2">
-                  <a
-                    className="rounded bg-gray-800 py-2 px-4 font-bold text-white hover:bg-gray-700"
-                    href={generateWaLink(registration)}
-                    target="_blank"
-                  >
-                    Send WA message
-                  </a>
-                </td>
+        <div className="w-full bg-neutral-100 rounded-xl overflow-x-scroll border border-neutral-300">
+          <table className="w-min-fit w-full border-collapse whitespace-nowrap">
+            <thead>
+              <tr>
+                <th className="font-medium text-left px-4 py-3">First Name</th>
+                <th className="font-medium text-left px-4 py-3">Last Name</th>
+                <th className="font-medium text-left px-4 py-3">Email</th>
+                <th className="font-medium text-left px-4 py-3">Phone</th>
+                <th className="font-medium text-left px-4 py-3">Group</th>
+                <th className="font-medium text-left px-4 py-3">
+                  Registration Status
+                </th>
+                <th className="font-medium text-left px-4 py-3">
+                  Payment status
+                </th>
+                <th className="font-medium text-left px-4 py-3">Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="">
+              {filteredRegistrations.map((registration) => (
+                <tr key={registration.id} className="">
+                  <td className="border-t border-neutral-300 text-left px-4 py-3">
+                    {registration.user.firstName}
+                  </td>
+                  <td className="border-t border-neutral-300 text-left px-4 py-3">
+                    {registration.user.lastName}
+                  </td>
+                  <td className="border-t border-neutral-300 text-left px-4 py-3">
+                    {registration.user.email}
+                  </td>
+                  <td className="border-t border-neutral-300 text-left px-4 py-3">
+                    {registration.phone}
+                  </td>
+                  <td className="border-t border-neutral-300 text-left px-4 py-3">
+                    {registration.group?.name}
+                  </td>
+                  <td className="border-t border-neutral-300 text-left px-4 py-3">
+                    {registration.registrationStatus}
+                  </td>
+                  <td className="border-t border-neutral-300 text-left px-4 py-3">
+                    {registration.paymentStatus}
+                  </td>
+                  <td className="border-t border-neutral-300 text-left px-4 py-3">
+                    <a
+                      className="underline text-blue-600 hover:text-blue-700"
+                      href={generateWaLink(registration)}
+                      target="_blank"
+                    >
+                      Send payment reminder
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
-      <section className="mb-2 p-4 text-white">
-        <h2 className="mb-4 text-lg font-bold">
-          All those mails ({filteredRegistrations.length})
+      <section className="text-black bg-neutral-200 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+        <h2 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
+          Selected Mails{' '}
+          <span className="text-neutral-600">
+            ({filteredRegistrations.length})
+          </span>
         </h2>
         <pre className="select-all whitespace-pre-wrap break-words">
           {filteredRegistrations.map((r) => r.user.email).join(';')}
         </pre>
       </section>
-      <section className="mb-2 p-4 text-white">
-        <h2 className="mb-4 text-lg font-bold">
-          All those ids ({filteredRegistrations.length})
+      <section className="text-black bg-neutral-200 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+        <h2 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
+          Selected IDs{' '}
+          <span className="text-neutral-600">
+            ({filteredRegistrations.length})
+          </span>
         </h2>
         <pre className="select-all whitespace-pre-wrap break-words">
           {filteredRegistrations.map((r) => `'${r.user.authId}'`).join(',')}
         </pre>
       </section>
     </main>
+  );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  console.error(error);
+  return (
+    <div className="w-full max-w-7xl m-auto px-2 md:px-8">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="max-w-4xl px-8 py-12 md:p-12">
+          <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
+            Error
+          </h1>
+
+          <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
+            Oops! We had a problem. You can try refreshing the page or contact
+            us at{' '}
+            <a
+              href="mailto:party.animals@esn-tumi.de"
+              className="underline text-blue-600 transition-all hover:text-blue-700"
+            >
+              party.animals@esn-tumi.de
+            </a>
+            . Please send the following error message along with your request:
+          </p>
+
+          <pre className="select-all blackspace-pre-wrap text-sm text-black">
+            {error.message}
+          </pre>
+        </div>
+      </div>
+    </div>
   );
 }
