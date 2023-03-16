@@ -69,10 +69,14 @@ export const action: ActionFunction = async ({ request }) => {
       ? process.env.PA_PRICE_ID
       : process.env.CC_PRICE_ID
   ) as string;
+  const programme =
+    registration.group.groupType === GroupType.PA
+      ? 'Party Animals'
+      : 'Culture Creatures';
   const stripeRedirectUrl = await getStripeSession(
     priceId,
     getDomainUrl(request),
-    `Party Animals payment for ${user.email}`,
+    `${programme} payment for ${user.email}`,
     {
       registrationId,
       userId: user.id,
