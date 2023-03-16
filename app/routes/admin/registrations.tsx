@@ -281,7 +281,10 @@ export default function AdminRegistrations() {
             className={`flex flex-col rounded-[2.25rem] p-6 w-full h-fit ${(() => {
               if (registration.registrationStatus === 'ACCEPTED')
                 return 'bg-green-200';
-              if (registration.registrationStatus === 'REJECTED' || 'CANCELLED')
+              if (
+                registration.registrationStatus === 'REJECTED' ||
+                registration.registrationStatus === 'CANCELLED'
+              )
                 return 'bg-neutral-200';
               switch (registration.gender) {
                 case 'f':
@@ -363,7 +366,7 @@ export default function AdminRegistrations() {
               <hr className="border-black border-opacity-20 col-span-2 my-2" />
 
               <p className="text-neutral-600 leading-snug">Mail</p>
-              <p className="leading-snug">{registration.user.email}</p>
+              <p className="leading-snug truncate">{registration.user.email}</p>
 
               <p className="text-neutral-600 leading-snug">Phone</p>
               <div className="inline-flex items-center">

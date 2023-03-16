@@ -74,7 +74,7 @@ export default function AdminGroups() {
           <div className="flex flex-wrap gap-4 w-full">
             {groups.map((group) => (
               <div
-                className="shirnk-0 bg-blue-200 px-4 py-2 rounded-full"
+                className="shrink-0 bg-blue-200 px-4 py-2 rounded-full"
                 key={group.id}
               >
                 <span className="text-black font-medium">
@@ -90,8 +90,8 @@ export default function AdminGroups() {
           <h2 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
             Create Group
           </h2>
-          <div className="flex gap-4 md:gap-8 w-full items-center">
-            <label className="relative block w-3/4 h-fit" htmlFor="lastName">
+          <div className="flex flex-col gap-2 md:flex-row md:gap-4 w-full items-center">
+            <label className="relative block w-full h-fit" htmlFor="lastName">
               <input
                 className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
                 id="name"
@@ -111,7 +111,7 @@ export default function AdminGroups() {
                 />
               ) : null}
             </label>
-            <label className="relative block h-fit" htmlFor="groupType">
+            <label className="relative block w-full h-fit" htmlFor="groupType">
               <select
                 name="groupType"
                 id="groupType"
@@ -133,7 +133,7 @@ export default function AdminGroups() {
                 />
               ) : null}
             </label>
-            <button className="shrink-0 h-fit overflow-hidden inline-block leading-none rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-all px-4 py-2 focus:outline-none focus:ring">
+            <button className="w-full md:w-fit shrink-0 h-fit overflow-hidden inline-block leading-none rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-all px-4 py-2 focus:outline-none focus:ring">
               <span className="block font-medium text-lg text-center">
                 Create Group
               </span>
