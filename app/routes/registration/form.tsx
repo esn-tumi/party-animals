@@ -10,11 +10,9 @@ import { authenticator } from '~/services/auth.server';
 import { createRegistration } from '~/services/registrations.server';
 import { useState } from 'react';
 import { db } from '~/utils/db.server';
+import countries from '~/utils/countries.json';
 
 export let loader: LoaderFunction = async ({ request }) => {
-  const countries = await fetch(
-    'https://restcountries.com/v2/all?fields=name,alpha2Code'
-  ).then((res) => res.json());
   const user = await authenticator.isAuthenticated(request);
   const registration = await db.registration.findFirst({
     where: { user: { id: user?.id } },

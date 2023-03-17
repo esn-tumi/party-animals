@@ -9,6 +9,7 @@ import {
   useTransition,
 } from '@remix-run/react';
 import { ValidationMessage } from '~/components/ValidationMessage';
+import countries from '~/utils/countries.json';
 
 export const loader: LoaderFunction = async ({ request }) => {
   const user = await authenticator.isAuthenticated(request);
@@ -18,9 +19,9 @@ export const loader: LoaderFunction = async ({ request }) => {
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
   }
-  const countries = fetch(
-    'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
-  ).then((res) => res.json());
+  // const countries = fetch(
+  //   'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
+  // ).then((res) => res.json());
   const registrations = db.registration.findMany({
     include: { user: true },
     orderBy: { createdAt: 'asc' },

@@ -6,6 +6,7 @@ import { GeneticAlgorithm } from '~/services/genetics/algorithm.server';
 import { Form, useLoaderData } from '@remix-run/react';
 import { itemURL } from '~/utils';
 import { Popover } from '@headlessui/react';
+import countries from '~/utils/countries.json';
 
 export const loader: LoaderFunction = async ({ request }) => {
   const user = await authenticator.isAuthenticated(request);
@@ -15,9 +16,9 @@ export const loader: LoaderFunction = async ({ request }) => {
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
   }
-  const countries = await fetch(
-    'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
-  ).then((res) => res.json());
+  // const countries = await fetch(
+  //   'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
+  // ).then((res) => res.json());
   const registrationsQuery = db.registration.findMany({
     where: {
       OR: [

@@ -12,6 +12,7 @@ import {
 import { db } from '~/utils/db.server';
 import { Form, useLoaderData } from '@remix-run/react';
 import { Popover } from '@headlessui/react';
+import countries from '~/utils/countries.json';
 
 const prioToNum = (prio: Priority) => {
   switch (prio) {
@@ -56,9 +57,9 @@ export const loader: LoaderFunction = async ({ request }) => {
   if (user.role !== Role.ADMIN) {
     throw new Error('You are not authorized to view this page');
   }
-  const countries = await fetch(
-    'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
-  ).then((res) => res.json());
+  // const countries = await fetch(
+  //   'https://restcountries.com/v2/all?fields=name,alpha2Code,flags'
+  // ).then((res) => res.json());
   const registrationsQuery = db.registration.findMany({
     where: {
       OR: [
@@ -467,11 +468,11 @@ export default function AdminAssignments() {
                         {registration.paymentStatus === 'SUCCESS' ? ' 💶' : ''}{' '}
                       </p>
                       <div className="flex items-center overflow-hidden">
-                        <img
-                          src={getCountry(registration.country).flags.svg}
-                          className="mr-2 h-4"
-                          alt=""
-                        />
+                        {/*<img*/}
+                        {/*  src={getCountry(registration.country).flags.svg}*/}
+                        {/*  className="mr-2 h-4"*/}
+                        {/*  alt=""*/}
+                        {/*/>*/}
                         <p className="overflow-hidden text-ellipsis whitespace-nowrap">
                           {getCountry(registration.country).name}
                         </p>
@@ -551,11 +552,11 @@ export default function AdminAssignments() {
                       {registration.paymentStatus === 'SUCCESS' ? ' 💶' : ''}{' '}
                     </p>
                     <div className="flex items-center overflow-hidden">
-                      <img
-                        src={getCountry(registration.country).flags.svg}
-                        className="mr-2 h-4"
-                        alt=""
-                      />
+                      {/*<img*/}
+                      {/*  src={getCountry(registration.country).flags.svg}*/}
+                      {/*  className="mr-2 h-4"*/}
+                      {/*  alt=""*/}
+                      {/*/>*/}
                       <p className="overflow-hidden text-ellipsis whitespace-nowrap">
                         {getCountry(registration.country).name}
                       </p>
