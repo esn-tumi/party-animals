@@ -400,11 +400,11 @@ export default function AdminRegistrations() {
               <p className="text-neutral-600 leading-snug">Country</p>
               <div>
                 <div className="leading-snug inline-flex flex-col items-center mr-2">
-                  <img
-                    src={getCountry(registration.country).flags.svg}
-                    className="inline-block h-3 "
-                    alt=""
-                  />
+                  {/*<img*/}
+                  {/*  src={getCountry(registration.country).flags.svg}*/}
+                  {/*  className="inline-block h-3 "*/}
+                  {/*  alt=""*/}
+                  {/*/>*/}
                 </div>
                 <p className="inline leading-snug">
                   {getCountry(registration.country).name}
