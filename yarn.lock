@@ -2074,7 +2074,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     remix-auth: ^3.4.0
-    remix-auth-auth0: 1.5.1
+    remix-auth-auth0: 1.7.0
     stripe: ^10.17.0
     tailwindcss: ^3.2.7
     typescript: ~4.9.5
@@ -7009,14 +7009,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remix-auth-auth0@npm:1.5.1":
-  version: 1.5.1
-  resolution: "remix-auth-auth0@npm:1.5.1"
+"remix-auth-auth0@npm:1.7.0":
+  version: 1.7.0
+  resolution: "remix-auth-auth0@npm:1.7.0"
   dependencies:
     remix-auth-oauth2: ^1.5.0
   peerDependencies:
     remix-auth: ^3.x
-  checksum: 96c2980c1b2b75b4607461b1e9d408fec772ad6f1d97f2ccc7492e31c0e9c4636f1eaeda21a0658e49f376c8a35f79875cebf1e093fc5c413a85ead130143431
+  checksum: 791f823bd6d823e55bf1f2a045a9d5f8ca9910cc958b503b9ead60207ddc7ecc5863191f26f25d2ffe1843b378bcce19b6e1e12809345996f0df565095c85afc
   languageName: node
   linkType: hard
 
