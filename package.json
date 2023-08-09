@@ -1,0 +1,47 @@
+{
+  "name": "@tumi/party-animals",
+  "private": true,
+  "description": "Remix app for party animals registration and management",
+  "license": "",
+  "sideEffects": false,
+  "scripts": {
+    "build": "yarn prisma generate && yarn build:css && remix build",
+    "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+    "dev": "concurrently \"yarn dev:css\" \"remix dev\"",
+    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+    "docker:up": "docker-compose -f stack.yml up -d",
+    "docker:down": "docker-compose -f stack.yml down",
+    "prisma:push": "yarn prisma db push",
+    "prisma:studio": "yarn prisma studio",
+    "start": "remix-serve build"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@prisma/client": "^4.11.0",
+    "@remix-run/node": "^1.14.0",
+    "@remix-run/react": "^1.14.0",
+    "@remix-run/serve": "^1.14.0",
+    "@tailwindcss/forms": "^0.5.3",
+    "cross-env": "^7.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remix-auth": "^3.4.0",
+    "remix-auth-auth0": "1.5.1",
+    "stripe": "^10.17.0",
+    "v8n": "^1.5.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.14.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "autoprefixer": "^10.4.13",
+    "concurrently": "^7.6.0",
+    "postcss": "^8.4.21",
+    "prisma": "^4.11.0",
+    "tailwindcss": "^3.2.7",
+    "typescript": "~4.9.5"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
