@@ -312,6 +312,28 @@ export default function PartyAnimals() {
           </div>
         </div>
       </section>
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden hover-click">
+        <Link to="/team">
+        <div className="relative">
+          <div className="absolute top-0 bottom-0 left-0 right-0">
+            <img
+              className="block h-full w-full object-cover"
+              src="/images/kickoff.jpg"
+            />
+          </div>
+          <div className="relative bg-gradient-to-t from-[rgba(0,0,0,0.8)] bg-blend-multiply">
+            <div className="max-w-4xl px-8 pb-12 pt-48 md:px-12 md:pb-12 md:pt-96">
+              <h2 className="mb-4 text-2xl font-medium leading-tight md:mb-6 md:text-4xl md:leading-tight text-white tracking-tight">
+                Get to know us
+              </h2>
+              <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-white text-opacity-80">
+                Take a look at the people behind TUMi and Party Animals
+              </p>
+            </div>
+          </div>
+        </div>
+        </Link>
+      </section>
       <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
         <div className="px-8 py-12 md:p-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
@@ -641,6 +663,28 @@ export default function PartyAnimals() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden hover-click">
+        <Link to="/qa">
+          <div className="relative">
+            <div className="absolute top-0 bottom-0 left-0 right-0">
+              <img
+                className="block h-full w-full object-cover"
+                src="/images/kickoff.jpg"
+              />
+            </div>
+            <div className="relative bg-gradient-to-t from-[rgba(0,0,0,0.8)] bg-blend-multiply">
+              <div className="max-w-4xl px-8 pb-12 pt-48 md:px-12 md:pb-12 md:pt-96">
+                <h2 className="mb-4 text-2xl font-medium leading-tight md:mb-6 md:text-4xl md:leading-tight text-white tracking-tight">
+                  Have a question?
+                </h2>
+                <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-white text-opacity-80">
+                  Click here to check out our section about frequently asked questions and their answers. You can most probably find the answer to your question there, or find ways to contact us there.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Link>
       </section>
       <section className="mt-12 mb-8 md:mt-24 md:mb-12 flex items-center justify-center">
         <div className="flex flex-col space-y-3 w-full px-8 md:flex-row md:justify-center md:space-x-4 md:space-y-0">
