@@ -12,7 +12,7 @@
 @tailwind utilities;
 
 body {
-  background: url('public/farbig.svg') no-repeat top left;
+  background: url('public/farbig_ausgefuellt.svg') no-repeat top left;
   background-size: contain;
 }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 2481 3508" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(0.213803,0,0,0.213803,916.685,133.362)">
-        <g>
+<svg width="100%" height="100%" viewBox="0 0 509 794" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-983.976,-543.669)">
+        <g transform="matrix(0.213803,0,0,0.213803,916.685,133.362)">
             <g transform="matrix(4.16667,0,0,4.16667,-1120.72,-17.2149)">
                 <g>
                     <g transform="matrix(1,0,0,1,846.905,1003.88)">
@@ -601,6 +601,47 @@
                     <path d="M6466.93,1203.04C6466.41,1202.89 6466.24,1202.83 6465.83,1202.42" style="fill:none;stroke:black;stroke-width:4.28px;stroke-linecap:round;stroke-miterlimit:1.5;"/>
                 </g>
             </g>
+        </g>
+        <g id="party-animals" serif:id="party animals" transform="matrix(0.231784,0,0,0.213803,906.847,120.442)">
+            <g transform="matrix(4.98606,-10.0715,16.3859,8.11208,-7482.04,-6621.39)">
+                <text x="-408.31px" y="612.646px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:13px;stroke:black;stroke-width:0.28px;">P</text>
+            </g>
+            <g transform="matrix(8.77573,-6.33573,11.0848,15.4116,-4200.4,-9597.53)">
+                <text x="-288.231px" y="656.553px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:13px;stroke:black;stroke-width:0.28px;">A</text>
+            </g>
+            <g transform="matrix(2.23893,-0.839307,1.59306,3.95085,-384.747,-722.731)">
+                <text x="-47.257px" y="740.517px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:58.941px;stroke:black;stroke-width:1.27px;">R</text>
+            </g>
+            <g transform="matrix(10.4927,1.1218,-1.1707,19.4577,-1895.89,-10296.1)">
+                <text x="329.608px" y="622.23px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:13px;stroke:black;stroke-width:0.29px;">T</text>
+            </g>
+            <g transform="matrix(8.87342,6.17378,-9.90235,16.2669,1116.06,-9081.24)">
+                <text x="534.618px" y="490.847px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:13px;stroke:black;stroke-width:0.29px;">y</text>
+            </g>
+            <g transform="matrix(9.90148,3.92821,-7.76805,17.6705,-3857.51,-5206.96)">
+                <text x="727.588px" y="260.058px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:13px;stroke:black;stroke-width:0.3px;">A</text>
+            </g>
+            <g transform="matrix(2.60313,-0.0209901,-0.00188242,4.18283,-212.271,163.629)">
+                <text x="666.18px" y="491.935px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:60.669px;stroke:black;stroke-width:1.32px;">N</text>
+            </g>
+            <g transform="matrix(10.4614,-1.42472,3.7735,19.1276,-5228.78,-10975.3)">
+                <text x="404.518px" y="718.02px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:13px;stroke:black;stroke-width:0.28px;">I</text>
+            </g>
+            <g transform="matrix(10.3909,-1.93853,4.78224,18.8826,-5708,-10991.3)">
+                <text x="386.4px" y="738.386px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:13px;stroke:black;stroke-width:0.28px;">M</text>
+            </g>
+            <g transform="matrix(2.59493,-0.126461,0.415451,4.17579,336.645,-682.704)">
+                <text x="539.313px" y="710.221px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:60.591px;stroke:black;stroke-width:1.27px;">A</text>
+            </g>
+            <g transform="matrix(10.4888,1.16426,-1.57462,19.4154,-4066.64,-9507.3)">
+                <text x="683.714px" y="562.253px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:13px;stroke:black;stroke-width:0.29px;">L</text>
+            </g>
+            <g transform="matrix(2.53151,0.683079,-1.05721,4.01589,830.768,-296.983)">
+                <text x="801.441px" y="478.687px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:60.743px;stroke:black;stroke-width:1.33px;">S</text>
+            </g>
+        </g>
+        <g transform="matrix(1.70549e-17,4.16667,-4.16667,-1.82766e-17,-2318.55,-2503.34)">
+            <text x="805.837px" y="-907.364px" style="font-family:'Ravie', fantasy;font-stretch:semi-expanded;font-size:7px;stroke:black;stroke-width:0.24px;">I<tspan x="809.945px 816.141px 822.7px 828.832px 832.052px 838.611px 845.337px 851.756px 854.976px 860.554px 864.662px 871.221px 878.145px 881.366px 887.169px 893.581px 899.777px 905.714px 911.77px " y="-907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px -907.364px ">NTO THE CITY JUNGLE</tspan></text>
         </g>
     </g>
 </svg>
