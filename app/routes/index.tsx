@@ -68,8 +68,8 @@ export default function Index() {
             international students who want to dive into Munich's student
             (night) life. Join one of eight teams of 25 students, make new
             friends, and get to know the ins and outs of the city together. The
-            programme is designed to be intense and takes place from April 3 to
-            April 16, 2023.
+            programme is designed to be intense and takes place from October 5 to
+            October 15, 2023.
           </p>
           <div className="flex flex-col md:flex-row">
             <Link

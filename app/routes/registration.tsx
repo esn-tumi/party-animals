@@ -44,7 +44,7 @@ export default function Registration() {
               Which programme is right for me?
             </p>
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
-              Party Animals (April 3&ndash;16, 2023) is designed as the ultimate
+              Party Animals (October 5&ndash;15, 2023) is designed as the ultimate
               exchange experience. As the name suggests, it is suited for
               students who enjoy being social, partying late at night, and a
               couple of drinks along the way. Culture Creatures (April
