@@ -26,7 +26,7 @@ export default function CultureCreatures() {
           <div className="relative bg-gradient-to-t from-[rgba(13,38,0,0.8)] bg-blend-multiply">
             <div className="max-w-4xl px-8 pb-12 pt-16 md:px-12 md:pb-12 md:pt-32">
               <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-opacity-60 text-white">
-                April 10 &ndash; April 16, 2023
+                October 6 &ndash; October 12, 2023
               </p>
               <h1 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-white ">
                 Welcome to <br />
@@ -38,7 +38,7 @@ export default function CultureCreatures() {
                 Instead of copious amounts of adult beverages, you'll engage in
                 copious amounts of cultural events and activities. The programme
                 is also a great way to get to know Munich and make friends. It
-                takes place from April 10 to April 16, 2023.
+                takes place from October 6 to October 12, 2023.
               </p>
               <div className="flex flex-col md:flex-row">
                 <Link
@@ -72,7 +72,7 @@ export default function CultureCreatures() {
           </p>
           <div>
             <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
-              Monday, April 10
+              Friday, October 6
             </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
@@ -104,12 +104,46 @@ export default function CultureCreatures() {
           </div>
           <div>
             <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
-              Tuesday, April 11
+              Saturday, Octobert 7
             </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Overnight stay in Regensburg{' '}
+                  Munich Tour{' '}
+                  <span className="font-normal text-neutral-600 lowercase">
+                    (afternoon)
+                  </span>
+                </strong>
+              </p>
+              <p className="text-neutral-600 text-base md:text-lg">
+                Let's explore Munich including the university district and TUM
+                main campus&mdash;with the help of our tutors you'll find your
+                way in no time.
+              </p>
+            </div>
+            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
+              <p className="font-normal text-base md:text-lg">
+                <strong className="font-medium text-black">
+                  Grill dinner{' '}
+                  <span className="font-normal text-neutral-600 lowercase">
+                    (evening)
+                  </span>
+                </strong>
+              </p>
+              <p className="text-neutral-600 text-base md:text-lg">
+                Enjoy a great meal in the beautiful English Garden at the 
+                heart of Munich.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+              Sunday, October 8
+            </p>
+            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
+              <p className="font-normal text-base md:text-lg">
+                <strong className="font-medium text-black">
+                  Overnight stay in Füssen{' '}
                   <span className="font-normal text-neutral-600 lowercase">
                     (all-day)
                   </span>
@@ -123,26 +157,26 @@ export default function CultureCreatures() {
           </div>
           <div>
             <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
-              Wednesday, April 12
+              Monday, October 9
             </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Day trip to Landshut{' '}
+                  Day trip to Neuschweinstein and hiking{' '}
                   <span className="font-normal text-neutral-600 lowercase">
                     (all-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Explore the medieval Trausnitz Castle&mdash;the home of the
-                Wittelsbach dynasty.
+                Visit the beautiful Neuschwanstein Castle&mdash; one of the
+                most famous sights in Germany.
               </p>
             </div>
           </div>
           <div>
             <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
-              Thursday, April 13
+              Tuesday, October 10
             </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
@@ -154,81 +188,44 @@ export default function CultureCreatures() {
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Enjoy a day off to complete organisational matters and moving
-                in.
+                Enjoy a day off to complete organisational matters and moving in.
               </p>
             </div>
           </div>
           <div>
             <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
-              Friday, April 14
+              Wednesday, October 11
             </p>
-            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
+            <div className="px-4 py-3 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Munich and campus tour{' '}
+                  Deutsches Museum{' '}
                   <span className="font-normal text-neutral-600 lowercase">
                     (half-day)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Let's explore Munich including the university district and TUM
-                main campus&mdash;with the help of our tutors you'll find your
-                way in no time.
+                Visit Deutsches Museum—one of the largest natural science 
+                museums in the world.
               </p>
             </div>
+          </div>
+          <div>
+            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
+              Thursday, October 12
+            </p>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Classical concert{' '}
+                  Alice in Wonderland{' '}
                   <span className="font-normal text-neutral-600 lowercase">
                     (evening)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Experience a concerto for violin and orchestra (premiere of a
-                composition commissioned by the Bamberg Symphony Orchestra).
-              </p>
-            </div>
-          </div>
-          <div>
-            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
-              Saturday, April 15
-            </p>
-            <div className="px-4 py-3 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
-              <p className="font-normal text-base md:text-lg">
-                <strong className="font-medium text-black">
-                  Hike{' '}
-                  <span className="font-normal text-neutral-600 lowercase">
-                    (all-day)
-                  </span>
-                </strong>
-              </p>
-              <p className="text-neutral-600 text-base md:text-lg">
-                The area surrounding Munich offers incredibly picturesque hiking
-                routes which are enjoyable and beginner friendly. Enjoy
-                magnificent views over Lake Schliersee and Tegernsee.
-              </p>
-            </div>
-          </div>
-          <div>
-            <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
-              Sunday, April 16
-            </p>
-            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
-              <p className="font-normal text-base md:text-lg">
-                <strong className="font-medium text-black">
-                  Museum visit{' '}
-                  <span className="font-normal text-neutral-600 lowercase">
-                    (half-day)
-                  </span>
-                </strong>
-              </p>
-              <p className="text-neutral-600 text-base md:text-lg">
-                Visit Deutsches Museum&mdash;one of the largest natural science
-                museums in the world.
+                Dive into Wonderland: Experience Alice in Wonderland live at the National Theater.
               </p>
             </div>
           </div>
