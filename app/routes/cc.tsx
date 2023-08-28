@@ -55,6 +55,48 @@ export default function CultureCreatures() {
         </div>
       </section>
       <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="relative">
+          <div className="absolute top-0 bottom-0 left-0 right-0">
+            <img
+              className="block h-full w-full object-cover object-bottom"
+              src="/images/cc-group.jpg"
+            />
+          </div>
+          <div className="relative bg-gradient-to-t from-[rgba(0,0,0,0.8)] bg-blend-multiply">
+            <div className="max-w-4xl px-8 pb-12 pt-48 md:px-12 md:pb-12 md:pt-96">
+              <h2 className="mb-4 text-2xl font-medium leading-tight md:mb-6 md:text-4xl md:leading-tight text-white tracking-tight">
+                Magic of Bavaria's Hidden Gems
+              </h2>
+              <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-white text-opacity-80">
+                Culture Creatures will take you to some of the most beautiful places Bavaria can offer.
+                We will visit the legendary Neuschwanstein castle, spend a night in the Alps, enjoy a classical concert and delve into cultural treasures within Deutsches Museum.
+                You can also look forward to a group dinner, fun city rally, board game night, or action-packed sports day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <div className="relative">
+          <div className="absolute top-0 bottom-0 left-0 right-0">
+            <img
+              className="block h-full w-full object-cover object-bottom"
+              src="/images/cc-museum.jpg"
+            />
+          </div>
+          <div className="relative bg-gradient-to-t from-[rgba(0,0,0,0.8)] bg-blend-multiply">
+            <div className="max-w-4xl px-8 pb-12 pt-48 md:px-12 md:pb-12 md:pt-96">
+              <h2 className="mb-4 text-2xl font-medium leading-tight md:mb-6 md:text-4xl md:leading-tight text-white tracking-tight">
+                Friends for the whole semester
+              </h2>
+              <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-white text-opacity-80">
+                Culture Creatures is a wonderful opportunity to meet like-minded people and make friends for the whole semester. Bond with your group during fun activities, create beautiful memories, and kick-start your stay in Munich!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
         <div className="px-8 py-12 md:p-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
             What and when
