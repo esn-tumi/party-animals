@@ -1,18 +1,27 @@
-import pic from '../../public/images/picture.png'
+import dan from '../../public/images/dan.png'
+import matthias from '../../public/images/matthias.png'
+import martin from '../../public/images/martin.png'
+import alissa from '../../public/images/alissia.png'
+import bence from '../../public/images/bence.png'
+import nicolas from '../../public/images/nicolas.png'
+import pia from '../../public/images/pia.png'
+import szilvi from '../../public/images/szilvi.png'
 
 export default function Team() {
     const orga = [
-        { img: pic, name: "Chuck Norris", responsibility: "Making sure time ticks"},
-        { img: pic, name: "Batman", responsibility: "Catching jokers"},
-        { img: pic, name: "Daenerys Targaryen", responsibility: "Burn?"},
+        { img: dan, name: "Dan Bachar", responsibility: "Tech, Logistics, HR, Programm Coordination"},
+        { img: martin, name: "Martin Mocker", responsibility: "Event Coordination"},
+        { img: matthias, name: "Matthias Decarli", responsibility: "Supervising"},
+        { img: szilvi, name: "Szilvia Keszthelyi", responsibility: "Supervisionary"},
+        { img: nicolas, name: "Nicolas Osipenco", responsibility: "Overnight Stay"},
+        { img: bence, name: "Bence Tóth", responsibility: "Finance"},
+
     ];
 
     const tutors = [
-        { img: pic, name: "Everybody else #1", responsibility: "Everything"},
-        { img: pic, name: "Everybody else #2", responsibility: "Everything"},
-        { img: pic, name: "Everybody else #3", responsibility: "Everything"},
-        { img: pic, name: "Everybody else #4", responsibility: "Everything"},
-        { img: pic, name: "Everybody else #5", responsibility: "Everything"},
+        { img: pia, name: "Pia Schmidt", responsibility: "Amazing Design"},
+        { img: alissa, name: "Alissa Schulteß", responsibility: "Beautiful Design"},
+        { img: dan, name: "Everybody else", responsibility: "Everything"},
     ];
 
     const all = [...orga, ...tutors]
