@@ -26,7 +26,7 @@ export default function Index() {
           <div className="relative bg-gradient-to-t from-[rgba(0,26,102,0.8)] bg-blend-multiply">
             <div className="max-w-4xl px-8 pb-12 pt-16 md:px-12 md:pb-12 md:pt-32">
               <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-opacity-60 text-white">
-                Spring 2023
+                Winter 2023
               </p>
               <h1 className="mb-6 text-5xl font-medium leading-2 md:text-7xl md:leading-none tracking-tight text-white ">
                 Orientation <br />
@@ -99,7 +99,7 @@ export default function Index() {
             copious amounts of adult beverages, you'll engage in copious amounts
             of cultural events and activities. The programme is also a great way
             to get to know Munich and make friends. It takes place from April 10
-            to April 16, 2023.
+            to April 16, 2023. ## TODO: Update
           </p>
           <div className="flex flex-col md:flex-row">
             <Link
@@ -124,7 +124,7 @@ export default function Index() {
               <p className="text-green-600 font-medium">
                 Instead of <s className="decoration-2">€150</s>
               </p>
-              <p>April 10&ndash;16, 2023</p>
+              <p>April 10&ndash;16, 2023</p> ## TODO: Update
             </div>
             <div className="flex flex-col md:flex-row">
               <Link
@@ -159,12 +159,12 @@ export default function Index() {
             <h2 className="font-medium leading-tight text-2xl md:leading-tight text-white tracking-tight mb-6">
               Party Animals
             </h2>
-            <p className="font-medium text-6xl text-white mb-2">€119</p>
+            <p className="font-medium text-6xl text-white mb-2">€119</p> ## TODO: Update
             <div className="text-base font-normal leading-snug text-white md:leading-snug mb-8">
               <p className="text-pink-400 font-medium">
-                Instead of <s className="decoration-2">€170</s>
+                Instead of <s className="decoration-2">€170</s> ## TODO: Update
               </p>
-              <p>April 3&ndash;16, 2023</p>
+              <p>October 5&ndash;15, 2023</p>
             </div>
             <div className="flex flex-col md:flex-row">
               <Link
@@ -206,7 +206,7 @@ export default function Index() {
           <div className="relative bg-gradient-to-t from-[rgba(0,0,0,0.8)] bg-blend-multiply">
             <div className="max-w-4xl px-8 pb-12 pt-48 md:px-12 md:pb-12 md:pt-96">
               <h2 className="mb-4 text-2xl font-medium leading-tight md:mb-6 md:text-4xl md:leading-tight text-white tracking-tight">
-                The choice is yours&mdash;sign up before March 15
+                The choice is yours&mdash;sign up before September 16
               </h2>
               <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-white text-opacity-80">
                 Party Animals is for students who enjoy being social, partying
