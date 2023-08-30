@@ -26,7 +26,7 @@ export default function Index() {
           <div className="relative bg-gradient-to-t from-[rgba(0,26,102,0.8)] bg-blend-multiply">
             <div className="max-w-4xl px-8 pb-12 pt-16 md:px-12 md:pb-12 md:pt-32">
               <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-opacity-60 text-white">
-                Spring 2023
+                Autumn 2023
               </p>
               <h1 className="mb-6 text-5xl font-medium leading-2 md:text-7xl md:leading-none tracking-tight text-white ">
                 Orientation <br />
@@ -98,8 +98,8 @@ export default function Index() {
             Party Animals roam free and turn into a Culture Creature. Instead of
             copious amounts of adult beverages, you'll engage in copious amounts
             of cultural events and activities. The programme is also a great way
-            to get to know Munich and make friends. It takes place from April 10
-            to April 16, 2023.
+            to get to know Munich and make friends. It takes place from October 6
+            to October 14, 2023.
           </p>
           <div className="flex flex-col md:flex-row">
             <Link
@@ -119,12 +119,12 @@ export default function Index() {
             <h2 className="font-medium leading-tight text-2xl md:leading-tight text-black tracking-tight mb-6 ">
               Culture Creatures
             </h2>
-            <p className="font-medium text-6xl text-black mb-2">€109</p>
+            <p className="font-medium text-6xl text-black mb-2">€69</p>
             <div className="text-base font-normal leading-snug text-black md:leading-snug mb-8">
               <p className="text-green-600 font-medium">
-                Instead of <s className="decoration-2">€150</s>
+                Instead of <s className="decoration-2">€130</s>
               </p>
-              <p>April 10&ndash;16, 2023</p>
+              <p>October 6&ndash;14, 2023</p>
             </div>
             <div className="flex flex-col md:flex-row">
               <Link
@@ -149,7 +149,7 @@ export default function Index() {
                 </Link>
                 . It does not cover additional drinks and food that you may want
                 to consume during the events. You will join one of two groups of
-                20 students (incl. 3 organisers per group).
+                35 students (incl. 5 organisers per group).
               </p>
             </div>
           </div>
