@@ -184,7 +184,7 @@ export default function Registration() {
               Follow us on{' '}
               <a
                 className="underline hover:text-blue-700 transition-all"
-                href="https://www.instagram.com/tumi.esn/"
+                href="https://www.instagram.com/esn.tumi.orientation.weeks/"
                 target="_blank"
               >
                 Instagram
