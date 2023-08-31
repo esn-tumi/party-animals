@@ -591,7 +591,7 @@ export default function PartyAnimals() {
         </div>
       </section>
       <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden hover-click">
-        <Link to="/qa">
+        <Link to="/registration">
           <div className="relative">
             <div className="absolute top-0 bottom-0 left-0 right-0">
               <img
