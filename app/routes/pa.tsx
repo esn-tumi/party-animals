@@ -333,7 +333,7 @@ export default function PartyAnimals() {
           <p className="max-w-4xl mb-8 font-normal leading-normal text-base md:text-xl md:leading-normal text-neutral-600">
             We are planning this preliminary schedule for you. This will be mainly a
             guide to indicate when the Party Animals events will happen and give
-            you an impression of the time needed. The exact schedule needs to be finished already wtf
+            you an impression of the time needed.
           </p>
           <div>
             <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
