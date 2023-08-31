@@ -355,7 +355,7 @@ export default function PartyAnimals() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Coffee and Cake/Dinner 2.0{' '}
+                  Coffee and Cake{' '}
                   <span className="font-normal text-neutral-600 lowercase">
                     (evening)
                   </span>
