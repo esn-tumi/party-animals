@@ -272,18 +272,6 @@ export default function PartyAnimals() {
               src="/images/tu-film.jpg"
             />
           </div>
-          <div className="relative bg-gradient-to-t from-[rgba(0,0,0,0.8)] bg-blend-multiply">
-            <div className="max-w-4xl px-8 pb-12 pt-48 md:px-12 md:pb-12 md:pt-96">
-              <h2 className="mb-4 text-2xl font-medium leading-tight md:mb-6 md:text-4xl md:leading-tight text-white tracking-tight">
-                Maybe something about the overnight stay in the alps
-              </h2>
-              <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-white text-opacity-80">
-                Text text text text help me @Alissa text text text text text text text text text text text text text text
-                Text text text text help me @Alissa text text text text text text text text text text text text text text
-                Text text text text help me @Alissa text text text text text text text text text text text text text text
-              </p>
-            </div>
-          </div>
         </div>
       </section>
       <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
