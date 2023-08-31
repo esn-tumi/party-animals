@@ -383,19 +383,6 @@ export default function PartyAnimals() {
                 Get to know Munich's student bar scene and combine your (trivia) knowledge as a team and take home the winning prize.
               </p>
             </div>
-            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
-              <p className="font-normal text-base md:text-lg">
-                <strong className="font-medium text-black">
-                  KARAOKE {' '}
-                  <span className="font-normal text-neutral-600 lowercase">
-                    (afternoon)
-                  </span>
-                </strong>
-              </p>
-              <p className="text-neutral-600 text-base md:text-lg">
-                Tired of singing in the shower? Warm up your vocal cords and get yourself ready for an unforgettable karaoke night! And even if you're not much of a singer, you won't be able to resist grabbing the microphone.
-              </p>
-            </div>
           </div>
           <div>
             <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
@@ -428,19 +415,6 @@ export default function PartyAnimals() {
                 yourself ready for an unforgettable karaoke night! And even if
                 you're not much of a singer, you won't be able to resist
                 grabbing the microphone.
-              </p>
-            </div>
-            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
-              <p className="font-normal text-base md:text-lg">
-                <strong className="font-medium text-black">
-                  PUB QUIZ {' '}
-                  <span className="font-normal text-neutral-600 lowercase">
-                    (afternoon)
-                  </span>
-                </strong>
-              </p>
-              <p className="text-neutral-600 text-base md:text-lg">
-              Get to know Munich's student bar scene and combine your (trivia) knowledge as a team and take home the winning prize.
               </p>
             </div>
           </div>
