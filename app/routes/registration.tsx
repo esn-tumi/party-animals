@@ -150,6 +150,29 @@ export default function Registration() {
             </p>
           </div>
         </div>
+        <div className="bg-orange-200 rounded-md md:rounded-lg overflow-hidden">
+          <div className="max-w-4xl p-8 md:p-12">
+            <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
+              Will I receive a confirmation mail after registering successfully?
+            </p>
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
+              No, you won't receive any confirmation email after completing your registration.
+              To check the status of your registration, login on this page and you'll be redirected to the overview.
+            </p>
+          </div>
+        </div>
+        <div className="bg-teal-200 rounded-md md:rounded-lg overflow-hidden">
+          <div className="max-w-4xl p-8 md:p-12">
+            <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
+              How will I know if I got a spot or not?
+            </p>
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
+              If you have been accepted, you'll receive an email and will be invited to pay.
+              If you have not been accepted (yet), you won't receive any email.
+              If all the spots have been given out, you'll receive a respective email
+            </p>
+          </div>
+        </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
         <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
