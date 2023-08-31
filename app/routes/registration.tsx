@@ -32,7 +32,13 @@ export default function Registration() {
             >
               party.animals@esn-tumi.de
             </a>
-            .
+            , or <br />
+            <a
+              className="text-blue-600 underline hover:text-blue-700"
+              href="mailto:culture.creatures@esn-tumi.de?subject=[Culture Creatures] Technical Issue"
+            >
+              culture.creatures@esn-tumi.de
+            </a>
           </p>
         </div>
       </section>
@@ -47,8 +53,8 @@ export default function Registration() {
               Party Animals (October 5&ndash;15, 2023) is designed as the ultimate
               exchange experience. As the name suggests, it is suited for
               students who enjoy being social, partying late at night, and a
-              couple of drinks along the way. Culture Creatures (April
-              10&ndash;16, 2023) is more relaxed and focuses on cultural
+              couple of drinks along the way. Culture Creatures (October
+              6&ndash;14, 2023) is more relaxed and focuses on cultural
               enjoyment.
             </p>
           </div>
@@ -176,19 +182,19 @@ export default function Registration() {
                 <li>
                   Apply before:{' '}
                   <strong className="font-medium">
-                    March 15, 6&nbsp;PM CET
+                    September 16, 6&nbsp;PM CET
                   </strong>
                 </li>
                 <li>
                   First round of admissions:{' '}
                   <strong className="font-medium">
-                    March 17, 6&nbsp;PM CET
+                    September 17, 6&nbsp;PM CET
                   </strong>
                 </li>
                 <li>
                   Second round of admissions:{' '}
                   <strong className="font-medium">
-                    March 20, 6&nbsp;PM CET
+                    September 20, 6&nbsp;PM CET
                   </strong>
                 </li>
               </ul>
