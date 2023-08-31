@@ -123,7 +123,7 @@ export default function RegistrationForm() {
         </h2>
         <label className="relative block h-fit" htmlFor="firstName">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="firstName"
             name="firstName"
             type="text"
@@ -143,7 +143,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="lastName">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="lastName"
             name="lastName"
             type="text"
@@ -163,7 +163,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="callBy">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="callBy"
             name="callBy"
             type="text"
@@ -187,7 +187,7 @@ export default function RegistrationForm() {
             id="gender"
             placeholder="Gender"
             required
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             defaultValue={actionData?.values?.gender}
           >
             <option value="">Select your gender</option>
@@ -208,7 +208,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="email">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="email"
             name="email"
             type="email"
@@ -228,7 +228,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="phone">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="phone"
             name="phone"
             type="tel"
@@ -253,7 +253,7 @@ export default function RegistrationForm() {
             placeholder="Country"
             defaultValue={actionData?.values?.country}
             required
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your home country</option>
             {countries.map((country: { alpha2Code: string; name: string }) => (
@@ -274,7 +274,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="university">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="university"
             name="university"
             type="text"
@@ -298,7 +298,7 @@ export default function RegistrationForm() {
             id="status"
             required
             defaultValue={actionData?.values?.status}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your status</option>
             <option value="l">Local student</option>
@@ -322,7 +322,7 @@ export default function RegistrationForm() {
             id="diet"
             required
             defaultValue={actionData?.values?.diet}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="none">No restrictions</option>
             <option value="vegetarian">I am vegetarian</option>
@@ -346,7 +346,7 @@ export default function RegistrationForm() {
                 name="sectionMember"
                 id="sectionMember"
                 defaultValue={actionData?.values?.sectionMember}
-                className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+                className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
                 onChange={(event) => setEsnMember(event.target.checked)}
               />
               <span className="font-medium text-black">
@@ -363,7 +363,7 @@ export default function RegistrationForm() {
         </div>
         <label className="relative block h-fit" htmlFor="esnSection">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600 disabled:bg-neutral-200"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600 disabled:bg-neutral-200"
             id="esnSection"
             name="esnSection"
             type="text"
@@ -383,7 +383,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="languages">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="languages"
             name="languages"
             type="text"
@@ -410,7 +410,7 @@ export default function RegistrationForm() {
             id="programme"
             required
             defaultValue={actionData?.values?.programme}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your preference</option>
             <option value="pa">Party Animals (€119)</option>
@@ -438,7 +438,7 @@ export default function RegistrationForm() {
             id="oldie"
             required
             defaultValue={actionData?.values?.oldie}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select an option</option>
             <option value="true">Yes, and I need more.</option>
@@ -456,7 +456,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block" htmlFor="expectations">
           <textarea
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="expectations"
             name="expectations"
             rows={4}
@@ -476,7 +476,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block" htmlFor="requests">
           <textarea
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="requests"
             name="requests"
             rows={4}
@@ -504,7 +504,7 @@ export default function RegistrationForm() {
               id="pay"
               required
               defaultValue={actionData?.values?.pay}
-              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+              className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
               I understand that once I receive my spot confirmation, I must pay
@@ -528,7 +528,7 @@ export default function RegistrationForm() {
               id="friends"
               required
               defaultValue={actionData?.values?.friends}
-              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+              className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
               I understand that I cannot influence which team I will be placed
@@ -551,7 +551,7 @@ export default function RegistrationForm() {
               id="refund"
               required
               defaultValue={actionData?.values?.refund}
-              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+              className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
               I understand that the participation fee cannot be refunded if my
@@ -576,7 +576,7 @@ export default function RegistrationForm() {
               id="vax"
               required
               defaultValue={actionData?.values?.vax}
-              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+              className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
               I confirm that I classify as fully vaccinated according to german

@@ -77,7 +77,7 @@ export default function PartyAnimals() {
           </div>
         </div>
       </section>
-      <section className="bg-neutral-200 my-2 md:my-8 rounded-md md:rounded-lg overflow-hidden">
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="px-8 py-12 md:px-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
             8 party animals
@@ -186,7 +186,7 @@ export default function PartyAnimals() {
         </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-orange-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-orange-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12 h-full flex flex-col justify-between">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Party Animals is one of my best memories from Erasmus and I am
@@ -198,7 +198,7 @@ export default function PartyAnimals() {
             </div>
           </div>
         </div>
-        <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-green-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12 h-full flex flex-col justify-between">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               If I could join Party Animals again, I would! I had an absolute
@@ -238,7 +238,7 @@ export default function PartyAnimals() {
         </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-sky-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-sky-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12 h-full flex flex-col justify-between">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Party Animals allowed me to make friends right from the start and
@@ -251,7 +251,7 @@ export default function PartyAnimals() {
             </div>
           </div>
         </div>
-        <div className="bg-pink-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-pink-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12 h-full flex flex-col justify-between">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               If you want to make friends for life and see the real side of

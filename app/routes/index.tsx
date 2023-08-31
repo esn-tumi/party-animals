@@ -114,7 +114,7 @@ export default function Index() {
         </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-neutral-200 order-last md:order-first rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-neutral-200 order-last md:order-first rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <h2 className="font-medium leading-tight text-2xl md:leading-tight text-black tracking-tight mb-6 ">
               Culture Creatures
@@ -148,7 +148,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="bg-black rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-black rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <h2 className="font-medium leading-tight text-2xl md:leading-tight text-white tracking-tight mb-6">
               Party Animals

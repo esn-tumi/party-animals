@@ -441,14 +441,14 @@ export default function AdminAssignments() {
               </div>
               <div className="flex flex-col space-y-2">
                 {assignments[group.id].map((registration) => (
-                  <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-md">
+                  <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-[3rem]">
                     {/* <img
                       className="h-10 w-10 rounded-full"
                       referrerPolicy="no-referrer"
                       src={registration.user.photo}
                       alt={registration.user.firstName}
                     /> */}
-                    <div className="px-3 py-2 rounded-md overflow-hidden w-full">
+                    <div className="px-3 py-2 rounded-[3rem] overflow-hidden w-full">
                       <p
                         className={`${
                           registration.gender !== 'f' &&
@@ -484,7 +484,7 @@ export default function AdminAssignments() {
                         <Popover.Button className="h-full w-full p-2 leading-none text-neutral-600 hover:text-black hover:bg-neutral-300 transition-all">
                           Read
                         </Popover.Button>
-                        <Popover.Panel className="absolute left-1/2 -translate-x-1/2 z-10 mt-2 w-screen max-w-sm p-4 bg-white overflow-hidden rounded-md shadow-lg">
+                        <Popover.Panel className="absolute left-1/2 -translate-x-1/2 z-10 mt-2 w-screen max-w-sm p-4 bg-white overflow-hidden rounded-[3rem] shadow-lg">
                           <div className="relative">
                             <p>{registration.expectations}</p>
                           </div>
@@ -532,8 +532,8 @@ export default function AdminAssignments() {
           {nonAssigned.length !== 0 && (
             <div className="bg-neutral-100 rounded-xl p-4 grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
               {nonAssigned.map((registration) => (
-                <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-md">
-                  <div className="px-3 py-2 rounded-md overflow-hidden w-full">
+                <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-[3rem]">
+                  <div className="px-3 py-2 rounded-[3rem] overflow-hidden w-full">
                     <p
                       className={`${
                         registration.gender !== 'f' &&

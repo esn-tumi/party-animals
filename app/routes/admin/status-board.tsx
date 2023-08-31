@@ -148,7 +148,7 @@ Your TUMi team`);
             <select
               id="status"
               onChange={(event) => setRegistrationStatus(event.target.value)}
-              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={registrationStatus}
             >
               <option value="">All</option>
@@ -165,7 +165,7 @@ Your TUMi team`);
             <select
               id="group"
               onChange={(event) => setGroup(event.target.value)}
-              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={group}
             >
               <option value="">All</option>
@@ -183,7 +183,7 @@ Your TUMi team`);
             <select
               id="paymentStatus"
               onChange={(event) => setPaymentStatus(event.target.value)}
-              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={paymentStatus}
             >
               <option value="">All</option>
@@ -198,7 +198,7 @@ Your TUMi team`);
             <input
               type="tex"
               onChange={(event) => setDeadlineDate(event.target.value)}
-              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={deadlineDate}
             />
             <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">

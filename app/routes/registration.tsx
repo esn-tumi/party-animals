@@ -44,7 +44,7 @@ export default function Registration() {
       </section>
       <Outlet />
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-pink-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-pink-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Which programme is right for me?
@@ -59,7 +59,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-green-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How much is it?
@@ -90,7 +90,7 @@ export default function Registration() {
         </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-sky-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-sky-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Can I be in a group with my friends?
@@ -102,7 +102,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-orange-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-orange-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               What if I cannot attend every event?
@@ -115,7 +115,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-yellow-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-yellow-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How does the application work?
@@ -129,7 +129,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-indigo-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-indigo-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Are there any other options?
@@ -150,7 +150,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-orange-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-orange-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Will I receive a confirmation mail after registering successfully?
@@ -161,7 +161,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-teal-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-teal-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How will I know if I got a spot or not?
@@ -175,7 +175,7 @@ export default function Registration() {
         </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-green-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How can I stay in the loop?
@@ -195,7 +195,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-pink-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-pink-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               What's next?

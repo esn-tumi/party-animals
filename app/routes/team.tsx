@@ -32,7 +32,7 @@ export default function Team() {
     
     for (const [idx, tutor] of all.entries()) {
         aboutUsCards.push(<section key={`tutor${idx}`} className="my-2 md:my-8 grid grid-flow-row gap-x-2 gap-y-2 md:gap-y-8">
-        <div className="bg-white order-last md:order-first rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-white order-last md:order-first rounded-[3rem] md:rounded-[3rem] overflow-hidden">
             <img src={tutor.img} alt="" width="100%"/>
             <div className="p-8 md:p-12">
                 <h2 className="font-medium leading-tight text-2xl md:leading-tight text-black tracking-tight mb-6 ">

@@ -67,7 +67,7 @@ export default function AdminGroups() {
   return (
     <main className="px-2 md:px-8">
       {groups.length !== 0 && (
-        <section className="text-white bg-black min-w-fit rounded-md md:rounded-lg overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+        <section className="text-white bg-black min-w-fit rounded-[3rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
           <h1 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
             Groups
           </h1>
@@ -93,7 +93,7 @@ export default function AdminGroups() {
           <div className="flex gap-4 md:gap-8 w-full items-center">
             <label className="relative block w-3/4 h-fit" htmlFor="lastName">
               <input
-                className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+                className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
                 id="name"
                 name="name"
                 type="text"
@@ -117,7 +117,7 @@ export default function AdminGroups() {
                 id="groupType"
                 required
                 defaultValue={actionData?.values?.groupType}
-                className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+                className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               >
                 <option value="">Select a type</option>
                 <option value={GroupType.PA}>Party Animals</option>
@@ -140,7 +140,7 @@ export default function AdminGroups() {
             </button>
           </div>
           {/*<label
-            className="relative block rounded-lg border-2 border-gray-200 p-3"
+            className="relative block rounded-[3rem] border-2 border-gray-200 p-3"
             htmlFor="lastName"
           >
             <input

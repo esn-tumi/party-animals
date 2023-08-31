@@ -23,7 +23,7 @@ export default function AdminFrame() {
           <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                `block rounded-[3rem] px-3 py-2 hover:text-black transition-all ${
                   isActive ? 'text-black bg-neutral-200' : ''
                 }`
               }
@@ -35,7 +35,7 @@ export default function AdminFrame() {
           <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                `block rounded-[3rem] px-3 py-2 hover:text-black transition-all ${
                   isActive ? 'text-black bg-neutral-200' : ''
                 }`
               }
@@ -47,7 +47,7 @@ export default function AdminFrame() {
           <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                `block rounded-[3rem] px-3 py-2 hover:text-black transition-all ${
                   isActive ? 'text-black bg-neutral-200' : ''
                 }`
               }
@@ -59,7 +59,7 @@ export default function AdminFrame() {
           <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                `block rounded-[3rem] px-3 py-2 hover:text-black transition-all ${
                   isActive ? 'text-black bg-neutral-200' : ''
                 }`
               }
@@ -71,7 +71,7 @@ export default function AdminFrame() {
           <li className="shrink-0">
             <NavLink
               className={({ isActive }) =>
-                `block rounded-lg px-3 py-2 hover:text-black transition-all ${
+                `block rounded-[3rem] px-3 py-2 hover:text-black transition-all ${
                   isActive ? 'text-black bg-neutral-200' : ''
                 }`
               }

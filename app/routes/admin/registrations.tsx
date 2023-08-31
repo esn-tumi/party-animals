@@ -198,7 +198,7 @@ export default function AdminRegistrations() {
 
   return (
     <main className="px-2 md:px-8">
-      <section className="bg-black min-w-fit rounded-md md:rounded-lg overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+      <section className="bg-black min-w-fit rounded-[3rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
         <h1 className="text-2xl mb-6 font-medium text-white">Registrations</h1>
         <ul className="text-white grid gap-6 xl:gap-y-8 grid-cols-2 md:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
           <li className="">
@@ -449,7 +449,7 @@ export default function AdminRegistrations() {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="absolute left-[50%] top-[100%] -translate-x-1/2 -translate-y-full z-20 w-full divide-y divide-neutral-200 rounded-md bg-white shadow-lg focus:outline-none">
+                  <Menu.Items className="absolute left-[50%] top-[100%] -translate-x-1/2 -translate-y-full z-20 w-full divide-y divide-neutral-200 rounded-[3rem] bg-white shadow-lg focus:outline-none">
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
@@ -586,7 +586,7 @@ export default function AdminRegistrations() {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="absolute left-[50%] top-[100%] -translate-x-1/2 -translate-y-full z-20 w-full divide-y divide-neutral-200 rounded-md bg-white shadow-lg focus:outline-none">
+                  <Menu.Items className="absolute left-[50%] top-[100%] -translate-x-1/2 -translate-y-full z-20 w-full divide-y divide-neutral-200 rounded-[3rem] bg-white shadow-lg focus:outline-none">
                     {groups.length !== 0 ? (
                       <div className="py-1">
                         {groups.map((group) => (
