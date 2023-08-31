@@ -35,7 +35,7 @@ export default function PartyAnimals() {
               <p className="mb-8 font-normal text-base leading-normal md:text-xl md:leading-normal text-white text-opacity-80">
                 Party Animals is the ultimate orientation program for exchange
                 and international students who want to dive into Munich's
-                student (night) life. Join one of eight teams of 25 students,
+                student (night) life. Join one of eight teams of 20 students,
                 make new friends, and get to know the ins and outs of the city
                 together. The programme is designed to be intense and takes
                 place from October 5 to October 15, 2023.
