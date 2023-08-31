@@ -13,7 +13,7 @@
     "docker:down": "docker-compose -f stack.yml down",
     "prisma:push": "yarn prisma db push",
     "prisma:studio": "yarn prisma studio",
-    "start": "remix-serve build"
+    "start": "remix-serve build && yarn run prisma:push"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
