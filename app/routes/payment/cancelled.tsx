@@ -3,7 +3,7 @@ import { Link } from '@remix-run/react';
 export default function Cancelled() {
   return (
     <div className="w-full max-w-7xl m-auto px-2 md:px-8">
-      <div className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <div className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <h1 className="mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight text-black">
             Payment cancelled!

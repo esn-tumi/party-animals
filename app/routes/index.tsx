@@ -9,7 +9,7 @@ export function links() {
 export default function Index() {
   return (
     <main className="max-w-7xl m-auto px-2 md:px-8">
-      <section className="my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-0 right-0 bg-blue-600">
             <img
@@ -53,7 +53,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="bg-[#330014] my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-[#330014] my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-pink-400 ">
             The ultimate exchange experience
@@ -83,7 +83,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="bg-[#00260F] my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-[#00260F] my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-green-400 ">
             Not a big party person?
@@ -186,7 +186,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-0 right-0">
             <img

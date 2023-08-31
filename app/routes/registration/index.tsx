@@ -22,7 +22,7 @@ export let loader: LoaderFunction = async ({ request }) => {
 
 export default function RegistrationLogin() {
   return (
-    <section className="bg-black my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+    <section className="bg-black my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
       <div className="max-w-4xl px-8 py-12 md:p-12">
         <p className="mb-1 text-sm md:text-base font-black tracking-wide text-opacity-60 text-white">
           WELCOME TO TUMi
@@ -46,7 +46,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
     <div className="w-full max-w-7xl m-auto">
-      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
             Error

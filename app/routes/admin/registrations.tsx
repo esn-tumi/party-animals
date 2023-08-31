@@ -278,7 +278,7 @@ export default function AdminRegistrations() {
         {registrations.map((registration) => (
           <div
             key={registration.id}
-            className={`flex flex-col rounded-[2.25rem] p-6 w-full h-fit ${(() => {
+            className={`flex flex-col rounded-[3rem] p-6 w-full h-fit ${(() => {
               if (registration.registrationStatus === 'ACCEPTED')
                 return 'bg-green-200';
               if (registration.registrationStatus === 'REJECTED' || 'CANCELLED')
@@ -648,7 +648,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
     <div className="w-full max-w-7xl m-auto px-2 md:px-8">
-      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
             Error

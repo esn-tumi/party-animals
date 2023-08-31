@@ -49,7 +49,7 @@ export default function Team() {
     }
 
     return (
-        <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+        <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
             <div className="px-8 py-12 md:p-12">
                 <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
                 The organizing team
