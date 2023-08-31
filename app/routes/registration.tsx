@@ -220,6 +220,12 @@ export default function Registration() {
                     September 20, 6&nbsp;PM CET
                   </strong>
                 </li>
+                <li>
+                  Rejection mail for everybody who (sadly) couldn't get a spot:{' '}
+                  <strong className="font-medium">
+                    September 24, 6&nbsp;PM CET
+                  </strong>
+                </li>
               </ul>
               Check your e-mail to confirm your registration.
             </p>
