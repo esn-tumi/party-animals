@@ -211,7 +211,7 @@ export default function Registration() {
                 <li>
                   First round of admissions:{' '}
                   <strong className="font-medium">
-                    September 17, 6&nbsp;PM CET
+                    September 18, 6&nbsp;PM CET
                   </strong>
                 </li>
                 <li>
