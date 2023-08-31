@@ -120,12 +120,6 @@ export default function Index() {
               Culture Creatures
             </h2>
             <p className="font-medium text-6xl text-black mb-2">€69</p>
-            <div className="text-base font-normal leading-snug text-black md:leading-snug mb-8">
-              <p className="text-green-600 font-medium">
-                Instead of <s className="decoration-2">€130</s>
-              </p>
-              <p>October 6&ndash;14, 2023</p>
-            </div>
             <div className="flex flex-col md:flex-row">
               <Link
                 className="shrink-0 h-fit overflow-hidden inline-block leading-none rounded-xl bg-white text-black border border-neutral-300 hover:bg-neutral-300 transition-all px-4 py-2 focus:outline-none focus:ring"
@@ -159,11 +153,8 @@ export default function Index() {
             <h2 className="font-medium leading-tight text-2xl md:leading-tight text-white tracking-tight mb-6">
               Party Animals
             </h2>
-            <p className="font-medium text-6xl text-white mb-2">€119</p> ## TODO: Update
+            <p className="font-medium text-6xl text-white mb-2">€99</p>
             <div className="text-base font-normal leading-snug text-white md:leading-snug mb-8">
-              <p className="text-pink-400 font-medium">
-                Instead of <s className="decoration-2">€170</s> ## TODO: Update
-              </p>
               <p>October 5&ndash;15, 2023</p>
             </div>
             <div className="flex flex-col md:flex-row">
@@ -189,7 +180,7 @@ export default function Index() {
                 </Link>
                 . It does not cover additional drinks and food that you may want
                 to consume during the events. You will join one of eight groups
-                of 25 students (incl. five organisers per group).
+                of 20 students (incl. five organisers per group).
               </p>
             </div>
           </div>
