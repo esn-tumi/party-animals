@@ -72,8 +72,7 @@ export default function Registration() {
               >
                 Party Animals
               </Link>{' '}
-              package is <s className="decoration-2">€170</s> €119 (only €8.50
-              per day). This covers all activities in the two-week programme
+              package is €99. This covers all activities in the programme
               schedule.{' '}
               <Link
                 className="underline hover:text-blue-700 transition-all"
@@ -81,9 +80,9 @@ export default function Registration() {
               >
                 Culture Creatures
               </Link>{' '}
-              is <s className="decoration-2">€150</s> €109 for its weeklong
-              schedule. Neither of the programmes include local transportation
-              within Munich or any additional food and drinks you might want to
+              is €69 for its weeklong
+              schedule. Neither of the programmes include transportation
+              within or outside Munich (we expect you to have Deutschlandticket) or any additional food and drinks you might want to
               consume during the events.
             </p>
           </div>
@@ -169,7 +168,7 @@ export default function Registration() {
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
               If you have been accepted, you'll receive an email and will be invited to pay.
               If you have not been accepted (yet), you won't receive any email.
-              If all the spots have been given out, you'll receive a respective email
+              If all the spots have been given out, you'll receive a respective email.
             </p>
           </div>
         </div>
