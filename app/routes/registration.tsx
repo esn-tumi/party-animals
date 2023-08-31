@@ -200,7 +200,7 @@ export default function Registration() {
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               What's next?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
+            <div className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
               <ul className="list-none">
                 <li>
                   Apply before:{' '}
@@ -228,7 +228,7 @@ export default function Registration() {
                 </li>
               </ul>
               Check your e-mail to confirm your registration.
-            </p>
+            </div>
           </div>
         </div>
       </section>
