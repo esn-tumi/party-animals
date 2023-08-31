@@ -1,11 +1,13 @@
 import dan from '../../public/images/dan.png'
 import matthias from '../../public/images/matthias.png'
 import martin from '../../public/images/martin.png'
-import alissa from '../../public/images/alissia.png'
+import alissa from '../../public/images/alissa.png'
 import bence from '../../public/images/bence.png'
 import nicolas from '../../public/images/nicolas.png'
 import pia from '../../public/images/pia.png'
 import szilvi from '../../public/images/szilvi.png'
+import alphar from '../../public/images/alphar.png'
+import samuel from '../../public/images/samuel.png'
 
 export default function Team() {
     const orga = [
@@ -21,7 +23,8 @@ export default function Team() {
     const tutors = [
         { img: pia, name: "Pia Schmidt", responsibility: "Amazing Design"},
         { img: alissa, name: "Alissa Schulteß", responsibility: "Beautiful Design"},
-        { img: dan, name: "Everybody else", responsibility: "Everything"},
+        { img: alphar, name: "Alphar Abdugeni", responsibility: "Innovative Design"},
+        { img: samuel, name: "Samuel Juhasz", responsibility: "HR"},
     ];
 
     const all = [...orga, ...tutors]
