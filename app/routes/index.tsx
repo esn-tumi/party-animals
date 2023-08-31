@@ -146,7 +146,7 @@ export default function Index() {
                 </Link>
                 . It does not cover additional drinks and food that you may want
                 to consume during the events. You will join one of two groups of
-                35 students (incl. 5 organisers per group).
+                35 students (incl. five organisers per group).
               </p>
             </div>
           </div>
