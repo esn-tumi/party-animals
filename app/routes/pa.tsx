@@ -344,7 +344,7 @@ export default function PartyAnimals() {
                 <strong className="font-medium text-black">
                   Kickoff{' '}
                   <span className="font-normal text-neutral-600 lowercase">
-                    (afternoon)
+                    (evening)
                   </span>
                 </strong>
               </p>
@@ -375,7 +375,7 @@ export default function PartyAnimals() {
                 <strong className="font-medium text-black">
                   PUB QUIZ {' '}
                   <span className="font-normal text-neutral-600 lowercase">
-                    (afternoon)
+                    (evening)
                   </span>
                 </strong>
               </p>
@@ -406,7 +406,7 @@ export default function PartyAnimals() {
                 <strong className="font-medium text-black">
                   Karaoke{' '}
                   <span className="font-normal text-neutral-600 lowercase">
-                    (afternoon)
+                    (evening)
                   </span>
                 </strong>
               </p>
@@ -499,7 +499,7 @@ export default function PartyAnimals() {
                 <strong className="font-medium text-black">
                   Kiosk/Pub Crawl{' '}
                   <span className="font-normal text-neutral-600 lowercase">
-                    (afternoon)
+                    (evening)
                   </span>
                 </strong>
               </p>
