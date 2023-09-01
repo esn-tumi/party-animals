@@ -538,19 +538,6 @@ export default function PartyAnimals() {
                 Let’s gather for a nice savory dinner, where everyone brings a meal/dish to share, creating a diverse and communal dining experience.
               </p>
             </div>
-            <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
-              <p className="font-normal text-base md:text-lg">
-                <strong className="font-medium text-black">
-                  Club Party {' '}
-                  <span className="font-normal text-neutral-600 lowercase">
-                    (night)
-                  </span>
-                </strong>
-              </p>
-              <p className="text-neutral-600 text-base md:text-lg">
-              ...a big Party! How could we claim to be Party Animals if we didn't have another party?!
-              </p>
-            </div>
           </div>
           <div>
             <p className="mb-3 mt-6 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
