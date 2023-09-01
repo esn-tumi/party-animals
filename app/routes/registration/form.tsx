@@ -465,7 +465,7 @@ export default function RegistrationForm() {
             placeholder="Expectations"
           />
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
-            My expectations for the programme
+            Name two things that would make the program unforgettable for you
           </span>
           {actionData?.errors.expectations ? (
             <ValidationMessage
@@ -484,7 +484,7 @@ export default function RegistrationForm() {
             placeholder="Requests"
           />
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
-            Special requests
+            Special requests, T-Shirt size, your heart's deepest wishes
           </span>
           {actionData?.errors.requests ? (
             <ValidationMessage
