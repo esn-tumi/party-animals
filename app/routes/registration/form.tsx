@@ -630,7 +630,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
             >
               party.animals@esn-tumi.de
             </a>
-            , or <br />
+            , or
             <a
               className="text-blue-600 underline hover:text-blue-700"
               href="mailto:culture.creatures@esn-tumi.de?subject=[Culture Creatures] Technical Issue"
