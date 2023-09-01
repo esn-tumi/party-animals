@@ -44,10 +44,10 @@ export default function RegistrationForm() {
   const [esnMember, setEsnMember] = useState(false);
   const transition = useTransition();
   const actionData = useActionData();
-  const registrationCloseDate = new Date('2023-03-15');
+  const registrationCloseDate = new Date('2023-09-16');
   const now = new Date();
   const registrationClosed = now > registrationCloseDate;
-  if (now > new Date('2023-03-31'))
+  if (now > new Date('2023-09-31'))
     return (
       <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:px-12">
@@ -58,7 +58,7 @@ export default function RegistrationForm() {
             Registration
           </h2>
           <p className="font-normal text-lg leading-normal md:text-xl md:leading-normal text-neutral-600">
-            The registration deadline for the spring 2023 orientation programmes
+            The registration deadline for the autumn 2023 orientation programmes
             has passed. You can still take part in the{' '}
             <a
               href="https:/tumi.esn.world/events"
@@ -413,8 +413,8 @@ export default function RegistrationForm() {
             className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your preference</option>
-            <option value="pa">Party Animals (€119)</option>
-            <option value="cc">Culture Creatures (€109)</option>
+            <option value="pa">Party Animals (€99)</option>
+            <option value="cc">Culture Creatures (€69)</option>
             <option value="pa-cc">
               I prefer Party Animals, but am open to join Culture Creatures.
             </option>
@@ -508,7 +508,7 @@ export default function RegistrationForm() {
             />
             <span className="text-black font-medium">
               I understand that once I receive my spot confirmation, I must pay
-              the programme fee (€109 for Culture Creatures or €119 for Party
+              the programme fee (€69 for Culture Creatures or €99 for Party
               Animals) within 24 hours. Otherwise, my spot will expire.
             </span>
           </div>
@@ -625,10 +625,17 @@ export function ErrorBoundary({ error }: { error: Error }) {
             Oops! We had a problem. You can try refreshing the page or contact
             us at{' '}
             <a
-              href="mailto:party.animals@esn-tumi.de"
+              href="mailto:party.animals@esn-tumi.de?subject=[Party Animals] Technical Issue"
               className="underline text-blue-600 transition-all hover:text-blue-700"
             >
               party.animals@esn-tumi.de
+            </a>
+            , or <br />
+            <a
+              className="text-blue-600 underline hover:text-blue-700"
+              href="mailto:culture.creatures@esn-tumi.de?subject=[Culture Creatures] Technical Issue"
+            >
+              culture.creatures@esn-tumi.de
             </a>
             . Please send the following error message along with your request:
           </p>
