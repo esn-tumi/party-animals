@@ -27,7 +27,7 @@
     "react-dom": "^18.2.0",
     "remix-auth": "^3.4.0",
     "remix-auth-auth0": "1.5.1",
-    "stripe": "^10.17.0",
+    "stripe": "^13.4.0",
     "v8n": "^1.5.1"
   },
   "devDependencies": {
