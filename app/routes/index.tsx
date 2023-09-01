@@ -104,8 +104,7 @@ export default function Index() {
           <div className="flex flex-col md:flex-row">
             <Link
               className="shrink-0 h-fit overflow-hidden inline-block leading-none rounded-xl bg-green-200 text-black hover:bg-green-300 transition-all px-4 py-2 focus:outline-none focus:ring"
-              to="/cc"
-            >
+              to="/cc">
               <span className="block font-medium text-lg text-center">
                 Learn more
               </span>
