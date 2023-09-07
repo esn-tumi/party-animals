@@ -151,27 +151,27 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  City ralley{' '}
+                  A day in Munich{' '}
                   <span className="font-normal text-neutral-600 lowercase">
                     (morning)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Explore Munich through fun challenges&mdash;you'll enjoy time with your group and find your way around Munich.
+                Explore Munich with the help of our tutors;you'll enjoy time with your group and find your way around the city.
               </p>
             </div>
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Dinner picnic{' '}
+                  Grill dinner{' '}
                   <span className="font-normal text-neutral-600 lowercase">
                     (evening)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Enjoy a great meal in the beautiful English Garden at the 
+                Enjoy a great grill dinner in the beautiful English Garden at the 
                 heart of Munich.
               </p>
             </div>
@@ -226,7 +226,7 @@ export default function CultureCreatures() {
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                We know that you just moved in&mdash;You deserve a day off to complete organisational matters.
+                Enjoy a day off to complete organisational matters and moving in.
               </p>
             </div>
           </div>
@@ -251,14 +251,14 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Ballroom dance evening{' '}
+                  Games night with karaoke{' '}
                   <span className="font-normal text-neutral-600 lowercase">
                     (evening)
                   </span>
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Dress up and enjoy a night full of dance!
+                Join us for a night of gaming and singing your heart out!
               </p>
             </div>
           </div>
@@ -294,7 +294,8 @@ export default function CultureCreatures() {
                 </strong>
               </p>
               <p className="text-neutral-600 text-base md:text-lg">
-                Experience a beautiful concert of a symphonical orchestra.
+                Enjoy an evening of timeless music by the symphonical
+                orchestra.
               </p>
             </div>
           </div>
@@ -305,7 +306,7 @@ export default function CultureCreatures() {
             <div className="px-4 py-3 mb-4 grid grid-flow-row grid-cols-1 sm:p-4 sm:grid-cols-2 sm:gap-4 rounded-xl bg-neutral-100">
               <p className="font-normal text-base md:text-lg">
                 <strong className="font-medium text-black">
-                  Group time{' '}
+                  Farewell{' '}
                   <span className="font-normal text-neutral-600 lowercase">
                     (half-day)
                   </span>
