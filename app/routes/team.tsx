@@ -1,5 +1,5 @@
-import dan from '../../public/images/dan_crop.png'
-import matthias from '../../public/images/matthias_crop.png'
+import dan from '../../public/images/dan.png'
+import matthias from '../../public/images/matthias_crop.jpeg'
 import martin from '../../public/images/martin_crop.jpg'
 import alissa from '../../public/images/alissa.png'
 import bence from '../../public/images/bence.png'
@@ -21,7 +21,7 @@ export default function Team() {
         { img: pia, name: "Pia Schmitzer", responsibility: "Design & PR"},
         { img: alissa, name: "Alissa Schulteß", responsibility: "Design, PR"},
         { img: alphar, name: "Alphar Abdugeni", responsibility: "Design, PR"},
-        { img: samuel, name: "Samuel Juhasz", responsibility: "HR"},
+        { img: samuel, name: "Samuel Juhasz", responsibility: "HR"}, 
         { img: bence, name: "Bence Tóth", responsibility: "Finance"},
         { img: nicolas, name: "Nicolas Osipenco", responsibility: "Overnight Stay"},
     ];
