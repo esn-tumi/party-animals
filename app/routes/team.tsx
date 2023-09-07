@@ -1,6 +1,6 @@
-import dan from '../../public/images/dan.png'
-import matthias from '../../public/images/matthias.png'
-import martin from '../../public/images/martin.png'
+import dan from '../../public/images/dan_crop.png'
+import matthias from '../../public/images/matthias_crop.png'
+import martin from '../../public/images/martin_crop.jpg'
 import alissa from '../../public/images/alissa.png'
 import bence from '../../public/images/bence.png'
 import nicolas from '../../public/images/nicolas.png'
@@ -11,20 +11,19 @@ import samuel from '../../public/images/samuel.png'
 
 export default function Team() {
     const orga = [
-        { img: dan, name: "Dan Bachar", responsibility: "Tech, Logistics, HR, Programm Coordination"},
-        { img: martin, name: "Martin Mocker", responsibility: "Event Coordination"},
-        { img: matthias, name: "Matthias Decarli", responsibility: "Supervising"},
-        { img: szilvi, name: "Szilvia Keszthelyi", responsibility: "Supervisionary"},
-        { img: nicolas, name: "Nicolas Osipenco", responsibility: "Overnight Stay"},
-        { img: bence, name: "Bence Tóth", responsibility: "Finance"},
-
+    { img: matthias, name: "Matthias Decarli", responsibility: "Lead, Supervising"},
+    { img: szilvi, name: "Szilvia Keszthelyi", responsibility: "Lead, Supervising, Internal HR"},
+    { img: martin, name: "Martin Mocker", responsibility: "Lead, Event Coordination"},
+        { img: dan, name: "Dan Bachar", responsibility: "IT, General Organization"},
     ];
 
     const tutors = [
         { img: pia, name: "Pia Schmitzer", responsibility: "Design & PR"},
-        { img: alissa, name: "Alissa Schulteß", responsibility: "Design & PR"},
-        { img: alphar, name: "Alphar Abdugeni", responsibility: "Design & PR"},
+        { img: alissa, name: "Alissa Schulteß", responsibility: "Design, PR"},
+        { img: alphar, name: "Alphar Abdugeni", responsibility: "Design, PR"},
         { img: samuel, name: "Samuel Juhasz", responsibility: "HR"},
+        { img: bence, name: "Bence Tóth", responsibility: "Finance"},
+        { img: nicolas, name: "Nicolas Osipenco", responsibility: "Overnight Stay"},
     ];
 
     const all = [...orga, ...tutors]
@@ -33,7 +32,13 @@ export default function Team() {
     for (const [idx, tutor] of all.entries()) {
         aboutUsCards.push(<section key={`tutor${idx}`} className="my-2 md:my-8 grid grid-flow-row gap-x-2 gap-y-2 md:gap-y-8">
         <div className="bg-white order-last md:order-first rounded-[3rem] md:rounded-[3rem] overflow-hidden">
-            <img src={tutor.img} alt="" width="100%"/>
+            <div className="image-container" style={{ width: '100%', height: '500px', overflow: 'hidden'  }}>
+          <img
+            src={tutor.img}
+            alt=""
+            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          />
+        </div>
             <div className="p-8 md:p-12">
                 <h2 className="font-medium leading-tight text-2xl md:leading-tight text-black tracking-tight mb-6 ">
                 {tutor.name.toUpperCase()}
