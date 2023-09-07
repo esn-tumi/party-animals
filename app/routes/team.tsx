@@ -21,7 +21,7 @@ export default function Team() {
     ];
 
     const tutors = [
-        { img: pia, name: "Pia Schmidt", responsibility: "Design & PR"},
+        { img: pia, name: "Pia Schmitzer", responsibility: "Design & PR"},
         { img: alissa, name: "Alissa Schulteß", responsibility: "Design & PR"},
         { img: alphar, name: "Alphar Abdugeni", responsibility: "Design & PR"},
         { img: samuel, name: "Samuel Juhasz", responsibility: "HR"},
