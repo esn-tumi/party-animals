@@ -44,10 +44,10 @@ export default function RegistrationForm() {
   const [esnMember, setEsnMember] = useState(false);
   const transition = useTransition();
   const actionData = useActionData();
-  const registrationCloseDate = new Date('2023-09-16');
+  const registrationCloseDate = new Date('2023-10-16');
   const now = new Date();
   const registrationClosed = now > registrationCloseDate;
-  if (now > new Date('2023-09-31'))
+  if (now > registrationCloseDate)
     return (
       <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:px-12">
