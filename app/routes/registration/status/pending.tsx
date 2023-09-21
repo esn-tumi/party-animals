@@ -23,7 +23,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 export default function RegistrationStatusPending() {
   const registration = useLoaderData<Registration & { user: User }>();
   return (
-    <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+    <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
       <div className="max-w-4xl px-8 py-12 md:p-12">
         <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
           Registration complete
@@ -34,8 +34,8 @@ export default function RegistrationStatusPending() {
         <p className="mb-6 font-normal text-base leading-normal md:text-xl md:leading-normal text-neutral-600">
           You have signed up successfully. We will inform you during the
           admission rounds whether there is a spot for you. The admission rounds
-          are on <span className="text-black">Friday, March 17</span> and{' '}
-          <span className="text-black">Monday, March 20</span>. Do not forget to
+          are on <span className="text-black">Monday, September 18</span> and{' '}
+          <span className="text-black">Wednesday, September 20</span>. Do not forget to
           check your e-mail or this page to see if you got a spot. Otherwise you
           might miss your payment window.
         </p>
@@ -44,6 +44,12 @@ export default function RegistrationStatusPending() {
           and not immediately after this initial registration. If you see this
           message, your registration was successful. In case anything changes
           for you (incl. phone number or email) please reach out to us via{' '}
+          <a
+            className="text-blue-600 underline hover:text-blue-700"
+            href="mailto:party.animals@esn-tumi.de?subject=[Party Animals] Registration Question"
+          >
+            party.animals@esn-tumi.de
+          </a>{' '} or {' '}
           <a
             className="text-blue-600 underline hover:text-blue-700"
             href="mailto:party.animals@esn-tumi.de?subject=[Party Animals] Registration Question"
@@ -61,7 +67,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
     <div className="w-full max-w-7xl m-auto">
-      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
             Error

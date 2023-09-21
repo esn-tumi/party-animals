@@ -139,7 +139,7 @@ Your TUMi team`);
   };
   return (
     <main className="px-2 md:px-8">
-      <section className="text-black bg-neutral-200 min-w-fit rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+      <section className="text-black bg-neutral-200 min-w-fit rounded-[3rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
         <h1 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
           Registration Status Board
         </h1>
@@ -148,7 +148,7 @@ Your TUMi team`);
             <select
               id="status"
               onChange={(event) => setRegistrationStatus(event.target.value)}
-              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={registrationStatus}
             >
               <option value="">All</option>
@@ -165,7 +165,7 @@ Your TUMi team`);
             <select
               id="group"
               onChange={(event) => setGroup(event.target.value)}
-              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={group}
             >
               <option value="">All</option>
@@ -183,7 +183,7 @@ Your TUMi team`);
             <select
               id="paymentStatus"
               onChange={(event) => setPaymentStatus(event.target.value)}
-              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={paymentStatus}
             >
               <option value="">All</option>
@@ -198,7 +198,7 @@ Your TUMi team`);
             <input
               type="tex"
               onChange={(event) => setDeadlineDate(event.target.value)}
-              className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+              className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
               defaultValue={deadlineDate}
             />
             <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
@@ -207,7 +207,7 @@ Your TUMi team`);
           </label>
         </div>
       </section>
-      <section className="w-full text-black bg-neutral-200 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+      <section className="w-full text-black bg-neutral-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
         <h2 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
           Selected Registrations{' '}
           <span className="text-neutral-600">
@@ -271,7 +271,7 @@ Your TUMi team`);
           </table>
         </div>
       </section>
-      <section className="text-black bg-neutral-200 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+      <section className="text-black bg-neutral-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
         <h2 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
           Selected Mails{' '}
           <span className="text-neutral-600">
@@ -282,7 +282,7 @@ Your TUMi team`);
           {filteredRegistrations.map((r) => r.user.email).join(';')}
         </pre>
       </section>
-      <section className="text-black bg-neutral-200 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+      <section className="text-black bg-neutral-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
         <h2 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
           Selected IDs{' '}
           <span className="text-neutral-600">
@@ -301,7 +301,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
     <div className="w-full max-w-7xl m-auto px-2 md:px-8">
-      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
             Error

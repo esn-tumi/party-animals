@@ -9,7 +9,7 @@ export function links() {
 export default function Index() {
   return (
     <main className="max-w-7xl m-auto px-2 md:px-8">
-      <section className="my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-0 right-0 bg-blue-600">
             <img
@@ -26,7 +26,7 @@ export default function Index() {
           <div className="relative bg-gradient-to-t from-[rgba(0,26,102,0.8)] bg-blend-multiply">
             <div className="max-w-4xl px-8 pb-12 pt-16 md:px-12 md:pb-12 md:pt-32">
               <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-opacity-60 text-white">
-                Spring 2023
+                Autumn 2023
               </p>
               <h1 className="mb-6 text-5xl font-medium leading-2 md:text-7xl md:leading-none tracking-tight text-white ">
                 Orientation <br />
@@ -53,7 +53,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="bg-[#330014] my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-[#330014] my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-pink-400 ">
             The ultimate exchange experience
@@ -66,10 +66,10 @@ export default function Index() {
           <p className="mb-8 font-normal text-base leading-normal md:text-xl md:leading-normal text-pink-400">
             Party Animals is the ultimate orientation program for exchange and
             international students who want to dive into Munich's student
-            (night) life. Join one of eight teams of 25 students, make new
+            (night) life. Join one of eight teams of 20 students, make new
             friends, and get to know the ins and outs of the city together. The
-            programme is designed to be intense and takes place from April 3 to
-            April 16, 2023.
+            programme is designed to be intense and takes place from October 5 to
+            October 15, 2023.
           </p>
           <div className="flex flex-col md:flex-row">
             <Link
@@ -83,7 +83,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section className="bg-[#00260F] my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-[#00260F] my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-green-400 ">
             Not a big party person?
@@ -98,14 +98,13 @@ export default function Index() {
             Party Animals roam free and turn into a Culture Creature. Instead of
             copious amounts of adult beverages, you'll engage in copious amounts
             of cultural events and activities. The programme is also a great way
-            to get to know Munich and make friends. It takes place from April 10
-            to April 16, 2023.
+            to get to know Munich and make friends. It takes place from October 6
+            to October 14, 2023.
           </p>
           <div className="flex flex-col md:flex-row">
             <Link
               className="shrink-0 h-fit overflow-hidden inline-block leading-none rounded-xl bg-green-200 text-black hover:bg-green-300 transition-all px-4 py-2 focus:outline-none focus:ring"
-              to="/cc"
-            >
+              to="/cc">
               <span className="block font-medium text-lg text-center">
                 Learn more
               </span>
@@ -114,17 +113,14 @@ export default function Index() {
         </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-neutral-200 order-last md:order-first rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-neutral-200 order-last md:order-first rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <h2 className="font-medium leading-tight text-2xl md:leading-tight text-black tracking-tight mb-6 ">
               Culture Creatures
             </h2>
-            <p className="font-medium text-6xl text-black mb-2">€109</p>
+            <p className="font-medium text-6xl text-black mb-2">€69</p>
             <div className="text-base font-normal leading-snug text-black md:leading-snug mb-8">
-              <p className="text-green-600 font-medium">
-                Instead of <s className="decoration-2">€150</s>
-              </p>
-              <p>April 10&ndash;16, 2023</p>
+            <p>October 6&ndash;14, 2023</p>
             </div>
             <div className="flex flex-col md:flex-row">
               <Link
@@ -149,22 +145,19 @@ export default function Index() {
                 </Link>
                 . It does not cover additional drinks and food that you may want
                 to consume during the events. You will join one of two groups of
-                20 students (incl. 3 organisers per group).
+                35 students (incl. five organisers per group).
               </p>
             </div>
           </div>
         </div>
-        <div className="bg-black rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-black rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <h2 className="font-medium leading-tight text-2xl md:leading-tight text-white tracking-tight mb-6">
               Party Animals
             </h2>
-            <p className="font-medium text-6xl text-white mb-2">€119</p>
+            <p className="font-medium text-6xl text-white mb-2">€99</p>
             <div className="text-base font-normal leading-snug text-white md:leading-snug mb-8">
-              <p className="text-pink-400 font-medium">
-                Instead of <s className="decoration-2">€170</s>
-              </p>
-              <p>April 3&ndash;16, 2023</p>
+              <p>October 5&ndash;15, 2023</p>
             </div>
             <div className="flex flex-col md:flex-row">
               <Link
@@ -189,13 +182,13 @@ export default function Index() {
                 </Link>
                 . It does not cover additional drinks and food that you may want
                 to consume during the events. You will join one of eight groups
-                of 25 students (incl. five organisers per group).
+                of 20 students (incl. five organisers per group).
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-0 right-0">
             <img
@@ -206,7 +199,7 @@ export default function Index() {
           <div className="relative bg-gradient-to-t from-[rgba(0,0,0,0.8)] bg-blend-multiply">
             <div className="max-w-4xl px-8 pb-12 pt-48 md:px-12 md:pb-12 md:pt-96">
               <h2 className="mb-4 text-2xl font-medium leading-tight md:mb-6 md:text-4xl md:leading-tight text-white tracking-tight">
-                The choice is yours&mdash;sign up before March 15
+                The choice is yours&mdash;sign up before September 16
               </h2>
               <p className="font-normal text-base leading-normal md:text-xl md:leading-normal text-white text-opacity-80">
                 Party Animals is for students who enjoy being social, partying

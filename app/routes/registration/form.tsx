@@ -44,12 +44,12 @@ export default function RegistrationForm() {
   const [esnMember, setEsnMember] = useState(false);
   const transition = useTransition();
   const actionData = useActionData();
-  const registrationCloseDate = new Date('2023-03-15');
+  const registrationCloseDate = new Date('2023-10-16');
   const now = new Date();
   const registrationClosed = now > registrationCloseDate;
-  if (now > new Date('2023-03-31'))
+  if (now > registrationCloseDate)
     return (
-      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:px-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
             Application Closed
@@ -58,7 +58,7 @@ export default function RegistrationForm() {
             Registration
           </h2>
           <p className="font-normal text-lg leading-normal md:text-xl md:leading-normal text-neutral-600">
-            The registration deadline for the spring 2023 orientation programmes
+            The registration deadline for the autumn 2023 orientation programmes
             has passed. You can still take part in the{' '}
             <a
               href="https:/tumi.esn.world/events"
@@ -73,7 +73,7 @@ export default function RegistrationForm() {
       </section>
     );
   return (
-    <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+    <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
       <div className="max-w-4xl px-8 pt-12 md:px-12">
         <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
           Fill out the form
@@ -123,7 +123,7 @@ export default function RegistrationForm() {
         </h2>
         <label className="relative block h-fit" htmlFor="firstName">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="firstName"
             name="firstName"
             type="text"
@@ -143,7 +143,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="lastName">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="lastName"
             name="lastName"
             type="text"
@@ -163,7 +163,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="callBy">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="callBy"
             name="callBy"
             type="text"
@@ -187,7 +187,7 @@ export default function RegistrationForm() {
             id="gender"
             placeholder="Gender"
             required
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             defaultValue={actionData?.values?.gender}
           >
             <option value="">Select your gender</option>
@@ -208,7 +208,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="email">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="email"
             name="email"
             type="email"
@@ -228,7 +228,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="phone">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="phone"
             name="phone"
             type="tel"
@@ -253,7 +253,7 @@ export default function RegistrationForm() {
             placeholder="Country"
             defaultValue={actionData?.values?.country}
             required
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your home country</option>
             {countries.map((country: { alpha2Code: string; name: string }) => (
@@ -274,7 +274,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="university">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="university"
             name="university"
             type="text"
@@ -298,13 +298,13 @@ export default function RegistrationForm() {
             id="status"
             required
             defaultValue={actionData?.values?.status}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your status</option>
             <option value="l">Local student</option>
             <option value="i">International degree student</option>
-            <option value="o">Exchange student (started before April)</option>
-            <option value="e">Exchange student (starting in April)</option>
+            <option value="o">Exchange student (started before October)</option>
+            <option value="e">Exchange student (starting in October)</option>
           </select>
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs">
             Status
@@ -322,7 +322,7 @@ export default function RegistrationForm() {
             id="diet"
             required
             defaultValue={actionData?.values?.diet}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="none">No restrictions</option>
             <option value="vegetarian">I am vegetarian</option>
@@ -346,7 +346,7 @@ export default function RegistrationForm() {
                 name="sectionMember"
                 id="sectionMember"
                 defaultValue={actionData?.values?.sectionMember}
-                className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+                className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
                 onChange={(event) => setEsnMember(event.target.checked)}
               />
               <span className="font-medium text-black">
@@ -363,7 +363,7 @@ export default function RegistrationForm() {
         </div>
         <label className="relative block h-fit" htmlFor="esnSection">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600 disabled:bg-neutral-200"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600 disabled:bg-neutral-200"
             id="esnSection"
             name="esnSection"
             type="text"
@@ -383,7 +383,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block h-fit" htmlFor="languages">
           <input
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="languages"
             name="languages"
             type="text"
@@ -410,11 +410,11 @@ export default function RegistrationForm() {
             id="programme"
             required
             defaultValue={actionData?.values?.programme}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select your preference</option>
-            <option value="pa">Party Animals (€119)</option>
-            <option value="cc">Culture Creatures (€109)</option>
+            <option value="pa">Party Animals (€99)</option>
+            <option value="cc">Culture Creatures (€69)</option>
             <option value="pa-cc">
               I prefer Party Animals, but am open to join Culture Creatures.
             </option>
@@ -438,7 +438,7 @@ export default function RegistrationForm() {
             id="oldie"
             required
             defaultValue={actionData?.values?.oldie}
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
           >
             <option value="">Select an option</option>
             <option value="true">Yes, and I need more.</option>
@@ -456,7 +456,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block" htmlFor="expectations">
           <textarea
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="expectations"
             name="expectations"
             rows={4}
@@ -465,7 +465,7 @@ export default function RegistrationForm() {
             placeholder="Expectations"
           />
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
-            My expectations for the programme
+            Name two things that would make the program unforgettable for you
           </span>
           {actionData?.errors.expectations ? (
             <ValidationMessage
@@ -476,7 +476,7 @@ export default function RegistrationForm() {
         </label>
         <label className="relative block" htmlFor="requests">
           <textarea
-            className="peer w-full font-medium text-black rounded-lg border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
+            className="peer w-full font-medium text-black rounded-[3rem] border-2 border-neutral-300 overflow-hidden bg-neutral-100 px-3 pt-6 pb-2 text-base placeholder-transparent focus:ring-1 focus:ring-blue-600"
             id="requests"
             name="requests"
             rows={4}
@@ -484,7 +484,7 @@ export default function RegistrationForm() {
             placeholder="Requests"
           />
           <span className="border-l-2 border-transparent absolute left-3 top-2 text-xs font-medium text-neutral-600 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-disabled:text-neutral-400 ">
-            Special requests
+            Special requests, T-Shirt size, your heart's deepest wishes
           </span>
           {actionData?.errors.requests ? (
             <ValidationMessage
@@ -504,11 +504,11 @@ export default function RegistrationForm() {
               id="pay"
               required
               defaultValue={actionData?.values?.pay}
-              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+              className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
               I understand that once I receive my spot confirmation, I must pay
-              the programme fee (€109 for Culture Creatures or €119 for Party
+              the programme fee (€69 for Culture Creatures or €99 for Party
               Animals) within 24 hours. Otherwise, my spot will expire.
             </span>
           </div>
@@ -528,7 +528,7 @@ export default function RegistrationForm() {
               id="friends"
               required
               defaultValue={actionData?.values?.friends}
-              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+              className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
               I understand that I cannot influence which team I will be placed
@@ -551,7 +551,7 @@ export default function RegistrationForm() {
               id="refund"
               required
               defaultValue={actionData?.values?.refund}
-              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+              className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
               I understand that the participation fee cannot be refunded if my
@@ -576,7 +576,7 @@ export default function RegistrationForm() {
               id="vax"
               required
               defaultValue={actionData?.values?.vax}
-              className="h-6 w-6 rounded-md border border-2 border-gray-300 bg-neutral-100"
+              className="h-6 w-6 rounded-[3rem] border border-2 border-gray-300 bg-neutral-100"
             />
             <span className="text-black font-medium">
               I confirm that I classify as fully vaccinated according to german
@@ -615,7 +615,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
     <div className="w-full max-w-7xl m-auto">
-      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
             Error
@@ -625,10 +625,17 @@ export function ErrorBoundary({ error }: { error: Error }) {
             Oops! We had a problem. You can try refreshing the page or contact
             us at{' '}
             <a
-              href="mailto:party.animals@esn-tumi.de"
+              href="mailto:party.animals@esn-tumi.de?subject=[Party Animals] Technical Issue"
               className="underline text-blue-600 transition-all hover:text-blue-700"
             >
               party.animals@esn-tumi.de
+            </a>
+            , or
+            <a
+              className="text-blue-600 underline hover:text-blue-700"
+              href="mailto:culture.creatures@esn-tumi.de?subject=[Culture Creatures] Technical Issue"
+            >
+              culture.creatures@esn-tumi.de
             </a>
             . Please send the following error message along with your request:
           </p>

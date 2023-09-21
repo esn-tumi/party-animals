@@ -357,7 +357,7 @@ export default function AdminAssignments() {
   );
   return (
     <main className="px-2 md:px-8">
-      <section className="text-black bg-neutral-200 min-w-fit rounded-[2.25rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
+      <section className="text-black bg-neutral-200 min-w-fit rounded-[3rem] md:rounded-[3rem] overflow-hidden p-8 md:p-12 m-auto my-2 md:my-8">
         <h1 className="mb-4 md:mb-6 text-2xl font-medium leading-2 md:text-4xl md:leading-none tracking-tight">
           Assignments{' '}
           <span className="text-neutral-600">
@@ -441,14 +441,14 @@ export default function AdminAssignments() {
               </div>
               <div className="flex flex-col space-y-2">
                 {assignments[group.id].map((registration) => (
-                  <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-md">
+                  <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-[3rem]">
                     {/* <img
                       className="h-10 w-10 rounded-full"
                       referrerPolicy="no-referrer"
                       src={registration.user.photo}
                       alt={registration.user.firstName}
                     /> */}
-                    <div className="px-3 py-2 rounded-md overflow-hidden w-full">
+                    <div className="px-3 py-2 rounded-[3rem] overflow-hidden w-full">
                       <p
                         className={`${
                           registration.gender !== 'f' &&
@@ -484,7 +484,7 @@ export default function AdminAssignments() {
                         <Popover.Button className="h-full w-full p-2 leading-none text-neutral-600 hover:text-black hover:bg-neutral-300 transition-all">
                           Read
                         </Popover.Button>
-                        <Popover.Panel className="absolute left-1/2 -translate-x-1/2 z-10 mt-2 w-screen max-w-sm p-4 bg-white overflow-hidden rounded-md shadow-lg">
+                        <Popover.Panel className="absolute left-1/2 -translate-x-1/2 z-10 mt-2 w-screen max-w-sm p-4 bg-white overflow-hidden rounded-[3rem] shadow-lg">
                           <div className="relative">
                             <p>{registration.expectations}</p>
                           </div>
@@ -532,8 +532,8 @@ export default function AdminAssignments() {
           {nonAssigned.length !== 0 && (
             <div className="bg-neutral-100 rounded-xl p-4 grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
               {nonAssigned.map((registration) => (
-                <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-md">
-                  <div className="px-3 py-2 rounded-md overflow-hidden w-full">
+                <div className="flex items-strech justify-between bg-white border border-neutral-300 rounded-[3rem]">
+                  <div className="px-3 py-2 rounded-[3rem] overflow-hidden w-full">
                     <p
                       className={`${
                         registration.gender !== 'f' &&
@@ -577,7 +577,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
     <div className="w-full max-w-7xl m-auto px-2 md:px-8">
-      <div className="bg-red-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <div className="bg-red-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <h1 className="text-red-600 mb-6 text-4xl font-medium leading-2 md:text-6xl md:leading-none tracking-tight">
             Error

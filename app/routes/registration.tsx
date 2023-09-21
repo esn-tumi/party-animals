@@ -9,7 +9,7 @@ export function links() {
 export default function Registration() {
   return (
     <main className="max-w-7xl m-auto px-2 md:px-8">
-      <section className="bg-neutral-200 my-2 md:my-8 rounded-[2.25rem] md:rounded-[3rem] overflow-hidden">
+      <section className="bg-neutral-200 my-2 md:my-8 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
         <div className="max-w-4xl px-8 py-12 md:p-12">
           <p className="mb-1 text-sm md:text-base font-black tracking-wide uppercase text-neutral-600">
             Sign up
@@ -32,28 +32,34 @@ export default function Registration() {
             >
               party.animals@esn-tumi.de
             </a>
-            .
+            , or <br />
+            <a
+              className="text-blue-600 underline hover:text-blue-700"
+              href="mailto:culture.creatures@esn-tumi.de?subject=[Culture Creatures] Technical Issue"
+            >
+              culture.creatures@esn-tumi.de
+            </a>
           </p>
         </div>
       </section>
       <Outlet />
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-pink-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-pink-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Which programme is right for me?
             </p>
             <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
-              Party Animals (April 3&ndash;16, 2023) is designed as the ultimate
+              Party Animals (October 5&ndash;15, 2023) is designed as the ultimate
               exchange experience. As the name suggests, it is suited for
               students who enjoy being social, partying late at night, and a
-              couple of drinks along the way. Culture Creatures (April
-              10&ndash;16, 2023) is more relaxed and focuses on cultural
+              couple of drinks along the way. Culture Creatures (October
+              6&ndash;14, 2023) is more relaxed and focuses on cultural
               enjoyment.
             </p>
           </div>
         </div>
-        <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-green-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How much is it?
@@ -66,8 +72,7 @@ export default function Registration() {
               >
                 Party Animals
               </Link>{' '}
-              package is <s className="decoration-2">€170</s> €119 (only €8.50
-              per day). This covers all activities in the two-week programme
+              package is €99. This covers all activities in the programme
               schedule.{' '}
               <Link
                 className="underline hover:text-blue-700 transition-all"
@@ -75,16 +80,16 @@ export default function Registration() {
               >
                 Culture Creatures
               </Link>{' '}
-              is <s className="decoration-2">€150</s> €109 for its weeklong
-              schedule. Neither of the programmes include local transportation
-              within Munich or any additional food and drinks you might want to
+              is €69 for its weeklong
+              schedule. Neither of the programmes include transportation
+              within or outside Munich (we expect you to have Deutschlandticket) or any additional food and drinks you might want to
               consume during the events.
             </p>
           </div>
         </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-sky-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-sky-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Can I be in a group with my friends?
@@ -96,7 +101,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-orange-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-orange-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               What if I cannot attend every event?
@@ -109,7 +114,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-yellow-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-yellow-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How does the application work?
@@ -123,7 +128,7 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-indigo-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-indigo-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               Are there any other options?
@@ -144,9 +149,32 @@ export default function Registration() {
             </p>
           </div>
         </div>
+        <div className="bg-orange-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
+          <div className="max-w-4xl p-8 md:p-12">
+            <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
+              Will I receive a confirmation mail after registering successfully?
+            </p>
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
+              No, you won't receive any confirmation email after completing your registration.
+              To check the status of your registration, login on this page and you'll be redirected to the overview.
+            </p>
+          </div>
+        </div>
+        <div className="bg-teal-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
+          <div className="max-w-4xl p-8 md:p-12">
+            <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
+              How will I know if I got a spot or not?
+            </p>
+            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-orange-900">
+              If you have been accepted, you'll receive an email and will be invited to pay.
+              If you have not been accepted (yet), you won't receive any email.
+              If all the spots have been given out, you'll receive a respective email.
+            </p>
+          </div>
+        </div>
       </section>
       <section className="my-2 md:my-8 w-full grid grid-flow-row grid-cols-1 gap-x-2 gap-y-2 md:gap-y-8 sm:grid-cols-2">
-        <div className="bg-green-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-green-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               How can I stay in the loop?
@@ -155,7 +183,7 @@ export default function Registration() {
               Follow us on{' '}
               <a
                 className="underline hover:text-blue-700 transition-all"
-                href="https://www.instagram.com/tumi.esn/"
+                href="https://www.instagram.com/esn.tumi.orientation.weeks/"
                 target="_blank"
               >
                 Instagram
@@ -166,34 +194,40 @@ export default function Registration() {
             </p>
           </div>
         </div>
-        <div className="bg-pink-200 rounded-md md:rounded-lg overflow-hidden">
+        <div className="bg-pink-200 rounded-[3rem] md:rounded-[3rem] overflow-hidden">
           <div className="max-w-4xl p-8 md:p-12">
             <p className="font-medium leading-tight tracking-tight text-xl md:text-3xl md:leading-tight text-black">
               What's next?
             </p>
-            <p className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
+            <div className="mt-4 text-base md:text-xl font-normal leading-normal md:leading-normal text-pink-900">
               <ul className="list-none">
                 <li>
                   Apply before:{' '}
                   <strong className="font-medium">
-                    March 15, 6&nbsp;PM CET
+                    September 16, 6&nbsp;PM CET
                   </strong>
                 </li>
                 <li>
                   First round of admissions:{' '}
                   <strong className="font-medium">
-                    March 17, 6&nbsp;PM CET
+                    September 18, 6&nbsp;PM CET
                   </strong>
                 </li>
                 <li>
                   Second round of admissions:{' '}
                   <strong className="font-medium">
-                    March 20, 6&nbsp;PM CET
+                    September 20, 6&nbsp;PM CET
+                  </strong>
+                </li>
+                <li>
+                  Rejection mail for everybody who (sadly) couldn't get a spot:{' '}
+                  <strong className="font-medium">
+                    September 24, 6&nbsp;PM CET
                   </strong>
                 </li>
               </ul>
               Check your e-mail to confirm your registration.
-            </p>
+            </div>
           </div>
         </div>
       </section>
