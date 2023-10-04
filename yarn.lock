@@ -1798,10 +1798,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/engines@npm:4.11.0":
-  version: 4.11.0
-  resolution: "@prisma/engines@npm:4.11.0"
-  checksum: 98030cead39e5009b7a91fd2463433ccdb16cbeb6c7345ed7950c25dbe0731a425fc888458a1423b594d659972e081ca3d63d301ef647f05a634209c75769db2
+"@prisma/engines@npm:5.4.0":
+  version: 5.4.0
+  resolution: "@prisma/engines@npm:5.4.0"
+  checksum: 8df75d9752b33579dbe9851a974fff6eb0cdbbd7a639674fe56cb08cb0e389a30e4955594380bf1328dbb5abf7fd83c94dcc9fb917be26e1cfc124659e7503c5
   languageName: node
   linkType: hard
 
@@ -2070,7 +2070,7 @@ __metadata:
     concurrently: ^7.6.0
     cross-env: ^7.0.3
     postcss: ^8.4.21
-    prisma: ^4.11.0
+    prisma: ^5.4.0
     react: ^18.2.0
     react-dom: ^18.2.0
     remix-auth: ^3.4.0
@@ -6629,15 +6629,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:^4.11.0":
-  version: 4.11.0
-  resolution: "prisma@npm:4.11.0"
+"prisma@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "prisma@npm:5.4.0"
   dependencies:
-    "@prisma/engines": 4.11.0
+    "@prisma/engines": 5.4.0
   bin:
     prisma: build/index.js
-    prisma2: build/index.js
-  checksum: 760d80766ae16ad2d25cfc20d75433b020dff0937eab864b94b95beadd89e481508e4d3c6370a5df90749d5ac5c7af77c9c2f293b74bfdee0e548b04a905c2e7
+  checksum: ca4213625f581e6370787efca9fdfbbc38261e755c5d11ea493d767d2205ebaddf05f185fdf5e3a447dc2c1311d8c03a8153b6b5c13d991a5fae797a3d0315cc
   languageName: node
   linkType: hard
 
