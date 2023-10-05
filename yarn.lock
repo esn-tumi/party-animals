@@ -2065,7 +2065,7 @@ __metadata:
     "@remix-run/serve": ^1.14.0
     "@tailwindcss/forms": ^0.5.3
     "@types/react": ^18.0.28
-    "@types/react-dom": ^18.0.11
+    "@types/react-dom": ^18.2.10
     autoprefixer: ^10.4.13
     concurrently: ^7.6.0
     cross-env: ^7.0.3
@@ -2223,12 +2223,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.11":
-  version: 18.0.11
-  resolution: "@types/react-dom@npm:18.0.11"
+"@types/react-dom@npm:^18.2.10":
+  version: 18.2.10
+  resolution: "@types/react-dom@npm:18.2.10"
   dependencies:
     "@types/react": "*"
-  checksum: 579691e4d5ec09688087568037c35edf8cfb1ab3e07f6c60029280733ee7b5c06d66df6fcc90786702c93ac8cb13bc7ff16c79ddfc75d082938fbaa36e1cdbf4
+  checksum: ced70643d82dd9d165cd6d1a98ec7556daf77d8fdec1ed19badb744a2a2370a84cc109248667536d7f850409e85432c300ec9f8c87d46e066ad295ddf9b6ab03
   languageName: node
   linkType: hard
 
